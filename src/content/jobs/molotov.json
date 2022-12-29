@@ -5,5 +5,9 @@
   "type": "Mission",
   "from": "2016-09-01",
   "to": "2017-07-01",
-  "tags": ["javascript", "webOS", "TVOS", "Console"]
+  "tags": ["javascript", "webOS", "TVOS", "Console"],
+  "desc": {
+    "fr": "./molotov.fr.md",
+    "en": "./molotov.en.md"
+  }
 }

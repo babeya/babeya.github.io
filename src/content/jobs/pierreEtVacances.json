@@ -5,5 +5,9 @@
   "type": "Mission",
   "from": "2017-08-01",
   "to": "2018-08-01",
-  "tags": ["javascript", "reactJs", "php", "AWS"]
+  "tags": ["javascript", "reactJs", "php", "AWS"],
+  "desc": {
+    "fr": "./pierreEtVacances.fr.md",
+    "en": "./pierreEtVacances.en.md"
+  }
 }

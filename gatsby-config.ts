@@ -33,6 +33,7 @@ const config: GatsbyConfig = {
       },
       __key: "content",
     },
+    `gatsby-transformer-remark`,
   ],
 };
 
