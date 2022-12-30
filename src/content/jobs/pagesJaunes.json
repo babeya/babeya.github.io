@@ -8,6 +8,7 @@
   "typename": "job",
   "tags": ["javascript", "CSS", "html", "elasticsearch"],
   "project": [],
+  "colors": ["#FCEB23"],
   "desc": {
     "fr": "./pagesJaunes.fr.md",
     "en": "./pagesJaunes.en.md"

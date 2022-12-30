@@ -764,6 +764,7 @@ type JSONQueryOperatorInput = {
 
 type JobsJson = Node & {
   readonly children: ReadonlyArray<Node>;
+  readonly colors: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly company: Maybe<Scalars['String']>;
   readonly desc: Maybe<JobsJsonDesc>;
   readonly from: Maybe<Scalars['Date']>;
@@ -861,6 +862,7 @@ type JobsJsonEdge = {
 
 type JobsJsonFieldSelector = {
   readonly children: InputMaybe<NodeFieldSelector>;
+  readonly colors: InputMaybe<FieldSelectorEnum>;
   readonly company: InputMaybe<FieldSelectorEnum>;
   readonly desc: InputMaybe<JobsJsonDescFieldSelector>;
   readonly from: InputMaybe<FieldSelectorEnum>;
@@ -877,6 +879,7 @@ type JobsJsonFieldSelector = {
 
 type JobsJsonFilterInput = {
   readonly children: InputMaybe<NodeFilterListInput>;
+  readonly colors: InputMaybe<StringQueryOperatorInput>;
   readonly company: InputMaybe<StringQueryOperatorInput>;
   readonly desc: InputMaybe<JobsJsonDescFilterInput>;
   readonly from: InputMaybe<DateQueryOperatorInput>;
@@ -938,6 +941,7 @@ type JobsJsonGroupConnection_sumArgs = {
 
 type JobsJsonSortInput = {
   readonly children: InputMaybe<NodeSortInput>;
+  readonly colors: InputMaybe<SortOrderEnum>;
   readonly company: InputMaybe<SortOrderEnum>;
   readonly desc: InputMaybe<JobsJsonDescSortInput>;
   readonly from: InputMaybe<SortOrderEnum>;
@@ -1631,6 +1635,7 @@ type Query_fileArgs = {
 
 type Query_jobsJsonArgs = {
   children: InputMaybe<NodeFilterListInput>;
+  colors: InputMaybe<StringQueryOperatorInput>;
   company: InputMaybe<StringQueryOperatorInput>;
   desc: InputMaybe<JobsJsonDescFilterInput>;
   from: InputMaybe<DateQueryOperatorInput>;
@@ -2534,7 +2539,7 @@ type StringQueryOperatorInput = {
 type allJobsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type allJobsQuery = { readonly allProjectsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly name: string | null, readonly id: string, readonly release: string | null, readonly type: string | null, readonly typename: string | null, readonly desc: { readonly en: { readonly childrenMarkdownRemark: ReadonlyArray<{ readonly html: string | null } | null> | null } | null, readonly fr: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> }, readonly allJobsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly link: string | null, readonly id: string, readonly from: string | null, readonly to: string | null, readonly title: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly type: string | null, readonly typename: string | null, readonly company: string | null, readonly desc: { readonly en: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly fr: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> } };
+type allJobsQuery = { readonly allProjectsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly name: string | null, readonly id: string, readonly release: string | null, readonly type: string | null, readonly typename: string | null, readonly desc: { readonly en: { readonly childrenMarkdownRemark: ReadonlyArray<{ readonly html: string | null } | null> | null } | null, readonly fr: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> }, readonly allJobsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly link: string | null, readonly id: string, readonly from: string | null, readonly to: string | null, readonly title: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly type: string | null, readonly typename: string | null, readonly company: string | null, readonly colors: ReadonlyArray<string | null> | null, readonly desc: { readonly en: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly fr: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> } };
 
 
 }

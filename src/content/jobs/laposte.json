@@ -6,5 +6,6 @@
   "from": "2018-09-01",
   "to": "2018-12-01",
   "typename": "job",
+  "colors": ["#FCCE0C", "#003DA5"],
   "tags": ["javascript", "reactJs", "php", "AWS"]
 }

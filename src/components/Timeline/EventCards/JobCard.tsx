@@ -9,8 +9,11 @@ import BaseEventCard from "./BaseEventCard";
 
 type Props = { job: Queries.JobsJson };
 
-const JobCard = ({ job: { company, desc, type } }: Props) => (
-  <BaseEventCard icon={<WorkIcon />}>
+const JobCard = ({ job: { company, desc, type, colors } }: Props) => (
+  <BaseEventCard
+    icon={<WorkIcon sx={{ fill: (colors && colors[1]) || undefined }} />}
+    colors={colors}
+  >
     <Typography variant="h5">{company}</Typography>
     <Typography>{type}</Typography>
     <Typography>

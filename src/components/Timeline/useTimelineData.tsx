@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { DateTime } from "luxon";
 
 const query = graphql`
   query allJobs {
@@ -38,6 +39,7 @@ const query = graphql`
           type
           typename
           company
+          colors
           desc {
             en {
               id
@@ -75,7 +77,15 @@ const mergeDataRec = (
   const currentJob = jobs[jobIdx];
   const currentProject = projects[projectIdx];
 
-  if (currentJob.node?.from || 0 >= (currentProject.node?.release || 0)) {
+  const jobEnd =
+    (currentJob.node?.to && DateTime.fromISO(currentJob.node.to)) ||
+    DateTime.now();
+  const projectRelease =
+    (currentProject.node?.release &&
+      DateTime.fromISO(currentProject.node.release)) ||
+    DateTime.now();
+
+  if (jobEnd >= projectRelease) {
     return mergeDataRec(
       [...result, currentJob],
       jobs,
