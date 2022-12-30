@@ -10,7 +10,7 @@ type TranslatedGraphqlMarkdown = {
 };
 
 type Props = {
-  content: TranslatedGraphqlMarkdown;
+  content?: TranslatedGraphqlMarkdown | null;
   lang: "en" | "fr";
 };
 

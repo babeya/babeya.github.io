@@ -4,5 +4,6 @@
   "title": "Developer Front",
   "type": "Mission",
   "from": "2019-01-01",
+  "typename": "job",
   "tags": ["javascript", "reactJs", "graphql"]
 }

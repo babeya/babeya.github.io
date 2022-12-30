@@ -5,6 +5,7 @@
   "type": "Mission",
   "from": "2016-09-01",
   "to": "2017-07-01",
+  "typename": "job",
   "tags": ["javascript", "webOS", "TVOS", "Console"],
   "desc": {
     "fr": "./molotov.fr.md",

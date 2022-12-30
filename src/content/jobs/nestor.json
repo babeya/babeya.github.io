@@ -5,6 +5,7 @@
   "type": "Open-ended Contract",
   "from": "2016-01-01",
   "to": "2016-07-01",
+  "typename": "job",
   "tags": ["javascript", "reactJs", "php", "AWS"],
   "desc": {
     "fr": "./nestor.fr.md",

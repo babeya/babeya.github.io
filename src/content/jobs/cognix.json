@@ -6,6 +6,7 @@
   "from": "2012-07-01",
   "to": "2012-12-01",
   "tags": ["javascript", "CSS", "html", "php"],
+  "typename": "job",
   "desc": {
     "fr": "./cognix.fr.md",
     "en": "./cognix.en.md"

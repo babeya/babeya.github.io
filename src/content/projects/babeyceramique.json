@@ -1,0 +1,12 @@
+{
+  "name": "babeyceramique.com",
+  "link": "htts://www.babeyceramique.com",
+  "tags": ["reactjs"],
+  "release": "2022-09-01",
+  "type": "website",
+  "desc": {
+    "fr": "./babeyceramique.fr.md",
+    "en": "./babeyceramique.en.md"
+  },
+  "typename": "project"
+}

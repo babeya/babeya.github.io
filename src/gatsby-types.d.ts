@@ -362,11 +362,15 @@ type File = Node & {
   readonly childJobsJson: Maybe<JobsJson>;
   /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
   readonly childMarkdownRemark: Maybe<MarkdownRemark>;
+  /** Returns the first child node of type ProjectsJson or null if there are no children of given type on this node */
+  readonly childProjectsJson: Maybe<ProjectsJson>;
   readonly children: ReadonlyArray<Node>;
   /** Returns all children nodes filtered by type JobsJson */
   readonly childrenJobsJson: Maybe<ReadonlyArray<Maybe<JobsJson>>>;
   /** Returns all children nodes filtered by type MarkdownRemark */
   readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
+  /** Returns all children nodes filtered by type ProjectsJson */
+  readonly childrenProjectsJson: Maybe<ReadonlyArray<Maybe<ProjectsJson>>>;
   readonly ctime: Scalars['Date'];
   readonly ctimeMs: Scalars['Float'];
   readonly dev: Scalars['Int'];
@@ -511,9 +515,11 @@ type FileFieldSelector = {
   readonly changeTime: InputMaybe<FieldSelectorEnum>;
   readonly childJobsJson: InputMaybe<JobsJsonFieldSelector>;
   readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly childProjectsJson: InputMaybe<ProjectsJsonFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly childrenJobsJson: InputMaybe<JobsJsonFieldSelector>;
   readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly childrenProjectsJson: InputMaybe<ProjectsJsonFieldSelector>;
   readonly ctime: InputMaybe<FieldSelectorEnum>;
   readonly ctimeMs: InputMaybe<FieldSelectorEnum>;
   readonly dev: InputMaybe<FieldSelectorEnum>;
@@ -556,9 +562,11 @@ type FileFilterInput = {
   readonly changeTime: InputMaybe<DateQueryOperatorInput>;
   readonly childJobsJson: InputMaybe<JobsJsonFilterInput>;
   readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  readonly childProjectsJson: InputMaybe<ProjectsJsonFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly childrenJobsJson: InputMaybe<JobsJsonFilterListInput>;
   readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  readonly childrenProjectsJson: InputMaybe<ProjectsJsonFilterListInput>;
   readonly ctime: InputMaybe<DateQueryOperatorInput>;
   readonly ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   readonly dev: InputMaybe<IntQueryOperatorInput>;
@@ -642,9 +650,11 @@ type FileSortInput = {
   readonly changeTime: InputMaybe<SortOrderEnum>;
   readonly childJobsJson: InputMaybe<JobsJsonSortInput>;
   readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly childProjectsJson: InputMaybe<ProjectsJsonSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly childrenJobsJson: InputMaybe<JobsJsonSortInput>;
   readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly childrenProjectsJson: InputMaybe<ProjectsJsonSortInput>;
   readonly ctime: InputMaybe<SortOrderEnum>;
   readonly ctimeMs: InputMaybe<SortOrderEnum>;
   readonly dev: InputMaybe<SortOrderEnum>;
@@ -765,6 +775,7 @@ type JobsJson = Node & {
   readonly title: Maybe<Scalars['String']>;
   readonly to: Maybe<Scalars['Date']>;
   readonly type: Maybe<Scalars['String']>;
+  readonly typename: Maybe<Scalars['String']>;
 };
 
 
@@ -861,6 +872,7 @@ type JobsJsonFieldSelector = {
   readonly title: InputMaybe<FieldSelectorEnum>;
   readonly to: InputMaybe<FieldSelectorEnum>;
   readonly type: InputMaybe<FieldSelectorEnum>;
+  readonly typename: InputMaybe<FieldSelectorEnum>;
 };
 
 type JobsJsonFilterInput = {
@@ -876,6 +888,7 @@ type JobsJsonFilterInput = {
   readonly title: InputMaybe<StringQueryOperatorInput>;
   readonly to: InputMaybe<DateQueryOperatorInput>;
   readonly type: InputMaybe<StringQueryOperatorInput>;
+  readonly typename: InputMaybe<StringQueryOperatorInput>;
 };
 
 type JobsJsonFilterListInput = {
@@ -936,6 +949,7 @@ type JobsJsonSortInput = {
   readonly title: InputMaybe<SortOrderEnum>;
   readonly to: InputMaybe<SortOrderEnum>;
   readonly type: InputMaybe<SortOrderEnum>;
+  readonly typename: InputMaybe<SortOrderEnum>;
 };
 
 type MarkdownExcerptFormats =
@@ -1250,11 +1264,186 @@ type PageInfo = {
   readonly totalCount: Scalars['Int'];
 };
 
+type ProjectsJson = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly desc: Maybe<ProjectsJsonDesc>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly link: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly release: Maybe<Scalars['Date']>;
+  readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly type: Maybe<Scalars['String']>;
+  readonly typename: Maybe<Scalars['String']>;
+};
+
+
+type ProjectsJson_releaseArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type ProjectsJsonConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<ProjectsJsonEdge>;
+  readonly group: ReadonlyArray<ProjectsJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<ProjectsJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type ProjectsJsonConnection_distinctArgs = {
+  field: ProjectsJsonFieldSelector;
+};
+
+
+type ProjectsJsonConnection_groupArgs = {
+  field: ProjectsJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type ProjectsJsonConnection_maxArgs = {
+  field: ProjectsJsonFieldSelector;
+};
+
+
+type ProjectsJsonConnection_minArgs = {
+  field: ProjectsJsonFieldSelector;
+};
+
+
+type ProjectsJsonConnection_sumArgs = {
+  field: ProjectsJsonFieldSelector;
+};
+
+type ProjectsJsonDesc = {
+  readonly en: Maybe<File>;
+  readonly fr: Maybe<File>;
+};
+
+type ProjectsJsonDescFieldSelector = {
+  readonly en: InputMaybe<FileFieldSelector>;
+  readonly fr: InputMaybe<FileFieldSelector>;
+};
+
+type ProjectsJsonDescFilterInput = {
+  readonly en: InputMaybe<FileFilterInput>;
+  readonly fr: InputMaybe<FileFilterInput>;
+};
+
+type ProjectsJsonDescSortInput = {
+  readonly en: InputMaybe<FileSortInput>;
+  readonly fr: InputMaybe<FileSortInput>;
+};
+
+type ProjectsJsonEdge = {
+  readonly next: Maybe<ProjectsJson>;
+  readonly node: ProjectsJson;
+  readonly previous: Maybe<ProjectsJson>;
+};
+
+type ProjectsJsonFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly desc: InputMaybe<ProjectsJsonDescFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly link: InputMaybe<FieldSelectorEnum>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly release: InputMaybe<FieldSelectorEnum>;
+  readonly tags: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+  readonly typename: InputMaybe<FieldSelectorEnum>;
+};
+
+type ProjectsJsonFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly desc: InputMaybe<ProjectsJsonDescFilterInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly link: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly release: InputMaybe<DateQueryOperatorInput>;
+  readonly tags: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+  readonly typename: InputMaybe<StringQueryOperatorInput>;
+};
+
+type ProjectsJsonFilterListInput = {
+  readonly elemMatch: InputMaybe<ProjectsJsonFilterInput>;
+};
+
+type ProjectsJsonGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<ProjectsJsonEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<ProjectsJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<ProjectsJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type ProjectsJsonGroupConnection_distinctArgs = {
+  field: ProjectsJsonFieldSelector;
+};
+
+
+type ProjectsJsonGroupConnection_groupArgs = {
+  field: ProjectsJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type ProjectsJsonGroupConnection_maxArgs = {
+  field: ProjectsJsonFieldSelector;
+};
+
+
+type ProjectsJsonGroupConnection_minArgs = {
+  field: ProjectsJsonFieldSelector;
+};
+
+
+type ProjectsJsonGroupConnection_sumArgs = {
+  field: ProjectsJsonFieldSelector;
+};
+
+type ProjectsJsonSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly desc: InputMaybe<ProjectsJsonDescSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly link: InputMaybe<SortOrderEnum>;
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly release: InputMaybe<SortOrderEnum>;
+  readonly tags: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
+  readonly typename: InputMaybe<SortOrderEnum>;
+};
+
 type Query = {
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
   readonly allJobsJson: JobsJsonConnection;
   readonly allMarkdownRemark: MarkdownRemarkConnection;
+  readonly allProjectsJson: ProjectsJsonConnection;
   readonly allSite: SiteConnection;
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
   readonly allSiteFunction: SiteFunctionConnection;
@@ -1264,6 +1453,7 @@ type Query = {
   readonly file: Maybe<File>;
   readonly jobsJson: Maybe<JobsJson>;
   readonly markdownRemark: Maybe<MarkdownRemark>;
+  readonly projectsJson: Maybe<ProjectsJson>;
   readonly site: Maybe<Site>;
   readonly siteBuildMetadata: Maybe<SiteBuildMetadata>;
   readonly siteFunction: Maybe<SiteFunction>;
@@ -1301,6 +1491,14 @@ type Query_allMarkdownRemarkArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<MarkdownRemarkSortInput>>>;
+};
+
+
+type Query_allProjectsJsonArgs = {
+  filter: InputMaybe<ProjectsJsonFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<ProjectsJsonSortInput>>>;
 };
 
 
@@ -1397,9 +1595,11 @@ type Query_fileArgs = {
   changeTime: InputMaybe<DateQueryOperatorInput>;
   childJobsJson: InputMaybe<JobsJsonFilterInput>;
   childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  childProjectsJson: InputMaybe<ProjectsJsonFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
   childrenJobsJson: InputMaybe<JobsJsonFilterListInput>;
   childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  childrenProjectsJson: InputMaybe<ProjectsJsonFilterListInput>;
   ctime: InputMaybe<DateQueryOperatorInput>;
   ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   dev: InputMaybe<IntQueryOperatorInput>;
@@ -1442,6 +1642,7 @@ type Query_jobsJsonArgs = {
   title: InputMaybe<StringQueryOperatorInput>;
   to: InputMaybe<DateQueryOperatorInput>;
   type: InputMaybe<StringQueryOperatorInput>;
+  typename: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -1461,6 +1662,21 @@ type Query_markdownRemarkArgs = {
   tableOfContents: InputMaybe<StringQueryOperatorInput>;
   timeToRead: InputMaybe<IntQueryOperatorInput>;
   wordCount: InputMaybe<MarkdownWordCountFilterInput>;
+};
+
+
+type Query_projectsJsonArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  desc: InputMaybe<ProjectsJsonDescFilterInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  link: InputMaybe<StringQueryOperatorInput>;
+  name: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  release: InputMaybe<DateQueryOperatorInput>;
+  tags: InputMaybe<StringQueryOperatorInput>;
+  type: InputMaybe<StringQueryOperatorInput>;
+  typename: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -2318,7 +2534,7 @@ type StringQueryOperatorInput = {
 type allJobsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type allJobsQuery = { readonly allJobsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly link: string | null, readonly id: string, readonly from: string | null, readonly to: string | null, readonly title: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly type: string | null, readonly company: string | null, readonly desc: { readonly en: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly fr: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> } };
+type allJobsQuery = { readonly allProjectsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly name: string | null, readonly id: string, readonly release: string | null, readonly type: string | null, readonly typename: string | null, readonly desc: { readonly en: { readonly childrenMarkdownRemark: ReadonlyArray<{ readonly html: string | null } | null> | null } | null, readonly fr: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> }, readonly allJobsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly link: string | null, readonly id: string, readonly from: string | null, readonly to: string | null, readonly title: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly type: string | null, readonly typename: string | null, readonly company: string | null, readonly desc: { readonly en: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly fr: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> } };
 
 
 }
