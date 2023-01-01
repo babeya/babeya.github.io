@@ -13,6 +13,8 @@ import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import { LangContext } from "../Translation";
+import LinkButtonWrapper from "../LinkButtonWrapper";
+import LangSelector from "../LangSelector";
 
 type Props = {
   children: React.ReactNode;
@@ -24,6 +26,7 @@ const Page = ({ children, lang }: Props) => {
   const [mode, setMode] = useState<"dark" | "light">(
     prefersDarkMode ? "dark" : "light"
   );
+  console.log(lang);
 
   const theme = React.useMemo(
     () =>
@@ -53,7 +56,7 @@ const Page = ({ children, lang }: Props) => {
               <Typography variant="h6" sx={{ flexGrow: 1 }}>
                 A. Babey
               </Typography>
-              <Button>🇫🇷</Button>
+              <LangSelector />
             </Toolbar>
           </AppBar>
           <Container maxWidth="md" sx={{ paddingY: 2 }}>

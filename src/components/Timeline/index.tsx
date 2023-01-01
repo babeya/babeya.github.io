@@ -13,16 +13,14 @@ type Props = {
 const Timeline = ({ lang }: Props) => {
   const data = useTimelineData();
 
-  console.log(data);
-
   return (
     <Paper sx={{ padding: 4 }}>
       <Box sx={{ borderLeft: "2px solid grey" }}>
         {data.map(({ node }) =>
           node?.typename === "job" ? (
-            <JobCard job={node} lang={lang} />
+            <JobCard job={node} />
           ) : (
-            <ProjectCard project={node} lang={lang} />
+            <ProjectCard project={node} />
           )
         )}
       </Box>
