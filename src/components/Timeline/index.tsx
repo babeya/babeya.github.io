@@ -6,11 +6,9 @@ import Box from "@mui/material/Box";
 import useTimelineData from "./useTimelineData";
 import { JobCard, ProjectCard } from "./EventCards";
 
-type Props = {
-  lang: string;
-};
+type Props = {};
 
-const Timeline = ({ lang }: Props) => {
+const Timeline = () => {
   const data = useTimelineData();
 
   return (
