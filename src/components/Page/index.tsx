@@ -12,6 +12,8 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 
+import { LangContext } from "../Translation";
+
 type Props = {
   children: React.ReactNode;
   lang: string;
@@ -22,8 +24,6 @@ const Page = ({ children, lang }: Props) => {
   const [mode, setMode] = useState<"dark" | "light">(
     prefersDarkMode ? "dark" : "light"
   );
-
-  console.log(lang);
 
   const theme = React.useMemo(
     () =>
@@ -45,20 +45,22 @@ const Page = ({ children, lang }: Props) => {
         />
         <title>BABEY A.</title>
       </Helmet>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" sx={{ flexGrow: 1 }}>
-              A. Babey
-            </Typography>
-            <Button>🇫🇷</Button>
-          </Toolbar>
-        </AppBar>
-        <Container maxWidth="md" sx={{ paddingY: 2 }}>
-          {children}
-        </Container>
-      </ThemeProvider>
+      <LangContext.Provider value={{ lang }}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <AppBar position="static">
+            <Toolbar>
+              <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                A. Babey
+              </Typography>
+              <Button>🇫🇷</Button>
+            </Toolbar>
+          </AppBar>
+          <Container maxWidth="md" sx={{ paddingY: 2 }}>
+            {children}
+          </Container>
+        </ThemeProvider>
+      </LangContext.Provider>
     </>
   );
 };

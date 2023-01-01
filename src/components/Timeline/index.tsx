@@ -6,9 +6,11 @@ import Box from "@mui/material/Box";
 import useTimelineData from "./useTimelineData";
 import { JobCard, ProjectCard } from "./EventCards";
 
-type Props = {};
+type Props = {
+  lang: string;
+};
 
-const Timeline = ({}: Props) => {
+const Timeline = ({ lang }: Props) => {
   const data = useTimelineData();
 
   console.log(data);
@@ -18,9 +20,9 @@ const Timeline = ({}: Props) => {
       <Box sx={{ borderLeft: "2px solid grey" }}>
         {data.map(({ node }) =>
           node?.typename === "job" ? (
-            <JobCard job={node} />
+            <JobCard job={node} lang={lang} />
           ) : (
-            <ProjectCard project={node} />
+            <ProjectCard project={node} lang={lang} />
           )
         )}
       </Box>
