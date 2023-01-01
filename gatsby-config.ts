@@ -34,6 +34,7 @@ const config: GatsbyConfig = {
       __key: "content",
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-react-helmet`,
   ],
 };
 

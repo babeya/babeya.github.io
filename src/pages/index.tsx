@@ -4,9 +4,10 @@ import { Page, Timeline } from "../components";
 
 import { graphql } from "gatsby";
 
-const Index = ({ data }: any) => {
+const Index = ({ pageContext }: any) => {
+  console.log(pageContext);
   return (
-    <Page>
+    <Page lang={pageContext.lang}>
       <Timeline />
     </Page>
   );
@@ -14,12 +15,4 @@ const Index = ({ data }: any) => {
 
 export default Index;
 
-export const Head = () => (
-  <>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    />
-    <title>BABEY A.</title>
-  </>
-);
+export const Head = () => <></>;
