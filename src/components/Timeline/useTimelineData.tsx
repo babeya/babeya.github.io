@@ -1,6 +1,10 @@
 import { useMemo, useState } from "react";
+
 import { useStaticQuery, graphql } from "gatsby";
+
 import { DateTime } from "luxon";
+
+import { TimelineFilters } from "./types";
 
 const query = graphql`
   query allJobs {
@@ -103,9 +107,10 @@ const mergeDataRec = (
   );
 };
 
-type TimelineFilters = {
-  type?: "jobs" | "projects";
-  tags?: string[];
+type Result = {
+  timelineData: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[];
+  filters: TimelineFilters;
+  setFilters: (newFilters: TimelineFilters) => void;
 };
 
 const mergeData = (
@@ -113,14 +118,19 @@ const mergeData = (
   projects: Queries.ProjectsJsonEdge[]
 ) => mergeDataRec([], jobs, projects, 0, 0);
 
-const useTimelineData = () => {
+const useTimelineData = (): Result => {
   const data = useStaticQuery(query);
   const [filters, setFilters] = useState<TimelineFilters>({});
 
   const jobs = data?.allJobsJson?.edges;
   const projects = data?.allProjectsJson?.edges;
 
-  return useMemo(() => mergeData(jobs || [], projects || []), [jobs, projects]);
+  const timelineData = useMemo(
+    () => mergeData(jobs || [], projects || []),
+    [jobs, projects, filters]
+  );
+
+  return { timelineData, filters, setFilters };
 };
 
 export default useTimelineData;

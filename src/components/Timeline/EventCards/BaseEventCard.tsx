@@ -40,9 +40,9 @@ const BaseEventCard = ({ children, icon, colors }: Props) => {
       <Card
         sx={{
           flex: 1,
-          padding: 1,
+          padding: 2,
         }}
-        elevation={2}
+        elevation={3}
       >
         {children}
       </Card>

@@ -5,20 +5,22 @@ import Box from "@mui/material/Box";
 
 import useTimelineData from "./useTimelineData";
 import { JobCard, ProjectCard } from "./EventCards";
+import Header from "./Header";
 
 type Props = {};
 
 const Timeline = () => {
-  const data = useTimelineData();
+  const { timelineData, setFilters, filters } = useTimelineData();
 
   return (
     <Paper sx={{ padding: 4, paddingLeft: 6 }}>
+      <Header filters={filters} setFilters={setFilters} />
       <Box sx={{ borderLeft: "2px solid grey" }}>
-        {data.map(({ node }) =>
-          node?.typename === "job" ? (
-            <JobCard job={node} />
+        {timelineData.map(({ node }) =>
+          node?.typename === "job" ? ( // TODO: auto generate __typename
+            <JobCard job={node} key={node.id} />
           ) : (
-            <ProjectCard project={node} />
+            <ProjectCard project={node} key={node.id} />
           )
         )}
       </Box>
