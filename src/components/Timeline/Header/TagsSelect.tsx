@@ -10,13 +10,14 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
 
 type Props = {
+  tags: string[];
   value: string[];
   onChange: (skills: string[]) => void;
 };
 
 const OPTIONS = ["reactJs", "javascript", "typescript"];
 
-const TagsSelect = ({ value, onChange }: Props) => {
+const TagsSelect = ({ value, onChange, tags }: Props) => {
   const handleChange = (event: SelectChangeEvent<string[]>) => {
     const {
       target: { value },
@@ -46,7 +47,7 @@ const TagsSelect = ({ value, onChange }: Props) => {
             </Box>
           )}
         >
-          {OPTIONS.map((opt) => (
+          {tags.map((opt) => (
             <MenuItem key={opt} value={opt}>
               {opt}
             </MenuItem>

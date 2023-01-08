@@ -1,9 +1,7 @@
 import React from "react";
 
 import Typography from "@mui/material/Typography";
-import Chip from "@mui/material/Chip";
 import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
@@ -21,6 +19,7 @@ const JobCard = ({
   <BaseEventCard
     icon={<WorkIcon sx={{ fill: (colors && colors[1]) || undefined }} />}
     colors={colors}
+    tags={tags || []} // TODO
   >
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <Typography variant="h5" sx={{ flex: 1 }}>
@@ -39,11 +38,6 @@ const JobCard = ({
     <Typography>
       <TranslatedMarkdown lang="fr" content={desc} />
     </Typography>
-    <Stack direction="row-reverse" spacing={1} marginY={1}>
-      {(tags || []).map((tag) => (
-        <Chip label={tag} size="small" variant="outlined" />
-      ))}
-    </Stack>
   </BaseEventCard>
 );
 

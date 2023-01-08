@@ -26,6 +26,7 @@ const query = graphql`
           name
           id
           release
+          tags
           type
           typename
         }
@@ -107,10 +108,20 @@ const mergeDataRec = (
   );
 };
 
+const filterData = (
+  timelineData: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[],
+  { tags }: TimelineFilters
+) =>
+  timelineData.filter(
+    (entry) =>
+      !tags?.length || tags.every((tag) => entry.node.tags?.includes(tag))
+  );
+
 type Result = {
   timelineData: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[];
   filters: TimelineFilters;
   setFilters: (newFilters: TimelineFilters) => void;
+  availableTags: string[];
 };
 
 const mergeData = (
@@ -127,10 +138,37 @@ const useTimelineData = (): Result => {
 
   const timelineData = useMemo(
     () => mergeData(jobs || [], projects || []),
-    [jobs, projects, filters]
+    [jobs, projects]
   );
 
-  return { timelineData, filters, setFilters };
+  const filteredTimelineData = useMemo(
+    () => filterData(timelineData, filters),
+    [filters, timelineData]
+  );
+
+  const availableTags = useMemo(
+    () =>
+      Object.keys(
+        filteredTimelineData.reduce(
+          (acc, { node: { tags } }) => ({
+            ...acc,
+            ...(tags?.reduce(
+              (tagAcc, tag) => ({ ...tagAcc, [tag || ""]: tag }),
+              {}
+            ) || {}),
+          }),
+          {}
+        )
+      ),
+    [filteredTimelineData]
+  );
+
+  return {
+    timelineData: filteredTimelineData,
+    filters,
+    setFilters,
+    availableTags,
+  };
 };
 
 export default useTimelineData;

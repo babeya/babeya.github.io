@@ -1,18 +1,19 @@
 import React from "react";
 
+import Stack from "@mui/material/Stack";
+import Chip from "@mui/material/Chip";
 import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import WorkIcon from "@mui/icons-material/Work";
 import Fab from "@mui/material/Fab";
 
 type Props = {
   children: React.ReactNode;
   icon: React.ReactNode;
   colors?: string[];
+  tags: string[];
 };
 
-const BaseEventCard = ({ children, icon, colors }: Props) => {
+const BaseEventCard = ({ children, icon, colors, tags }: Props) => {
   return (
     <Box
       sx={{
@@ -45,6 +46,11 @@ const BaseEventCard = ({ children, icon, colors }: Props) => {
         elevation={3}
       >
         {children}
+        <Stack direction="row-reverse" spacing={1} marginY={1}>
+          {(tags || []).map((tag) => (
+            <Chip label={tag} size="small" variant="outlined" />
+          ))}
+        </Stack>
       </Card>
     </Box>
   );

@@ -9,11 +9,13 @@ import TagsSelect from "./TagsSelect";
 type Props = {
   filters: TimelineFilters;
   setFilters: (newFilters: TimelineFilters) => void;
+  availableTags: string[];
 };
 
-const TimelineHeader = ({ filters, setFilters }: Props) => (
+const TimelineHeader = ({ filters, setFilters, availableTags }: Props) => (
   <Box>
     <TagsSelect
+      tags={availableTags}
       value={filters.tags || []}
       onChange={(newTags) => {
         setFilters({ ...filters, tags: newTags });

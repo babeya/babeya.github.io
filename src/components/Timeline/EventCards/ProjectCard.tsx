@@ -9,8 +9,11 @@ import BaseEventCard from "./BaseEventCard";
 
 type Props = { project: Queries.ProjectsJson };
 
-const ProjectCard = ({ project: { name, desc, type } }: Props) => (
-  <BaseEventCard icon={type === "website" ? <WebIcon /> : null}>
+const ProjectCard = ({ project: { name, desc, type, tags } }: Props) => (
+  <BaseEventCard
+    icon={type === "website" ? <WebIcon /> : null}
+    tags={tags || []} // TODO
+  >
     <Typography variant="h5">{name}</Typography>
     <Typography>
       <TranslatedMarkdown lang="fr" content={desc} />

@@ -10,11 +10,16 @@ import Header from "./Header";
 type Props = {};
 
 const Timeline = () => {
-  const { timelineData, setFilters, filters } = useTimelineData();
+  const { timelineData, setFilters, filters, availableTags } =
+    useTimelineData();
 
   return (
     <Paper sx={{ padding: 4, paddingLeft: 6 }}>
-      <Header filters={filters} setFilters={setFilters} />
+      <Header
+        filters={filters}
+        setFilters={setFilters}
+        availableTags={availableTags}
+      />
       <Box sx={{ borderLeft: "2px solid grey" }}>
         {timelineData.map(({ node }) =>
           node?.typename === "job" ? ( // TODO: auto generate __typename
