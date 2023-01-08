@@ -12,7 +12,7 @@ const Timeline = () => {
   const data = useTimelineData();
 
   return (
-    <Paper sx={{ padding: 4 }}>
+    <Paper sx={{ padding: 4, paddingLeft: 6 }}>
       <Box sx={{ borderLeft: "2px solid grey" }}>
         {data.map(({ node }) =>
           node?.typename === "job" ? (

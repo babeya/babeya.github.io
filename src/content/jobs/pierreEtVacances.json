@@ -1,13 +1,13 @@
 {
   "company": "Pierre et Vacances",
-  "link": "TODO",
+  "link": "https://www.pierreetvacances.com",
   "title": "Developer Mobile",
   "type": "Mission",
   "from": "2017-08-01",
   "to": "2018-08-01",
   "typename": "job",
   "tags": ["javascript", "reactJs", "php", "AWS"],
-  "colors": ["#F17C54"],
+  "colors": ["#F17C54", "#ffffff"],
   "desc": {
     "fr": "./pierreEtVacances.fr.md",
     "en": "./pierreEtVacances.en.md"

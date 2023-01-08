@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { DateTime } from "luxon";
 
@@ -103,6 +103,11 @@ const mergeDataRec = (
   );
 };
 
+type TimelineFilters = {
+  type?: "jobs" | "projects";
+  tags?: string[];
+};
+
 const mergeData = (
   jobs: Queries.JobsJsonEdge[],
   projects: Queries.ProjectsJsonEdge[]
@@ -110,6 +115,7 @@ const mergeData = (
 
 const useTimelineData = () => {
   const data = useStaticQuery(query);
+  const [filters, setFilters] = useState<TimelineFilters>({});
 
   const jobs = data?.allJobsJson?.edges;
   const projects = data?.allProjectsJson?.edges;

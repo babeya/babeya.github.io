@@ -1,12 +1,12 @@
 {
   "company": "Nestor",
-  "link": "TODO",
+  "link": "https://www.nestorparis.com",
   "title": "Developer Full-Stack",
   "type": "Open-ended Contract",
   "from": "2016-01-01",
   "to": "2016-07-01",
   "typename": "job",
-  "colors": ["#3235F6"],
+  "colors": ["#3235F6", "#ffffff"],
   "tags": ["javascript", "reactJs", "php", "AWS"],
   "desc": {
     "fr": "./nestor.fr.md",
