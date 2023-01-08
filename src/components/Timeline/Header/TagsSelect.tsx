@@ -42,7 +42,12 @@ const TagsSelect = ({ value, onChange, tags }: Props) => {
           renderValue={(selected) => (
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
               {selected.map((value) => (
-                <Chip key={value} label={value} />
+                <Chip
+                  variant="outlined"
+                  key={value}
+                  label={value}
+                  color="primary"
+                />
               ))}
             </Box>
           )}

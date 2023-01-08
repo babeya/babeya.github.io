@@ -131,7 +131,7 @@ const mergeData = (
 
 const useTimelineData = (): Result => {
   const data = useStaticQuery(query);
-  const [filters, setFilters] = useState<TimelineFilters>({});
+  const [filters, setFilters] = useState<TimelineFilters>({ tags: [] });
 
   const jobs = data?.allJobsJson?.edges;
   const projects = data?.allProjectsJson?.edges;

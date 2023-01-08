@@ -11,14 +11,16 @@ import { TranslatedMarkdown } from "../../Translation";
 
 import BaseEventCard from "./BaseEventCard";
 
-type Props = { job: Queries.JobsJson };
+type Props = { job: Queries.JobsJson; selectedTags: string[] };
 
 const JobCard = ({
   job: { company, desc, type, link, title, colors, tags },
+  selectedTags
 }: Props) => (
   <BaseEventCard
     icon={<WorkIcon sx={{ fill: (colors && colors[1]) || undefined }} />}
     colors={colors}
+    selectedTags={selectedTags}
     tags={tags || []} // TODO
   >
     <Box sx={{ display: "flex", alignItems: "center" }}>

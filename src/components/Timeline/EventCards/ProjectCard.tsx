@@ -7,11 +7,15 @@ import { TranslatedMarkdown } from "../../Translation";
 
 import BaseEventCard from "./BaseEventCard";
 
-type Props = { project: Queries.ProjectsJson };
+type Props = { project: Queries.ProjectsJson; selectedTags: string[] };
 
-const ProjectCard = ({ project: { name, desc, type, tags } }: Props) => (
+const ProjectCard = ({
+  project: { name, desc, type, tags },
+  selectedTags,
+}: Props) => (
   <BaseEventCard
     icon={type === "website" ? <WebIcon /> : null}
+    selectedTags={selectedTags}
     tags={tags || []} // TODO
   >
     <Typography variant="h5">{name}</Typography>

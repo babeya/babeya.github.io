@@ -11,9 +11,16 @@ type Props = {
   icon: React.ReactNode;
   colors?: string[];
   tags: string[];
+  selectedTags: string[];
 };
 
-const BaseEventCard = ({ children, icon, colors, tags }: Props) => {
+const BaseEventCard = ({
+  children,
+  icon,
+  colors,
+  tags,
+  selectedTags,
+}: Props) => {
   return (
     <Box
       sx={{
@@ -48,7 +55,13 @@ const BaseEventCard = ({ children, icon, colors, tags }: Props) => {
         {children}
         <Stack direction="row-reverse" spacing={1} marginY={1}>
           {(tags || []).map((tag) => (
-            <Chip label={tag} size="small" variant="outlined" />
+            <Chip
+              label={tag}
+              key={tag}
+              size="small"
+              variant="outlined"
+              color={selectedTags.includes(tag) ? "primary" : undefined}
+            />
           ))}
         </Stack>
       </Card>
