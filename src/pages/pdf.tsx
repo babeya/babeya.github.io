@@ -1,14 +1,15 @@
 import React from "react";
-import {
+/*import {
   Page,
   Text,
   View,
   Document,
   StyleSheet,
-  PDFViewer,
-} from "@react-pdf/renderer";
+  // PDFViewer,
+} from "@react-pdf/renderer";*/
 
 // Create styles
+/*
 const styles = StyleSheet.create({
   page: {
     flexDirection: "row",
@@ -33,18 +34,14 @@ const MyDocument = () => (
       </View>
     </Page>
   </Document>
-);
+);*/
 
 const PdfPage = ({ location }) => {
   console.log(location);
 
   const params = new URLSearchParams(location.search);
 
-  return (
-    <PDFViewer>
-      <MyDocument />
-    </PDFViewer>
-  );
+  return <div>WIP</div>;
 };
 
 export default PdfPage;
