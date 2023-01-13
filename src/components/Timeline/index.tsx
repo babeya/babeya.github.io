@@ -11,8 +11,6 @@ import useTimelineData from "./useTimelineData";
 import { JobCard, ProjectCard } from "./EventCards";
 import Header from "./Header";
 
-type Props = {};
-
 const Timeline = () => {
   const { timelineData, setFilters, filters, availableTags } =
     useTimelineData();
@@ -32,7 +30,7 @@ const Timeline = () => {
           {timelineData.map(({ node }) => (
             <Collapse key={node.id} mountOnEnter unmountOnExit>
               {node?.typename === "job" ? ( // TODO: auto generate __typename
-                <JobCard job={node} selectedTags={filters.tags} />
+                <JobCard job={node} selectedTags={filters.tags}  />
               ) : (
                 <ProjectCard project={node} selectedTags={filters.tags} />
               )}
