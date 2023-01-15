@@ -23,16 +23,18 @@ const Profile = () => {
         </Grid>
         <Grid xs={9} sx={{ padding: 2 }}>
           <Typography>A. BABEY</Typography>
-          <Typography>Dévellopeur Javascript</Typography>
+          <Typography>Développeur Javascript</Typography>
           <Typography>
             <GitHubIcon />
-            <Link href="https://github.com/babeya" target="blank">
+            <Link href="https://github.com/babeya" target="_blank">
               babeya
             </Link>
           </Typography>
           <Typography>
             <LinkedInIcon />
-            <Link>a-babey</Link>
+            <Link href="www.linkedin.com/in/a-babey" target="_blank">
+              a-babey
+            </Link>
           </Typography>
           <Typography>
             <AlternateEmailIcon />

@@ -1,0 +1,1 @@
+Participation in the development of TV applications (LG, Samsung) AppleTv and console.

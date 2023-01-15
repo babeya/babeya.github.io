@@ -1,0 +1,1 @@
+Realization of an open source tool to explore data stored in an elasticsearch cluster.

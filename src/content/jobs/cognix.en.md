@@ -1,1 +1,1 @@
-* Cognix systems en
+Integration (.psd -> html, js, css) and maintenance of many websites.
