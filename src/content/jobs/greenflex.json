@@ -6,5 +6,9 @@
   "from": "2019-01-01",
   "typename": "job",
   "colors": ["#00A880", "#03485E"],
-  "tags": ["javascript", "reactJs", "graphql"]
+  "tags": ["Typescript", "React", "GraphQL"],
+  "desc": {
+    "fr": "./greenflex.fr.md",
+    "en": "./greenflex.en.md"
+  }
 }

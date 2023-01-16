@@ -1,7 +1,7 @@
 {
   "name": "babeyceramique.com",
   "link": "htts://www.babeyceramique.com",
-  "tags": ["reactjs"],
+  "tags": ["React", "Typescript", "Gatsby"],
   "release": "2022-09-01",
   "type": "website",
   "desc": {

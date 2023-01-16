@@ -6,7 +6,7 @@
   "from": "2017-08-01",
   "to": "2018-08-01",
   "typename": "job",
-  "tags": ["javascript", "reactJs", "php", "AWS"],
+  "tags": ["Javascript", "React", "PHP", "AWS"],
   "colors": ["#F17C54", "#ffffff"],
   "desc": {
     "fr": "./pierreEtVacances.fr.md",

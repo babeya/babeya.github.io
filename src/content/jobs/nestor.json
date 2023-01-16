@@ -7,7 +7,7 @@
   "to": "2016-07-01",
   "typename": "job",
   "colors": ["#3235F6", "#ffffff"],
-  "tags": ["javascript", "reactJs", "php", "AWS"],
+  "tags": ["Javascript", "React", "PHP", "AWS"],
   "desc": {
     "fr": "./nestor.fr.md",
     "en": "./nestor.en.md"

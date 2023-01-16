@@ -6,7 +6,7 @@
   "from": "2016-09-01",
   "to": "2017-07-01",
   "typename": "job",
-  "tags": ["javascript", "webOS", "TVOS", "Console"],
+  "tags": ["Javascript", "webOS", "TVOS"],
   "colors": ["#FEC106"],
   "desc": {
     "fr": "./molotov.fr.md",
