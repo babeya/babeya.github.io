@@ -5,6 +5,9 @@ const messages = {
   "job-title.fullStack": "Full-Stack Developer",
   "job-title.tv": "TV / Console Developer",
   "job-title.integrator": "Front-end Integrator",
+  "job-type.mission": "Mission",
+  "job-type.internship": "Internship",
+  "job-type.openEnded": "Open-ended Contract",
 };
 
 export default messages;

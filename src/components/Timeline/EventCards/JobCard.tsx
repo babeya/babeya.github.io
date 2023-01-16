@@ -14,7 +14,7 @@ import BaseEventCard from "./BaseEventCard";
 
 type Props = { job: Queries.JobsJson; selectedTags: string[] };
 
-const TranslatedTitle: { [key: string]: React.ReactNode } = {
+const TRANSLATED_TITLE: { [key: string]: React.ReactNode } = {
   mobile: (
     <FormattedMessage
       id="job-title.mobile"
@@ -47,6 +47,14 @@ const TranslatedTitle: { [key: string]: React.ReactNode } = {
   ),
 };
 
+const TRANSLATED_JOB_TYPE: { [key: string]: React.ReactNode } = {
+  mission: <FormattedMessage id="job-type.mission" defaultMessage="Mission" />,
+  internship: (
+    <FormattedMessage id="job-type.internship" defaultMessage="Stage" />
+  ),
+  openEnded: <FormattedMessage id="job-type.openEnded" defaultMessage="CDI" />,
+};
+
 const JobCard = ({
   job: { company, desc, type, link, title, colors, tags },
   selectedTags,
@@ -68,9 +76,11 @@ const JobCard = ({
       ) : null}
     </Box>
     <Typography variant="subtitle1">
-      {title && TranslatedTitle[title] ? TranslatedTitle[title] : title}
+      {title && TRANSLATED_TITLE[title] ? TRANSLATED_TITLE[title] : title}
     </Typography>
-    <Typography variant="subtitle2">{type}</Typography>
+    <Typography variant="subtitle2">
+      {type && TRANSLATED_JOB_TYPE[type] ? TRANSLATED_JOB_TYPE[type] : type}
+    </Typography>
     <Typography>
       <TranslatedMarkdown lang="fr" content={desc} />
     </Typography>

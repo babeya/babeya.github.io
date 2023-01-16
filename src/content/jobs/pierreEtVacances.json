@@ -2,11 +2,11 @@
   "company": "Pierre et Vacances",
   "link": "https://www.pierreetvacances.com",
   "title": "mobile",
-  "type": "Mission",
+  "type": "mission",
   "from": "2017-08-01",
   "to": "2018-08-01",
   "typename": "job",
-  "tags": ["Javascript", "React", "PHP", "AWS"],
+  "tags": ["Javascript", "React", "React Native"],
   "colors": ["#F17C54", "#ffffff"],
   "desc": {
     "fr": "./pierreEtVacances.fr.md",

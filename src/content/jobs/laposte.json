@@ -2,12 +2,12 @@
   "company": "La poste",
   "link": "https://www.laposte.fr",
   "title": "front",
-  "type": "Mission",
+  "type": "mission",
   "from": "2018-09-01",
   "to": "2018-12-01",
   "typename": "job",
   "colors": ["#FCCE0C", "#003DA5"],
-  "tags": ["Javascript", "React", "Typescript"],
+  "tags": ["Javascript", "React", "React Native", "Node.js"],
   "desc": {
     "fr": "./laposte.fr.md",
     "en": "./laposte.en.md"
