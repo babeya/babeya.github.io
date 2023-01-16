@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 
 import { Helmet } from "react-helmet";
+import { IntlProvider } from "react-intl";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -9,12 +10,11 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import { LangContext } from "../Translation";
-import LinkButtonWrapper from "../LinkButtonWrapper";
 import LangSelector from "../LangSelector";
+import messages from "../../messages";
 
 type Props = {
   children: React.ReactNode;
@@ -49,20 +49,26 @@ const Page = ({ children, lang }: Props) => {
         <title>BABEY A.</title>
       </Helmet>
       <LangContext.Provider value={{ lang }}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <AppBar position="static">
-            <Toolbar>
-              <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                A. Babey
-              </Typography>
-              <LangSelector />
-            </Toolbar>
-          </AppBar>
-          <Container maxWidth="md" sx={{ paddingY: 2 }}>
-            {children}
-          </Container>
-        </ThemeProvider>
+        <IntlProvider
+          locale={lang}
+          defaultLocale="fr"
+          messages={lang === "fr" ? undefined : messages}
+        >
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <AppBar position="static">
+              <Toolbar>
+                <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                  A. Babey
+                </Typography>
+                <LangSelector />
+              </Toolbar>
+            </AppBar>
+            <Container maxWidth="md" sx={{ paddingY: 2 }}>
+              {children}
+            </Container>
+          </ThemeProvider>
+        </IntlProvider>
       </LangContext.Provider>
     </>
   );

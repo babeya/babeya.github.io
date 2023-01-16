@@ -2,6 +2,8 @@ import React from "react";
 
 import { StaticImage } from "gatsby-plugin-image";
 
+import { FormattedMessage } from "react-intl";
+
 import Paper from "@mui/material/Paper";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
@@ -23,7 +25,12 @@ const Profile = () => {
         </Grid>
         <Grid xs={9} sx={{ padding: 2 }}>
           <Typography>A. BABEY</Typography>
-          <Typography>Développeur Javascript</Typography>
+          <Typography>
+            <FormattedMessage
+              id="profile.title"
+              defaultMessage="Développeur Javascript"
+            />
+          </Typography>
           <Typography>
             <GitHubIcon />
             <Link href="https://github.com/babeya" target="_blank">

@@ -15,7 +15,7 @@ type Props = { job: Queries.JobsJson; selectedTags: string[] };
 
 const JobCard = ({
   job: { company, desc, type, link, title, colors, tags },
-  selectedTags
+  selectedTags,
 }: Props) => (
   <BaseEventCard
     icon={<WorkIcon sx={{ fill: (colors && colors[1]) || undefined }} />}
@@ -34,9 +34,8 @@ const JobCard = ({
       ) : null}
     </Box>
 
-    <Typography variant="subtitle1">
-      {title} <Typography variant="subtitle2">{type}</Typography>
-    </Typography>
+    <Typography variant="subtitle1">{title}</Typography>
+    <Typography variant="subtitle2">{type}</Typography>
     <Typography>
       <TranslatedMarkdown lang="fr" content={desc} />
     </Typography>
