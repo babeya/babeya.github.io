@@ -23,10 +23,10 @@ type Props = {
 
 const Page = ({ children, lang }: Props) => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
   const [mode, setMode] = useState<"dark" | "light">(
     prefersDarkMode ? "dark" : "light"
   );
-  console.log(lang);
 
   const theme = React.useMemo(
     () =>

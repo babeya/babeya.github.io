@@ -1,12 +1,12 @@
 {
   "company": "Pages Jaunes",
   "link": "https://www.pagesjaunes.fr",
-  "title": "Front-end developer",
+  "title": "front",
   "type": "internship",
   "from": "2014-04-01",
   "to": "2014-08-01",
   "typename": "job",
-  "tags": ["Javascript", "CSS", "HTML", "Elasticsearch"],
+  "tags": ["Javascript", "AngularJS", "Elasticsearch"],
   "project": [],
   "colors": ["#FCEB23"],
   "desc": {
