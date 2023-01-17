@@ -2,35 +2,29 @@ import React from "react";
 
 import { TransitionGroup } from "react-transition-group";
 
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
 import Collapse from "@mui/material/Collapse";
 
 import useTimelineData from "./useTimelineData";
 import { JobCard, ProjectCard } from "./EventCards";
-import Header from "./Header";
+import { FormattedMessage } from "react-intl";
 
 const Timeline = () => {
   const { timelineData, setFilters, filters, availableTags } =
     useTimelineData();
 
   return (
-    <Paper sx={{ padding: 4, paddingLeft: 6 }}>
-      <Header
-        filters={filters}
-        setFilters={setFilters}
-        availableTags={availableTags}
-      />
-
-      <Divider sx={{ marginY: 2 }} />
-
-      <Box sx={{ borderLeft: "2px solid grey" }}>
+    <Box>
+      <Typography textAlign="center" variant="h3" marginY={2}>
+        <FormattedMessage id="timeline.title" defaultMessage="Curriculum" />
+      </Typography>
+      <Box>
         <TransitionGroup>
           {timelineData.map(({ node }) => (
             <Collapse key={node.id} mountOnEnter unmountOnExit>
               {node?.typename === "job" ? ( // TODO: auto generate __typename
-                <JobCard job={node} selectedTags={filters.tags}  />
+                <JobCard job={node} selectedTags={filters.tags} />
               ) : (
                 <ProjectCard project={node} selectedTags={filters.tags} />
               )}
@@ -38,7 +32,7 @@ const Timeline = () => {
           ))}
         </TransitionGroup>
       </Box>
-    </Paper>
+    </Box>
   );
 };
 

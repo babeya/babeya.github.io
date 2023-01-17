@@ -1,7 +1,8 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Helmet } from "react-helmet";
 import { IntlProvider } from "react-intl";
+import { Settings } from "luxon";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -27,6 +28,11 @@ const Page = ({ children, lang }: Props) => {
   const [mode, setMode] = useState<"dark" | "light">(
     prefersDarkMode ? "dark" : "light"
   );
+
+  useEffect(() => {
+    Settings.defaultLocale = lang;
+    console.log("toto");
+  }, [lang]);
 
   const theme = React.useMemo(
     () =>

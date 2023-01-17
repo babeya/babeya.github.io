@@ -5,7 +5,6 @@ import { StaticImage } from "gatsby-plugin-image";
 import { FormattedMessage } from "react-intl";
 
 import Paper from "@mui/material/Paper";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -18,14 +17,14 @@ const Profile = () => {
   return (
     <Paper sx={{ marginBottom: 1, padding: 2 }}>
       <Grid container direction="row" alignItems="center">
-        <Grid xs={3}>
+        <Grid md={3}>
           <StaticImage
             src="../../images/icon.jpeg"
             alt="Simbad"
             layout="constrained"
           />
         </Grid>
-        <Grid xs={9} sx={{ padding: 2 }}>
+        <Grid xs={12} md={9} sx={{ padding: 2 }}>
           <Typography variant="h4" component="h1">
             A. BABEY
           </Typography>
@@ -44,7 +43,7 @@ const Profile = () => {
           />
           <ProfileLink
             icon={<LinkedInIcon />}
-            href="www.linkedin.com/in/a-babey"
+            href="https://www.linkedin.com/in/a-babey"
             target="_blank"
             text="a-babey"
           />

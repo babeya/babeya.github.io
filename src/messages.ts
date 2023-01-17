@@ -1,5 +1,6 @@
 const messages = {
   "profile.title": "Javascript Developer",
+  "timeline.title": "Resume",
   "job-title.mobile": "Mobile Developer",
   "job-title.front": "Front-end Developer",
   "job-title.fullStack": "Full-Stack Developer",

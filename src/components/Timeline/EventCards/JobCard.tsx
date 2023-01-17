@@ -8,9 +8,10 @@ import IconButton from "@mui/material/IconButton";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import WorkIcon from "@mui/icons-material/Work";
 
-import { TranslatedMarkdown } from "../../Translation";
+import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
 
 import BaseEventCard from "./BaseEventCard";
+import { DateTime } from "luxon";
 
 type Props = { job: Queries.JobsJson; selectedTags: string[] };
 
@@ -56,7 +57,7 @@ const TRANSLATED_JOB_TYPE: { [key: string]: React.ReactNode } = {
 };
 
 const JobCard = ({
-  job: { company, desc, type, link, title, colors, tags },
+  job: { company, desc, type, link, title, colors, tags, to, from },
   selectedTags,
 }: Props) => (
   <BaseEventCard
@@ -64,6 +65,8 @@ const JobCard = ({
     colors={colors}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
+    from={<TranslatedDate date={from} />}
+    to={<TranslatedDate date={to} />}
   >
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <Typography variant="h5" sx={{ flex: 1 }}>
@@ -82,7 +85,7 @@ const JobCard = ({
       {type && TRANSLATED_JOB_TYPE[type] ? TRANSLATED_JOB_TYPE[type] : type}
     </Typography>
     <Typography>
-      <TranslatedMarkdown lang="fr" content={desc} />
+      <TranslatedMarkdown content={desc} />
     </Typography>
   </BaseEventCard>
 );
