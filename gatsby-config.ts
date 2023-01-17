@@ -38,6 +38,28 @@ const config: GatsbyConfig = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: ["/pdf"],
+        serialize: ({ path }: any) => {
+          const isEn = path.includes("/en/");
+          return {
+            url: path,
+            links: [
+              {
+                lang: "fr",
+                url: path.replace("/en/", "/"),
+              },
+              {
+                lang: "en",
+                url: isEn ? path : "/en" + path,
+              },
+            ],
+          };
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.

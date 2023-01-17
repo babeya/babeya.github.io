@@ -38,9 +38,10 @@ const BaseEventCard = ({
           </Fab>
         </Box>
       </Grid>
-      <Grid xs={12} md={11} sx={{ margin: 1 }}>
+      <Grid xs={12} md={11}>
         <Card
           sx={{
+            margin: 1,
             flex: 1,
             padding: 2,
           }}
