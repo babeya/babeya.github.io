@@ -4,6 +4,8 @@ import Stack from "@mui/material/Stack";
 import Chip from "@mui/material/Chip";
 import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Grid from "@mui/material/Grid";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
@@ -16,6 +18,8 @@ type Props = {
   selectedTags: string[];
   from?: React.ReactNode;
   to?: React.ReactNode;
+  link?: string | null;
+  title?: React.ReactNode;
 };
 
 const BaseEventCard = ({
@@ -26,6 +30,8 @@ const BaseEventCard = ({
   selectedTags,
   from,
   to,
+  link,
+  title,
 }: Props) => {
   return (
     <Grid container direction="row" alignItems="center" justifyContent="center">
@@ -65,6 +71,16 @@ const BaseEventCard = ({
           }}
           elevation={3}
         >
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Typography variant="h5" sx={{ flex: 1 }}>
+              {title}
+            </Typography>
+            {link ? (
+              <IconButton href={link} target="__blank">
+                <OpenInNewIcon />
+              </IconButton>
+            ) : null}
+          </Box>
           {children}
           <Stack direction="row-reverse" flexWrap="wrap">
             {(tags || []).map((tag) => (

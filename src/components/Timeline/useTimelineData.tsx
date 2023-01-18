@@ -28,6 +28,7 @@ const query = graphql`
           release
           tags
           type
+          link
           typename
         }
       }

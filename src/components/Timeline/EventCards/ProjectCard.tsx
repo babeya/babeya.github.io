@@ -10,7 +10,7 @@ import BaseEventCard from "./BaseEventCard";
 type Props = { project: Queries.ProjectsJson; selectedTags: string[] };
 
 const ProjectCard = ({
-  project: { name, desc, type, tags, release },
+  project: { name, desc, type, tags, release, link },
   selectedTags,
 }: Props) => (
   <BaseEventCard
@@ -18,8 +18,9 @@ const ProjectCard = ({
     selectedTags={selectedTags}
     tags={tags || []} // TODO
     from={<TranslatedDate date={release} />}
+    title={name}
+    link={link}
   >
-    <Typography variant="h5">{name}</Typography>
     <Typography>
       <TranslatedMarkdown content={desc} />
     </Typography>
