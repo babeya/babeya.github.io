@@ -9,6 +9,7 @@ import Collapse from "@mui/material/Collapse";
 import useTimelineData from "./useTimelineData";
 import { JobCard, ProjectCard } from "./EventCards";
 import { FormattedMessage } from "react-intl";
+import TimelineHeader from "./Header";
 
 const Timeline = () => {
   const { timelineData, setFilters, filters, availableTags } =
@@ -19,6 +20,7 @@ const Timeline = () => {
       <Typography textAlign="center" variant="h3" marginY={2}>
         <FormattedMessage id="timeline.title" defaultMessage="Curriculum" />
       </Typography>
+      <TimelineHeader data={timelineData} />
       <Box>
         <TransitionGroup>
           {timelineData.map(({ node }) => (

@@ -1,26 +1,22 @@
 import React from "react";
 
 import Box from "@mui/material/Box";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 
-import { TimelineFilters } from "../types";
-
-import TagsSelect from "./TagsSelect";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import MyDoc from "../../pdf";
 
 type Props = {
-  filters: TimelineFilters;
-  setFilters: (newFilters: TimelineFilters) => void;
-  availableTags: string[];
+  data: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[];
 };
 
-const TimelineHeader = ({ filters, setFilters, availableTags }: Props) => (
+const TimelineHeader = ({ data }: Props) => (
   <Box>
-    <TagsSelect
-      tags={availableTags}
-      value={filters.tags || []}
-      onChange={(newTags) => {
-        setFilters({ ...filters, tags: newTags });
-      }}
-    />
+    <PDFDownloadLink document={<MyDoc data={data} />} fileName="somename.pdf">
+      {({ blob, url, loading, error }) =>
+        loading ? "Loading document..." : <PictureAsPdfIcon />
+      }
+    </PDFDownloadLink>
   </Box>
 );
 
