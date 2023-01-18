@@ -12,11 +12,13 @@ type Props = {
 
 const TimelineHeader = ({ data }: Props) => (
   <Box>
-    <PDFDownloadLink document={<MyDoc data={data} />} fileName="somename.pdf">
-      {({ blob, url, loading, error }) =>
-        loading ? "Loading document..." : <PictureAsPdfIcon />
-      }
-    </PDFDownloadLink>
+    {typeof window !== "undefined" ? (
+      <PDFDownloadLink document={<MyDoc data={data} />} fileName="somename.pdf">
+        {({ blob, url, loading, error }) =>
+          loading ? "Loading document..." : <PictureAsPdfIcon />
+        }
+      </PDFDownloadLink>
+    ) : null}
   </Box>
 );
 
