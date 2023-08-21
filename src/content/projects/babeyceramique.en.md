@@ -1,0 +1,1 @@
+Showcase site for JB Création Céramique. We use [gatbsy](https://www.gatsbyjs.com) and githubpages to keep the site up to date and keep hosting costs down.

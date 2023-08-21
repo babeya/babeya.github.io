@@ -32,7 +32,7 @@ const TranslatedMarkdown = ({ content }: Props) => {
   return translatedHtml ? (
     <div dangerouslySetInnerHTML={{ __html: translatedHtml }} />
   ) : (
-    LOREM
+    <div>{LOREM}</div>
   );
 };
 

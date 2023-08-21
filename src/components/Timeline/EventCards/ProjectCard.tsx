@@ -21,7 +21,7 @@ const ProjectCard = ({
     title={name}
     link={link}
   >
-    <Typography>
+    <Typography component="div">
       <TranslatedMarkdown content={desc} />
     </Typography>
   </BaseEventCard>

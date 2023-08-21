@@ -31,7 +31,6 @@ const Page = ({ children, lang }: Props) => {
 
   useEffect(() => {
     Settings.defaultLocale = lang;
-    console.log("toto");
   }, [lang]);
 
   const theme = React.useMemo(
