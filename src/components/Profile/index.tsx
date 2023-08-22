@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import { FormattedMessage } from "react-intl";
 
-import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -15,7 +15,7 @@ import ProfileLink from "./ProfileLink";
 
 const Profile = () => {
   return (
-    <Paper sx={{ marginBottom: 1, padding: 2 }}>
+    <Box sx={{ marginBottom: 1, padding: 2 }}>
       <Grid container direction="row" alignItems="center">
         <Grid md={3} item>
           <StaticImage
@@ -54,7 +54,7 @@ const Profile = () => {
           />
         </Grid>
       </Grid>
-    </Paper>
+    </Box>
   );
 };
 

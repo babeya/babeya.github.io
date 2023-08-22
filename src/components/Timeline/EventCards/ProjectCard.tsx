@@ -22,6 +22,7 @@ const ProjectCard = ({
     link={link}
   >
     <Typography component="div">
+      {/* @ts-ignore */}
       <TranslatedMarkdown content={desc} />
     </Typography>
   </BaseEventCard>

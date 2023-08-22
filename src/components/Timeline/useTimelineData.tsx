@@ -13,11 +13,13 @@ const query = graphql`
         node {
           desc {
             en {
+              id
               childrenMarkdownRemark {
                 html
               }
             }
             fr {
+              id
               childMarkdownRemark {
                 html
               }

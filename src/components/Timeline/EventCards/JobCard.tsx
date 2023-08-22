@@ -73,6 +73,7 @@ const JobCard = ({
       {type && TRANSLATED_JOB_TYPE[type] ? TRANSLATED_JOB_TYPE[type] : type}
     </Typography>
     <Typography component="div">
+      {/* @ts-ignore */}
       <TranslatedMarkdown content={desc} />
     </Typography>
   </BaseEventCard>

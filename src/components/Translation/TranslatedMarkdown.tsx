@@ -3,10 +3,12 @@ import LangContext from "./LangContext";
 
 type TranslatedGraphqlMarkdown = {
   fr: {
-    childMarkdownRemark: Queries.MarkdownRemark;
+    childMarkdownRemark?: Queries.MarkdownRemark;
+    childrenMarkdownRemark?: Queries.MarkdownRemark[];
   };
   en: {
-    childMarkdownRemark: Queries.MarkdownRemark;
+    childMarkdownRemark?: Queries.MarkdownRemark;
+    childrenMarkdownRemark?: Queries.MarkdownRemark[];
   };
 };
 
@@ -26,8 +28,12 @@ const TranslatedMarkdown = ({ content }: Props) => {
   const { lang } = useContext(LangContext);
 
   const translatedHtml =
-    (content && content[lang] && content[lang].childMarkdownRemark?.html) ||
-    null;
+    content &&
+    content[lang] &&
+    (content[lang].childMarkdownRemark?.html ||
+      (content[lang].childrenMarkdownRemark &&
+        // @ts-ignore
+        content[lang].childrenMarkdownRemark[0]?.html));
 
   return translatedHtml ? (
     <div dangerouslySetInnerHTML={{ __html: translatedHtml }} />
