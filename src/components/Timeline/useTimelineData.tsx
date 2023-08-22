@@ -8,16 +8,18 @@ import { TimelineFilters } from "./types";
 
 const query = graphql`
   query allJobs {
-    allProjectsJson {
+    allProjectsJson(sort: { release: DESC }) {
       edges {
         node {
           desc {
             en {
+              id
               childrenMarkdownRemark {
                 html
               }
             }
             fr {
+              id
               childMarkdownRemark {
                 html
               }

@@ -13,8 +13,8 @@ import Typography from "@mui/material/Typography";
 type Props = {
   children: React.ReactNode;
   icon: React.ReactNode;
-  colors?: string[];
-  tags: string[];
+  colors?: readonly (string | null | undefined)[] | null;
+  tags?: readonly (string | null | undefined)[] | null;
   selectedTags: string[];
   from?: React.ReactNode;
   to?: React.ReactNode;
@@ -35,14 +35,14 @@ const BaseEventCard = ({
 }: Props) => {
   return (
     <Grid container direction="row" alignItems="center" justifyContent="center">
-      <Grid sx={{ position: "relative", marginY: 1 }} xs={12}>
+      <Grid sx={{ position: "relative", marginY: 1 }} xs={12} item>
         <Grid
           container
           direction="row"
           alignItems="center"
           justifyContent="space-evenly"
         >
-          <Grid xs={4}>
+          <Grid xs={4} item>
             <Typography variant="overline">{from}</Typography>
           </Grid>
           <Grid>
@@ -57,12 +57,12 @@ const BaseEventCard = ({
               {icon}
             </Fab>
           </Grid>
-          <Grid xs={4} textAlign="right">
+          <Grid item xs={4} textAlign="right">
             <Typography variant="overline">{to}</Typography>
           </Grid>
         </Grid>
       </Grid>
-      <Grid xs={12}>
+      <Grid xs={12} item>
         <Card
           sx={{
             margin: 1,
@@ -90,7 +90,7 @@ const BaseEventCard = ({
                 sx={{ margin: 0.5 }}
                 size="small"
                 variant="outlined"
-                color={selectedTags.includes(tag) ? "primary" : undefined}
+                color={selectedTags.includes(tag || "") ? "primary" : undefined}
               />
             ))}
           </Stack>

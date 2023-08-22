@@ -15,20 +15,27 @@ const Timeline = () => {
   const { timelineData, setFilters, filters, availableTags } =
     useTimelineData();
 
+  console.log(timelineData);
   return (
     <Box>
       <Typography textAlign="center" variant="h3" marginY={2}>
         <FormattedMessage id="timeline.title" defaultMessage="Curriculum" />
       </Typography>
-      <TimelineHeader data={timelineData} />
+      {/*<TimelineHeader data={timelineData} />*/}
       <Box>
         <TransitionGroup>
           {timelineData.map(({ node }) => (
             <Collapse key={node.id} mountOnEnter unmountOnExit>
               {node?.typename === "job" ? ( // TODO: auto generate __typename
-                <JobCard job={node} selectedTags={filters.tags} />
+                <JobCard
+                  job={node as Queries.JobsJson}
+                  selectedTags={filters.tags}
+                />
               ) : (
-                <ProjectCard project={node} selectedTags={filters.tags} />
+                <ProjectCard
+                  project={node as Queries.ProjectsJson}
+                  selectedTags={filters.tags}
+                />
               )}
             </Collapse>
           ))}

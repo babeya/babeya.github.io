@@ -45,7 +45,7 @@ const LangSelector = () => {
         >
           <LinkButtonWrapper href="/">Français 🇫🇷</LinkButtonWrapper>
         </MenuItem>
-        <MenuItem href="/" disabled={lang === "en"}>
+        <MenuItem href="/en/" disabled={lang === "en"}>
           <LinkButtonWrapper href="/en/">English 🇬🇧</LinkButtonWrapper>
         </MenuItem>
       </Menu>

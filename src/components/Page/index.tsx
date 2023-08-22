@@ -1,48 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { Helmet } from "react-helmet";
 import { IntlProvider } from "react-intl";
 import { Settings } from "luxon";
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
+import Paper from "@mui/material/Paper";
+
+import messages from "../../messages";
 
 import { LangContext } from "../Translation";
 import LangSelector from "../LangSelector";
-import messages from "../../messages";
+import useTheme from "../Theme";
 
 type Props = {
   children: React.ReactNode;
-  lang: string;
+  lang: "fr" | "en";
 };
 
 const Page = ({ children, lang }: Props) => {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
-  const [mode, setMode] = useState<"dark" | "light">(
-    prefersDarkMode ? "dark" : "light"
-  );
-
   useEffect(() => {
     Settings.defaultLocale = lang;
-    console.log("toto");
   }, [lang]);
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode]
-  );
+  const { theme } = useTheme();
 
   return (
     <>
@@ -70,8 +57,8 @@ const Page = ({ children, lang }: Props) => {
                 <LangSelector />
               </Toolbar>
             </AppBar>
-            <Container maxWidth="md" sx={{ paddingY: 2 }}>
-              {children}
+            <Container maxWidth="md" sx={{ paddingY: 0.5 }}>
+              <Paper elevation={0}>{children}</Paper>
             </Container>
           </ThemeProvider>
         </IntlProvider>
