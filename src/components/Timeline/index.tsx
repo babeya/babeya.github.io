@@ -2,13 +2,15 @@ import React from "react";
 
 import { TransitionGroup } from "react-transition-group";
 
+import { FormattedMessage } from "react-intl";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Collapse from "@mui/material/Collapse";
 
 import useTimelineData from "./useTimelineData";
 import { JobCard, ProjectCard } from "./EventCards";
-import { FormattedMessage } from "react-intl";
+
 import TimelineHeader from "./Header";
 
 const Timeline = () => {
@@ -17,9 +19,6 @@ const Timeline = () => {
 
   return (
     <Box>
-      <Typography textAlign="center" variant="h3" marginY={2}>
-        <FormattedMessage id="timeline.title" defaultMessage="Curriculum" />
-      </Typography>
       {/*<TimelineHeader data={timelineData} />*/}
       <Box>
         <TransitionGroup>

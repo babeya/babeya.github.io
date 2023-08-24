@@ -19,6 +19,7 @@ import { LangContext } from "../Translation";
 import LangSelector from "../LangSelector";
 import useTheme from "../Theme";
 import LeftDrawer from "../LeftDrawer";
+import EditorBar from "../EditorBar";
 
 type Props = {
   children: React.ReactNode;
@@ -64,7 +65,7 @@ const Page = ({ children, lang }: Props) => {
                 alignItems="center"
                 justifyContent="center"
               >
-                <Typography variant="h6">A. BABEY</Typography>
+                <Typography variant="h6">ababey.com</Typography>
               </Box>
               <Box
                 sx={{
@@ -78,8 +79,14 @@ const Page = ({ children, lang }: Props) => {
                 <LeftDrawer />
                 <Paper
                   elevation={0}
-                  sx={{ overflow: "scroll", flex: 1, maxHeight: "100vh" }}
+                  sx={{
+                    overflow: "scroll",
+                    flex: 1,
+                    maxHeight: "100vh",
+                    paddingX: 1,
+                  }}
                 >
+                  <EditorBar />
                   {children}
                 </Paper>
               </Box>
