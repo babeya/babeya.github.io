@@ -1,13 +1,9 @@
 import React from "react";
 
 import { FormattedMessage } from "react-intl";
-
-import Typography from "@mui/material/Typography";
-import WorkIcon from "@mui/icons-material/Work";
-
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
-
-import BaseEventCard from "./BaseEventCard";
+import { StartTag, EndTag, TagsBlock, InlineTagsBlock } from "../../Tag";
+import EditorBlock from "../../EditorBlock";
 
 type Props = { job: Queries.JobsJson; selectedTags: string[] };
 
@@ -53,30 +49,32 @@ const TRANSLATED_JOB_TYPE: { [key: string]: React.ReactNode } = {
 };
 
 const JobCard = ({
-  job: { company, desc, type, link, title, colors, tags, to, from },
+  job: { company, desc, type, link, title, colors, tags, start, end },
   selectedTags,
 }: Props) => (
-  <BaseEventCard
-    icon={<WorkIcon sx={{ fill: (colors && colors[1]) || undefined }} />}
-    colors={colors}
-    selectedTags={selectedTags}
-    tags={tags || []} // TODO
-    from={<TranslatedDate date={from} />}
-    to={<TranslatedDate date={to} />}
-    title={company}
-    link={link}
-  >
-    <Typography variant="subtitle1">
+  <React.Fragment>
+    <StartTag
+      name="Job"
+      level={0}
+      lineNumberText={<TranslatedDate date={start} />}
+    />
+    <InlineTagsBlock name="company" level={1}>
+      {company}
+    </InlineTagsBlock>
+    <InlineTagsBlock name="title" level={1}>
       {title && TRANSLATED_TITLE[title] ? TRANSLATED_TITLE[title] : title}
-    </Typography>
-    <Typography variant="subtitle2">
+    </InlineTagsBlock>
+    <InlineTagsBlock name="contract" level={1}>
       {type && TRANSLATED_JOB_TYPE[type] ? TRANSLATED_JOB_TYPE[type] : type}
-    </Typography>
-    <Typography component="div">
-      {/* @ts-ignore */}
-      <TranslatedMarkdown content={desc} />
-    </Typography>
-  </BaseEventCard>
+    </InlineTagsBlock>
+    <TagsBlock name="desc" level={1}>
+      <EditorBlock level={2}>
+        {/* @ts-ignore */}
+        <TranslatedMarkdown content={desc} />
+      </EditorBlock>
+    </TagsBlock>
+    <EndTag name="Job" level={0} />
+  </React.Fragment>
 );
 
 export default JobCard;

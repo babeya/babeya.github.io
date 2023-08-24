@@ -15,7 +15,6 @@ const Timeline = () => {
   const { timelineData, setFilters, filters, availableTags } =
     useTimelineData();
 
-  console.log(timelineData);
   return (
     <Box>
       <Typography textAlign="center" variant="h3" marginY={2}>

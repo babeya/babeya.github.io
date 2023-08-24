@@ -3,7 +3,7 @@
   "link": "https://www.greenflex.com",
   "title": "front",
   "type": "mission",
-  "from": "2019-01-01",
+  "start": "2019-01-01",
   "typename": "job",
   "colors": ["#00A880", "#03485E"],
   "tags": ["Typescript", "React", "GraphQL"],

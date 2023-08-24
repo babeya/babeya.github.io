@@ -9,7 +9,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Paper from "@mui/material/Paper";
 
@@ -18,6 +18,7 @@ import messages from "../../messages";
 import { LangContext } from "../Translation";
 import LangSelector from "../LangSelector";
 import useTheme from "../Theme";
+import LeftDrawer from "../LeftDrawer";
 
 type Props = {
   children: React.ReactNode;
@@ -49,17 +50,41 @@ const Page = ({ children, lang }: Props) => {
         >
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <AppBar position="static">
-              <Toolbar>
-                <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                  A. Babey
-                </Typography>
-                <LangSelector />
-              </Toolbar>
-            </AppBar>
-            <Container maxWidth="md" sx={{ paddingY: 0.5 }}>
-              <Paper elevation={0}>{children}</Paper>
-            </Container>
+            <Box
+              sx={{
+                maxHeight: "100vh",
+                display: "flex",
+                flexDirection: "column",
+                overflow: "hidden",
+              }}
+            >
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Typography variant="h6">A. BABEY</Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flex: 1,
+                  overflow: "hidden",
+                  alignItems: "flex-start",
+                  position: "relative",
+                }}
+              >
+                <LeftDrawer />
+                <Paper
+                  elevation={0}
+                  sx={{ overflow: "scroll", flex: 1, maxHeight: "100vh" }}
+                >
+                  {children}
+                </Paper>
+              </Box>
+              <Box>Hello</Box>
+            </Box>
           </ThemeProvider>
         </IntlProvider>
       </LangContext.Provider>

@@ -2,9 +2,11 @@ import React from "react";
 
 import { Page, Timeline, Profile } from "../components";
 
+import "../main.css";
+
 const Index = ({ pageContext, ...rest }: any) => (
   <Page lang={pageContext.lang || "fr"}>
-    <Profile />
+    {/*<Profile />*/}
     <Timeline />
   </Page>
 );

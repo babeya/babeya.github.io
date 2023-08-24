@@ -3,8 +3,8 @@
   "link": "https://www.cognix-systems.com",
   "title": "integrator",
   "type": "internship",
-  "from": "2012-07-01",
-  "to": "2012-12-01",
+  "start": "2012-07-01",
+  "end": "2012-12-01",
   "tags": ["Javascript", "CSS", "HTML", "PHP"],
   "typename": "job",
   "desc": {

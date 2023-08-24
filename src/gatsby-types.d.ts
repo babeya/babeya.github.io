@@ -786,20 +786,20 @@ type JobsJson = Node & {
   readonly colors: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly company: Maybe<Scalars['String']>;
   readonly desc: Maybe<JobsJsonDesc>;
-  readonly from: Maybe<Scalars['Date']>;
+  readonly end: Maybe<Scalars['Date']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   readonly link: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
+  readonly start: Maybe<Scalars['Date']>;
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly title: Maybe<Scalars['String']>;
-  readonly to: Maybe<Scalars['Date']>;
   readonly type: Maybe<Scalars['String']>;
   readonly typename: Maybe<Scalars['String']>;
 };
 
 
-type JobsJson_fromArgs = {
+type JobsJson_endArgs = {
   difference: InputMaybe<Scalars['String']>;
   formatString: InputMaybe<Scalars['String']>;
   fromNow: InputMaybe<Scalars['Boolean']>;
@@ -807,7 +807,7 @@ type JobsJson_fromArgs = {
 };
 
 
-type JobsJson_toArgs = {
+type JobsJson_startArgs = {
   difference: InputMaybe<Scalars['String']>;
   formatString: InputMaybe<Scalars['String']>;
   fromNow: InputMaybe<Scalars['Boolean']>;
@@ -884,14 +884,14 @@ type JobsJsonFieldSelector = {
   readonly colors: InputMaybe<FieldSelectorEnum>;
   readonly company: InputMaybe<FieldSelectorEnum>;
   readonly desc: InputMaybe<JobsJsonDescFieldSelector>;
-  readonly from: InputMaybe<FieldSelectorEnum>;
+  readonly end: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
   readonly link: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly start: InputMaybe<FieldSelectorEnum>;
   readonly tags: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
-  readonly to: InputMaybe<FieldSelectorEnum>;
   readonly type: InputMaybe<FieldSelectorEnum>;
   readonly typename: InputMaybe<FieldSelectorEnum>;
 };
@@ -901,14 +901,14 @@ type JobsJsonFilterInput = {
   readonly colors: InputMaybe<StringQueryOperatorInput>;
   readonly company: InputMaybe<StringQueryOperatorInput>;
   readonly desc: InputMaybe<JobsJsonDescFilterInput>;
-  readonly from: InputMaybe<DateQueryOperatorInput>;
+  readonly end: InputMaybe<DateQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
   readonly link: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
+  readonly start: InputMaybe<DateQueryOperatorInput>;
   readonly tags: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
-  readonly to: InputMaybe<DateQueryOperatorInput>;
   readonly type: InputMaybe<StringQueryOperatorInput>;
   readonly typename: InputMaybe<StringQueryOperatorInput>;
 };
@@ -963,14 +963,14 @@ type JobsJsonSortInput = {
   readonly colors: InputMaybe<SortOrderEnum>;
   readonly company: InputMaybe<SortOrderEnum>;
   readonly desc: InputMaybe<JobsJsonDescSortInput>;
-  readonly from: InputMaybe<SortOrderEnum>;
+  readonly end: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly link: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
+  readonly start: InputMaybe<SortOrderEnum>;
   readonly tags: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
-  readonly to: InputMaybe<SortOrderEnum>;
   readonly type: InputMaybe<SortOrderEnum>;
   readonly typename: InputMaybe<SortOrderEnum>;
 };
@@ -1295,14 +1295,14 @@ type ProjectsJson = Node & {
   readonly link: Maybe<Scalars['String']>;
   readonly name: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
-  readonly release: Maybe<Scalars['Date']>;
+  readonly start: Maybe<Scalars['Date']>;
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly type: Maybe<Scalars['String']>;
   readonly typename: Maybe<Scalars['String']>;
 };
 
 
-type ProjectsJson_releaseArgs = {
+type ProjectsJson_startArgs = {
   difference: InputMaybe<Scalars['String']>;
   formatString: InputMaybe<Scalars['String']>;
   fromNow: InputMaybe<Scalars['Boolean']>;
@@ -1382,7 +1382,7 @@ type ProjectsJsonFieldSelector = {
   readonly link: InputMaybe<FieldSelectorEnum>;
   readonly name: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
-  readonly release: InputMaybe<FieldSelectorEnum>;
+  readonly start: InputMaybe<FieldSelectorEnum>;
   readonly tags: InputMaybe<FieldSelectorEnum>;
   readonly type: InputMaybe<FieldSelectorEnum>;
   readonly typename: InputMaybe<FieldSelectorEnum>;
@@ -1396,7 +1396,7 @@ type ProjectsJsonFilterInput = {
   readonly link: InputMaybe<StringQueryOperatorInput>;
   readonly name: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
-  readonly release: InputMaybe<DateQueryOperatorInput>;
+  readonly start: InputMaybe<DateQueryOperatorInput>;
   readonly tags: InputMaybe<StringQueryOperatorInput>;
   readonly type: InputMaybe<StringQueryOperatorInput>;
   readonly typename: InputMaybe<StringQueryOperatorInput>;
@@ -1455,7 +1455,7 @@ type ProjectsJsonSortInput = {
   readonly link: InputMaybe<SortOrderEnum>;
   readonly name: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
-  readonly release: InputMaybe<SortOrderEnum>;
+  readonly start: InputMaybe<SortOrderEnum>;
   readonly tags: InputMaybe<SortOrderEnum>;
   readonly type: InputMaybe<SortOrderEnum>;
   readonly typename: InputMaybe<SortOrderEnum>;
@@ -1657,14 +1657,14 @@ type Query_jobsJsonArgs = {
   colors: InputMaybe<StringQueryOperatorInput>;
   company: InputMaybe<StringQueryOperatorInput>;
   desc: InputMaybe<JobsJsonDescFilterInput>;
-  from: InputMaybe<DateQueryOperatorInput>;
+  end: InputMaybe<DateQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   link: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+  start: InputMaybe<DateQueryOperatorInput>;
   tags: InputMaybe<StringQueryOperatorInput>;
   title: InputMaybe<StringQueryOperatorInput>;
-  to: InputMaybe<DateQueryOperatorInput>;
   type: InputMaybe<StringQueryOperatorInput>;
   typename: InputMaybe<StringQueryOperatorInput>;
 };
@@ -1697,7 +1697,7 @@ type Query_projectsJsonArgs = {
   link: InputMaybe<StringQueryOperatorInput>;
   name: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
-  release: InputMaybe<DateQueryOperatorInput>;
+  start: InputMaybe<DateQueryOperatorInput>;
   tags: InputMaybe<StringQueryOperatorInput>;
   type: InputMaybe<StringQueryOperatorInput>;
   typename: InputMaybe<StringQueryOperatorInput>;
@@ -2558,7 +2558,7 @@ type StringQueryOperatorInput = {
 type allJobsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type allJobsQuery = { readonly allProjectsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly name: string | null, readonly id: string, readonly release: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly type: string | null, readonly link: string | null, readonly typename: string | null, readonly desc: { readonly en: { readonly id: string, readonly childrenMarkdownRemark: ReadonlyArray<{ readonly html: string | null } | null> | null } | null, readonly fr: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> }, readonly allJobsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly link: string | null, readonly id: string, readonly from: string | null, readonly to: string | null, readonly title: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly type: string | null, readonly typename: string | null, readonly company: string | null, readonly colors: ReadonlyArray<string | null> | null, readonly desc: { readonly en: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly fr: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> } };
+type allJobsQuery = { readonly allProjectsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly name: string | null, readonly id: string, readonly start: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly type: string | null, readonly link: string | null, readonly typename: string | null, readonly desc: { readonly en: { readonly id: string, readonly childrenMarkdownRemark: ReadonlyArray<{ readonly html: string | null } | null> | null } | null, readonly fr: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> }, readonly allJobsJson: { readonly edges: ReadonlyArray<{ readonly node: { readonly link: string | null, readonly id: string, readonly start: string | null, readonly end: string | null, readonly title: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly type: string | null, readonly typename: string | null, readonly company: string | null, readonly colors: ReadonlyArray<string | null> | null, readonly desc: { readonly en: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly fr: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } }> } };
 
 
 }

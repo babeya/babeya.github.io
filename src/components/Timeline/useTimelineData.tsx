@@ -8,7 +8,7 @@ import { TimelineFilters } from "./types";
 
 const query = graphql`
   query allJobs {
-    allProjectsJson(sort: { release: DESC }) {
+    allProjectsJson(sort: { start: DESC }) {
       edges {
         node {
           desc {
@@ -27,7 +27,7 @@ const query = graphql`
           }
           name
           id
-          release
+          start
           tags
           type
           link
@@ -35,13 +35,13 @@ const query = graphql`
         }
       }
     }
-    allJobsJson(sort: { from: DESC }) {
+    allJobsJson(sort: { start: DESC }) {
       edges {
         node {
           link
           id
-          from
-          to
+          start
+          end
           title
           tags
           type
@@ -68,49 +68,6 @@ const query = graphql`
   }
 `;
 
-const mergeDataRec = (
-  result: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[],
-  jobs: Queries.JobsJsonEdge[],
-  projects: Queries.ProjectsJsonEdge[],
-  jobIdx: number,
-  projectIdx: number
-): (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[] => {
-  if (jobIdx >= jobs.length) {
-    return [...result, ...(projects.slice(projectIdx) || [])];
-  }
-  if (projectIdx >= projects.length) {
-    return [...result, ...(jobs.slice(jobIdx) || [])];
-  }
-
-  const currentJob = jobs[jobIdx];
-  const currentProject = projects[projectIdx];
-
-  const jobEnd =
-    (currentJob.node?.to && DateTime.fromISO(currentJob.node.to)) ||
-    DateTime.now();
-  const projectRelease =
-    (currentProject.node?.release &&
-      DateTime.fromISO(currentProject.node.release)) ||
-    DateTime.now();
-
-  if (jobEnd >= projectRelease) {
-    return mergeDataRec(
-      [...result, currentJob],
-      jobs,
-      projects,
-      jobIdx + 1,
-      projectIdx
-    );
-  }
-  return mergeDataRec(
-    [...result, currentProject],
-    jobs,
-    projects,
-    jobIdx,
-    projectIdx + 1
-  );
-};
-
 const filterData = (
   timelineData: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[],
   { tags }: TimelineFilters
@@ -130,7 +87,11 @@ type Result = {
 const mergeData = (
   jobs: Queries.JobsJsonEdge[],
   projects: Queries.ProjectsJsonEdge[]
-) => mergeDataRec([], jobs, projects, 0, 0);
+) =>
+  [...(jobs || []), ...(projects || [])].sort(
+    (elem1, elem2) =>
+      DateTime.fromISO(elem2.node.start) - DateTime.fromISO(elem1.node.start)
+  );
 
 const useTimelineData = (): Result => {
   const data = useStaticQuery(query);

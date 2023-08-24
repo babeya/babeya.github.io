@@ -1,14 +1,10 @@
 import React from "react";
 
-import Stack from "@mui/material/Stack";
+import Link from "@mui/material/Link";
 import Chip from "@mui/material/Chip";
-import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import Grid from "@mui/material/Grid";
-import Fab from "@mui/material/Fab";
-import Typography from "@mui/material/Typography";
+
+import { InlineTagsBlock, TagsBlock } from "../../Tag";
 
 type Props = {
   children: React.ReactNode;
@@ -34,69 +30,32 @@ const BaseEventCard = ({
   title,
 }: Props) => {
   return (
-    <Grid container direction="row" alignItems="center" justifyContent="center">
-      <Grid sx={{ position: "relative", marginY: 1 }} xs={12} item>
-        <Grid
-          container
-          direction="row"
-          alignItems="center"
-          justifyContent="space-evenly"
-        >
-          <Grid xs={4} item>
-            <Typography variant="overline">{from}</Typography>
-          </Grid>
-          <Grid>
-            <Fab
-              size="medium"
-              sx={{
-                pointerEvents: "none",
-                boxShadow: "none",
-                background: (colors && colors[0]) || undefined,
-              }}
-            >
-              {icon}
-            </Fab>
-          </Grid>
-          <Grid item xs={4} textAlign="right">
-            <Typography variant="overline">{to}</Typography>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid xs={12} item>
-        <Card
-          sx={{
-            margin: 1,
-            flex: 1,
-            padding: 2,
-          }}
-          elevation={3}
-        >
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Typography variant="h5" sx={{ flex: 1 }}>
+    <Box sx={{ display: "flex" }}>
+      <TagsBlock name="Job" level={0}>
+        <InlineTagsBlock name="company" level={1}>
+          {link ? (
+            <Link href={link} target="__blank">
               {title}
-            </Typography>
-            {link ? (
-              <IconButton href={link} target="__blank">
-                <OpenInNewIcon />
-              </IconButton>
-            ) : null}
-          </Box>
-          {children}
-          <Stack direction="row-reverse" flexWrap="wrap">
-            {(tags || []).map((tag) => (
-              <Chip
-                label={tag}
-                key={tag}
-                sx={{ margin: 0.5 }}
-                size="small"
-                variant="outlined"
-                color={selectedTags.includes(tag || "") ? "primary" : undefined}
-              />
-            ))}
-          </Stack>
-        </Card>
-      </Grid>
-    </Grid>
+            </Link>
+          ) : (
+            title
+          )}
+        </InlineTagsBlock>
+        {children}
+        <TagsBlock name="tags" level={1}>
+          {(tags || []).map((tag) => (
+            <Chip
+              label={tag}
+              key={tag}
+              sx={{ margin: 0.5 }}
+              size="small"
+              variant="outlined"
+              color={selectedTags.includes(tag || "") ? "primary" : undefined}
+            />
+          ))}
+        </TagsBlock>
+      </TagsBlock>
+    </Box>
   );
 };
 

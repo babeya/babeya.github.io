@@ -1,31 +1,35 @@
 import React from "react";
 
-import Typography from "@mui/material/Typography";
-import WebIcon from "@mui/icons-material/Web";
-
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
-
-import BaseEventCard from "./BaseEventCard";
+import EditorBlock from "../../EditorBlock";
+import { StartTag, EndTag, InlineTagsBlock, TagsBlock } from "../../Tag";
 
 type Props = { project: Queries.ProjectsJson; selectedTags: string[] };
 
 const ProjectCard = ({
-  project: { name, desc, type, tags, release, link },
+  project: { name, desc, type, tags, start, link },
   selectedTags,
 }: Props) => (
-  <BaseEventCard
-    icon={type === "website" ? <WebIcon /> : null}
-    selectedTags={selectedTags}
-    tags={tags || []} // TODO
-    from={<TranslatedDate date={release} />}
-    title={name}
-    link={link}
-  >
-    <Typography component="div">
-      {/* @ts-ignore */}
-      <TranslatedMarkdown content={desc} />
-    </Typography>
-  </BaseEventCard>
+  <React.Fragment>
+    <StartTag
+      name="project"
+      level={0}
+      lineNumberText={<TranslatedDate date={start} />}
+    />
+    <InlineTagsBlock name="name" level={1}>
+      {name}
+    </InlineTagsBlock>
+    <InlineTagsBlock name="type" level={1}>
+      {type}
+    </InlineTagsBlock>
+    <TagsBlock name="desc" level={1}>
+      <EditorBlock level={2}>
+        {/* @ts-ignore */}
+        <TranslatedMarkdown content={desc} />
+      </EditorBlock>
+    </TagsBlock>
+    <EndTag name="project" level={0} />
+  </React.Fragment>
 );
 
 export default ProjectCard;

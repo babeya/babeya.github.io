@@ -10,7 +10,7 @@ type Props = {
   format?: string;
 };
 
-const TranslatedDate = ({ date, format = "MMM yy" }: Props) => {
+const TranslatedDate = ({ date, format = "MM/yy" }: Props) => {
   const { lang } = useContext(LangContext);
 
   if (!date) {
