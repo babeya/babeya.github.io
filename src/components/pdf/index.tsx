@@ -2,11 +2,14 @@ import React from "react";
 
 import { View, Document, Page, Text } from "@react-pdf/renderer";
 
+import JobSection from "./JobSection";
+
 type Props = {
-  data: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[];
+  jobs: Queries.JobsJsonEdge[];
+  projects: Queries.ProjectsJsonEdge[];
 };
 
-const Resume = ({ data }: Props) => (
+const Resume = ({ jobs }: Props) => (
   <Document>
     <Page>
       <View>
@@ -14,10 +17,8 @@ const Resume = ({ data }: Props) => (
         <Text>contact@ababey.com </Text>
       </View>
 
-      {data.map((elem) => (
-        <View>
-          <Text>{elem.node.company || elem.node.name}</Text>
-        </View>
+      {jobs.map((job) => (
+        <JobSection job={job} />
       ))}
     </Page>
   </Document>

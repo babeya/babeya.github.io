@@ -12,16 +12,15 @@ import { FormattedMessage } from "react-intl";
 import TimelineHeader from "./Header";
 
 const Timeline = () => {
-  const { timelineData, setFilters, filters, availableTags } =
+  const { timelineData, setFilters, filters, availableTags, jobs, projects } =
     useTimelineData();
 
-  console.log(timelineData);
   return (
     <Box>
       <Typography textAlign="center" variant="h3" marginY={2}>
         <FormattedMessage id="timeline.title" defaultMessage="Curriculum" />
       </Typography>
-      {/*<TimelineHeader data={timelineData} />*/}
+      <TimelineHeader jobs={jobs} projects={projects} />
       <Box>
         <TransitionGroup>
           {timelineData.map(({ node }) => (

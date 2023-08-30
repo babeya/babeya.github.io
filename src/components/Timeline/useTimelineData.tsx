@@ -16,12 +16,14 @@ const query = graphql`
               id
               childrenMarkdownRemark {
                 html
+                rawMarkdownBody
               }
             }
             fr {
               id
               childMarkdownRemark {
                 html
+                rawMarkdownBody
               }
             }
           }
@@ -53,12 +55,14 @@ const query = graphql`
               id
               childMarkdownRemark {
                 html
+                rawMarkdownBody
               }
             }
             fr {
               id
               childMarkdownRemark {
                 html
+                rawMarkdownBody
               }
             }
           }
@@ -125,6 +129,8 @@ type Result = {
   filters: TimelineFilters;
   setFilters: (newFilters: TimelineFilters) => void;
   availableTags: string[];
+  jobs: Queries.JobsJsonEdge[];
+  projects: Queries.ProjectsJsonEdge[];
 };
 
 const mergeData = (
@@ -169,6 +175,8 @@ const useTimelineData = (): Result => {
   return {
     timelineData: filteredTimelineData,
     filters,
+    jobs,
+    projects,
     setFilters,
     availableTags,
   };
