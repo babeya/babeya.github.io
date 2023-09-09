@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   },
   jobInfo: {
     fontSize: 10,
+    marginBottom: 3,
     fontStyle: "italic",
   },
 });
