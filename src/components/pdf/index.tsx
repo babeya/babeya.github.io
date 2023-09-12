@@ -10,6 +10,7 @@ type Props = {
   jobs: Queries.JobsJsonEdge[];
   projects: Queries.ProjectsJsonEdge[];
   intl: IntlShape;
+  lang: "fr" | "en";
 };
 
 const styles = StyleSheet.create({
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Resume = ({ jobs, intl }: Props) => (
+const Resume = ({ jobs, intl, lang }: Props) => (
   <Document>
     <Page style={styles.page}>
       <View style={styles.layout}>
@@ -35,7 +36,7 @@ const Resume = ({ jobs, intl }: Props) => (
         <View style={styles.content}>
           <Text style={styles.contentTitle}>Experiences</Text>
           {jobs.map((job) => (
-            <JobSection job={job} intl={intl} />
+            <JobSection job={job} intl={intl} lang={lang} />
           ))}
         </View>
       </View>
