@@ -4,6 +4,7 @@
   "title": "front",
   "type": "mission",
   "from": "2019-01-01",
+  "to": "2024-02-08",
   "typename": "job",
   "colors": ["#00A880", "#03485E"],
   "tags": ["Typescript", "React", "GraphQL"],
