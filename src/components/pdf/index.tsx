@@ -5,6 +5,7 @@ import { View, Document, Page, StyleSheet, Text } from "@react-pdf/renderer";
 
 import JobSection from "./JobSection";
 import InfoSection from "./InfoSection";
+import { GENERAL_MESSAGES } from "../CommonFormattedMessage";
 
 type Props = {
   jobs: Queries.JobsJsonEdge[];
@@ -14,9 +15,8 @@ type Props = {
 };
 
 const styles = StyleSheet.create({
-  page: { fontSize: 9 },
+  page: { fontSize: 9, marginVertical: 10 },
   layout: { display: "flex", flexDirection: "row", height: "100%" },
-  info: { width: 125, backgroundColor: "#444", color: "#ffffff" },
   content: { flex: 1, paddingHorizontal: 10 },
   contentTitle: {
     borderTop: "1px solid #ddd",
@@ -30,15 +30,24 @@ const styles = StyleSheet.create({
 
 const Resume = ({ jobs, intl, lang }: Props) => (
   <Document>
-    <Page style={styles.page}>
-      <View style={styles.layout}>
-        <InfoSection />
-        <View style={styles.content}>
-          <Text style={styles.contentTitle}>Experiences</Text>
-          {jobs.map((job) => (
-            <JobSection job={job} intl={intl} lang={lang} />
-          ))}
-        </View>
+    <Page style={styles.page} wrap>
+      <InfoSection intl={intl} lang={lang} />
+      <View style={styles.content}>
+        <Text style={styles.contentTitle}>
+          {intl.formatMessage(GENERAL_MESSAGES.professionalExperiences)}
+        </Text>
+        {jobs.map((job) => (
+          <JobSection job={job} intl={intl} lang={lang} />
+        ))}
+        <Text style={styles.contentTitle}>
+          {intl.formatMessage(GENERAL_MESSAGES.personalProjects)}
+        </Text>
+        {/* {projects.map((project) => (
+          <ProjectSection project={project} intl={intl} lang={lang} />
+        ))} */}
+        <Text style={styles.contentTitle}>
+          {intl.formatMessage(GENERAL_MESSAGES.education)}
+        </Text>
       </View>
     </Page>
   </Document>

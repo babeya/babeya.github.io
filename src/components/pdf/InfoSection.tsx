@@ -1,43 +1,45 @@
 import React from "react";
 
+import { IntlShape } from "react-intl";
+
 import { View, Text, StyleSheet, Link } from "@react-pdf/renderer";
+
+import { GENERAL_MESSAGES } from "../CommonFormattedMessage";
+
+type Props = {
+  intl: IntlShape;
+  lang: "fr" | "en";
+};
 
 const LEFT_ALIGN_PADDING = 10;
 
 const styles = StyleSheet.create({
-  info: {
-    width: 125,
-    backgroundColor: "#444",
-    color: "#ffffff",
-    paddingTop: 10,
-    height: "100%",
-  },
-  name: { fontSize: 15, paddingLeft: LEFT_ALIGN_PADDING },
-  title: { fontSize: 11, paddingLeft: LEFT_ALIGN_PADDING, marginVertical: 10 },
+  name: { fontSize: 15, textAlign: "center", fontWeight: "bold" },
+  title: { fontSize: 11, textAlign: "center", marginVertical: 10 },
   blocTitle: {
     fontWeight: "bold",
     fontSize: 12,
-    backgroundColor: "#222",
     paddingVertical: 3,
     paddingLeft: LEFT_ALIGN_PADDING,
   },
   infoBloc: {
-    paddingVertical: 5,
+    paddingVertical: 2,
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
   },
   infoType: {
     fontWeight: "bold",
     paddingLeft: LEFT_ALIGN_PADDING,
-    marginBottom: 3,
   },
-  infoValue: { paddingLeft: LEFT_ALIGN_PADDING, color: "#fff" },
+  infoValue: { paddingLeft: LEFT_ALIGN_PADDING, color: "blue" },
 });
 
-const InfoSection = () => (
-  <View style={styles.info}>
+const InfoSection = ({ intl: { formatMessage } }: Props) => (
+  <View>
     <Text style={styles.name}>A. BABEY</Text>
-    <Text style={styles.title}>Javascript Typescript developer</Text>
+    <Text style={styles.title}>{formatMessage(GENERAL_MESSAGES.title)}</Text>
     <View>
-      <Text style={styles.blocTitle}>Personal info</Text>
       <View style={styles.infoBloc}>
         <Text style={styles.infoType}>E-mail</Text>
         <Link src="mailto:contact@ababey.com">

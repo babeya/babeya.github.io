@@ -1,9 +1,52 @@
+import { profile } from "console";
+import { title } from "process";
 import React from "react";
 
 import { FormattedMessage, defineMessages } from "react-intl";
 
-// TITLE
+const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
+  title: {
+    id: "profile.title",
+    defaultMessage: "Développeur Javascript / Typescript",
+  },
+  professionalExperiences: {
+    id: "profile.professionalExperiences",
+    defaultMessage: "Expériences professionnelles",
+  },
+  personalProjects: {
+    id: "profile.personalProjects",
+    defaultMessage: "Projets personnels",
+  },
+  education: {
+    id: "profile.education",
+    defaultMessage: "Formation",
+  },
+};
 
+export const GENERAL_MESSAGES = defineMessages(
+  TRANSLATED_GENERAL_MESSAGES_CONFIG
+);
+
+export const TRANSLATED_GENERAL_MESSAGES: { [key: string]: React.ReactNode } = {
+  profileTitle: (
+    <FormattedMessage {...TRANSLATED_GENERAL_MESSAGES_CONFIG.title} />
+  ),
+  professionalExperiences: (
+    <FormattedMessage
+      {...TRANSLATED_GENERAL_MESSAGES_CONFIG.professionalExperiences}
+    />
+  ),
+  personalProjects: (
+    <FormattedMessage
+      {...TRANSLATED_GENERAL_MESSAGES_CONFIG.personalProjects}
+    />
+  ),
+  education: (
+    <FormattedMessage {...TRANSLATED_GENERAL_MESSAGES_CONFIG.education} />
+  ),
+};
+
+// JOB TITLE
 const TRANSLATED_TITLE_CONFIG = {
   mobile: {
     id: "job-title.mobile",
