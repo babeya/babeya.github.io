@@ -1,3 +1,3 @@
-* Développement du site e-commerce [monimalz.com](https://monimalz.com).
-* Participation au développement de l'application mobile.
-* Développement d'un jeu pour enfant sur système embarqué.
+* Participation au développement de l’application mobile Monimalz.
+* Développement et intégration du site internet e-commerce [monimalz.com](https://monimalz.com).
+* Développement d’un jeu de calcul sur la Monimalz (tirelire connectée avec un écran LED, communiquant avec un téléphone).
