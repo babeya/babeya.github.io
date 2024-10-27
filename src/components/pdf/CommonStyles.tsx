@@ -1,6 +1,6 @@
 import { StyleSheet } from "@react-pdf/renderer";
 
-const COMMON_STYLES = StyleSheet.create({
+export const COMMON_STYLES = StyleSheet.create({
   block: {
     display: "flex",
     flexDirection: "row",
