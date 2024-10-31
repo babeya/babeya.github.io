@@ -9,6 +9,7 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -34,7 +35,6 @@ const config: GatsbyConfig = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
-    "gatsby-plugin-postcss",
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     {

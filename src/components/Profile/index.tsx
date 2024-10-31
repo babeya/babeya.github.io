@@ -11,11 +11,11 @@ const Profile = () => {
     <div>
       <div>
         <div>
-          <StaticImage
+          {/*<StaticImage
             src="../../images/icon.jpeg"
             alt="Simbad"
             layout="constrained"
-          />
+          />*/}
         </div>
         <div>
           <div>A. BABEY</div>

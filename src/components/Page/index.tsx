@@ -23,10 +23,6 @@ const Page = ({ children, lang }: Props) => {
     <>
       <Helmet>
         <html lang={lang} />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        />
         <title>BABEY A.</title>
       </Helmet>
       <LangContext.Provider value={{ lang }}>
@@ -35,9 +31,10 @@ const Page = ({ children, lang }: Props) => {
           defaultLocale="fr"
           messages={lang === "fr" ? undefined : messages}
         >
-          <div>
-            <div>
-              <div>A. Babey</div>
+          <div className="flex row px-8">
+            <div className="flex-none">ababey.com</div>
+            <div className="flex-1"></div>
+            <div className="flex-none">
               <LangSelector />
             </div>
           </div>

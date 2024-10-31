@@ -1,7 +1,5 @@
 import React from "react";
 
-import Box from "@mui/material/Box";
-
 import ResumeDownloadLink from "./ResumeDownloadLink";
 import TypeButtonGroup from "./TypeButtonGroup";
 
@@ -11,11 +9,11 @@ type Props = {
 };
 
 const TimelineHeader = ({ jobs, projects }: Props) => (
-  <Box>
+  <div>
     <TypeButtonGroup />
     {typeof window !== "undefined" ? (
       <ResumeDownloadLink jobs={jobs} projects={projects} />
     ) : null}
-  </Box>
+  </div>
 );
 export default TimelineHeader;
