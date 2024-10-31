@@ -1,10 +1,6 @@
 import React from "react";
 
-import { TransitionGroup } from "react-transition-group";
-
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Collapse from "@mui/material/Collapse";
+// import { TransitionGroup } from "react-transition-group";
 
 import useTimelineData from "./useTimelineData";
 import { JobCard, ProjectCard } from "./EventCards";
@@ -12,19 +8,18 @@ import { FormattedMessage } from "react-intl";
 import TimelineHeader from "./Header";
 
 const Timeline = () => {
-  const { timelineData, setFilters, filters, availableTags, jobs, projects } =
-    useTimelineData();
+  const { timelineData, setFilters, filters } = useTimelineData(); // availableTags, jobs, projects } =
 
   return (
-    <Box>
-      <Typography textAlign="center" variant="h3" marginY={2}>
+    <div>
+      <div>
         <FormattedMessage id="timeline.title" defaultMessage="Curriculum" />
-      </Typography>
-      <TimelineHeader jobs={jobs} projects={projects} />
-      <Box>
-        <TransitionGroup>
-          {timelineData.map(({ node }) => (
-            <Collapse key={node.id} mountOnEnter unmountOnExit>
+      </div>
+      {/*<TimelineHeader jobs={jobs} projects={projects} />*/}
+      <div>
+        <div>
+          {timelineData.map((node) => (
+            <div key={node.id}>
               {node?.typename === "job" ? ( // TODO: auto generate __typename
                 <JobCard
                   job={node as Queries.JobsJson}
@@ -36,11 +31,11 @@ const Timeline = () => {
                   selectedTags={filters.tags}
                 />
               )}
-            </Collapse>
+            </div>
           ))}
-        </TransitionGroup>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 };
 

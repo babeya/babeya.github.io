@@ -1,14 +1,5 @@
 import React from "react";
 
-import { Theme, useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import Chip from "@mui/material/Chip";
-
 type Props = {
   tags: string[];
   value: string[];
@@ -18,7 +9,7 @@ type Props = {
 const OPTIONS = ["reactJs", "javascript", "typescript"];
 
 const TagsSelect = ({ value, onChange, tags }: Props) => {
-  const handleChange = (event: SelectChangeEvent<string[]>) => {
+  /*const handleChange = (event: SelectChangeEvent<string[]>) => {
     const {
       target: { value },
     } = event;
@@ -26,13 +17,13 @@ const TagsSelect = ({ value, onChange, tags }: Props) => {
       // On autofill we get a stringified value.
       typeof value === "string" ? value.split(",") : value
     );
-  };
+  };*/
 
   return (
     <div>
-      <FormControl fullWidth size="small">
-        <InputLabel id="skills-select-label">Tags</InputLabel>
-        <Select
+      <div>
+        <div id="skills-select-label">Tags</div>
+        {/*<Select
           labelId="demo-multiple-chip-label"
           id="skills-select"
           multiple
@@ -57,8 +48,8 @@ const TagsSelect = ({ value, onChange, tags }: Props) => {
               {opt}
             </MenuItem>
           ))}
-        </Select>
-      </FormControl>
+        </Select>*/}
+      </div>
     </div>
   );
 };

@@ -1,8 +1,5 @@
 import React from "react";
 
-import Typography from "@mui/material/Typography";
-import WebIcon from "@mui/icons-material/Web";
-
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
 
 import BaseEventCard from "./BaseEventCard";
@@ -10,21 +7,21 @@ import BaseEventCard from "./BaseEventCard";
 type Props = { project: Queries.ProjectsJson; selectedTags: string[] };
 
 const ProjectCard = ({
-  project: { name, desc, type, tags, release, link },
+  project: { name, desc, type, tags, from, link },
   selectedTags,
 }: Props) => (
   <BaseEventCard
-    icon={type === "website" ? <WebIcon /> : null}
+    //icon={type === "website" ? <WebIcon /> : null}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
-    from={<TranslatedDate date={release} />}
+    from={<TranslatedDate date={from} />}
     title={name}
     link={link}
   >
-    <Typography component="div">
+    <div>
       {/* @ts-ignore */}
       <TranslatedMarkdown content={desc} />
-    </Typography>
+    </div>
   </BaseEventCard>
 );
 

@@ -2,9 +2,6 @@ import React from "react";
 
 import { FormattedMessage } from "react-intl";
 
-import Typography from "@mui/material/Typography";
-import WorkIcon from "@mui/icons-material/Work";
-
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
 import {
   TRANSLATED_JOB_TYPE,
@@ -20,7 +17,7 @@ const JobCard = ({
   selectedTags,
 }: Props) => (
   <BaseEventCard
-    icon={<WorkIcon sx={{ fill: (colors && colors[1]) || undefined }} />}
+    // icon={<WorkIcon sx={{ fill: (colors && colors[1]) || undefined }} />}
     colors={colors}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
@@ -29,16 +26,16 @@ const JobCard = ({
     title={company}
     link={link}
   >
-    <Typography variant="subtitle1">
+    <div>
       {title && TRANSLATED_TITLE[title] ? TRANSLATED_TITLE[title] : title}
-    </Typography>
-    <Typography variant="subtitle2">
+    </div>
+    <div>
       {type && TRANSLATED_JOB_TYPE[type] ? TRANSLATED_JOB_TYPE[type] : type}
-    </Typography>
-    <Typography component="div">
+    </div>
+    <div>
       {/* @ts-ignore */}
       <TranslatedMarkdown content={desc} />
-    </Typography>
+    </div>
   </BaseEventCard>
 );
 

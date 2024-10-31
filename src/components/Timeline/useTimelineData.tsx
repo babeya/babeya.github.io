@@ -8,153 +8,126 @@ import { TimelineFilters } from "./types";
 
 const query = graphql`
   query allJobs {
-    allProjectsJson(sort: { release: DESC }) {
-      edges {
-        node {
-          desc {
-            en {
-              id
-              childrenMarkdownRemark {
-                html
-                rawMarkdownBody
-              }
-            }
-            fr {
-              id
-              childMarkdownRemark {
-                html
-                rawMarkdownBody
-              }
+    allProjectsJson {
+      nodes {
+        desc {
+          en {
+            id
+            childrenMarkdownRemark {
+              html
+              rawMarkdownBody
             }
           }
-          name
-          id
-          release
-          tags
-          type
-          link
-          typename
+          fr {
+            id
+            childMarkdownRemark {
+              html
+              rawMarkdownBody
+            }
+          }
+        }
+        name
+        id
+        from
+        tags
+        type
+        link
+        typename
+      }
+    }
+    allJobsJson {
+      nodes {
+        link
+        id
+        from
+        to
+        title
+        tags
+        type
+        typename
+        company
+        colors
+        desc {
+          en {
+            id
+            childMarkdownRemark {
+              html
+              rawMarkdownBody
+            }
+          }
+          fr {
+            id
+            childMarkdownRemark {
+              html
+              rawMarkdownBody
+            }
+          }
         }
       }
     }
-    allJobsJson(sort: { from: DESC }) {
-      edges {
-        node {
-          link
-          id
-          from
-          to
-          title
-          tags
-          type
-          typename
-          company
-          colors
-          desc {
-            en {
-              id
-              childMarkdownRemark {
-                html
-                rawMarkdownBody
-              }
-            }
-            fr {
-              id
-              childMarkdownRemark {
-                html
-                rawMarkdownBody
-              }
-            }
-          }
-        }
+    allSchoolsJson {
+      nodes {
+        diploma
+        from
+        id
+        link
+        school
+        tags
+        to
+        validated
       }
     }
   }
 `;
 
-const mergeDataRec = (
-  result: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[],
-  jobs: Queries.JobsJsonEdge[],
-  projects: Queries.ProjectsJsonEdge[],
-  jobIdx: number,
-  projectIdx: number
-): (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[] => {
-  if (jobIdx >= jobs.length) {
-    return [...result, ...(projects.slice(projectIdx) || [])];
-  }
-  if (projectIdx >= projects.length) {
-    return [...result, ...(jobs.slice(jobIdx) || [])];
-  }
+type TimelineNode =
+  | Queries.JobsJson
+  | Queries.ProjectsJson
+  | Queries.SchoolsJson;
 
-  const currentJob = jobs[jobIdx];
-  const currentProject = projects[projectIdx];
-
-  const jobEnd =
-    (currentJob.node?.to && DateTime.fromISO(currentJob.node.to)) ||
-    DateTime.now();
-  const projectRelease =
-    (currentProject.node?.release &&
-      DateTime.fromISO(currentProject.node.release)) ||
-    DateTime.now();
-
-  if (jobEnd >= projectRelease) {
-    return mergeDataRec(
-      [...result, currentJob],
-      jobs,
-      projects,
-      jobIdx + 1,
-      projectIdx
-    );
-  }
-  return mergeDataRec(
-    [...result, currentProject],
-    jobs,
-    projects,
-    jobIdx,
-    projectIdx + 1
+const mergeData = (data: {
+  jobs: Queries.JobsJson[];
+  projects: Queries.ProjectsJson[];
+  schools: Queries.SchoolsJson[];
+}): TimelineNode[] =>
+  [...data.jobs, ...data.projects, ...data.schools].sort(
+    ({ from: from1 }, { from: from2 }) =>
+      (from2 ? DateTime.fromISO(from2).toMillis() : DateTime.now().toMillis()) -
+      (from1 ? DateTime.fromISO(from1).toMillis() : DateTime.now().toMillis())
   );
-};
 
-const filterData = (
-  timelineData: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[],
-  { tags }: TimelineFilters
-) =>
+const filterData = (timelineData: TimelineNode[], { tags }: TimelineFilters) =>
   timelineData.filter(
-    (entry) =>
-      !tags?.length || tags.every((tag) => entry.node.tags?.includes(tag))
+    (entry) => !tags?.length || tags.every((tag) => entry.tags?.includes(tag))
   );
 
 type Result = {
-  timelineData: (Queries.JobsJsonEdge | Queries.ProjectsJsonEdge)[];
+  timelineData: TimelineNode[];
   filters: TimelineFilters;
   setFilters: (newFilters: TimelineFilters) => void;
-  availableTags: string[];
-  jobs: Queries.JobsJsonEdge[];
-  projects: Queries.ProjectsJsonEdge[];
+  // availableTags: string[];
+  // jobs: Queries.JobsJsonEdge[];
+  // projects: Queries.ProjectsJsonEdge[];
 };
-
-const mergeData = (
-  jobs: Queries.JobsJsonEdge[],
-  projects: Queries.ProjectsJsonEdge[]
-) => mergeDataRec([], jobs, projects, 0, 0);
 
 const useTimelineData = (): Result => {
   const data = useStaticQuery(query);
   const [filters, setFilters] = useState<TimelineFilters>({ tags: [] });
 
-  const jobs = data?.allJobsJson?.edges;
-  const projects = data?.allProjectsJson?.edges;
+  const jobs = data?.allJobsJson?.nodes || [];
+  const projects = data?.allProjectsJson?.nodes || [];
+  const schools = data?.allSchoolsJson?.nodes || [];
 
   const timelineData = useMemo(
-    () => mergeData(jobs || [], projects || []),
-    [jobs, projects]
+    () => mergeData({ jobs, projects, schools }),
+    [jobs, projects, schools]
   );
 
   const filteredTimelineData = useMemo(
     () => filterData(timelineData, filters),
     [filters, timelineData]
   );
-
+  /*
   const availableTags = useMemo(
     () =>
       Object.keys(
@@ -170,15 +143,15 @@ const useTimelineData = (): Result => {
         )
       ),
     [filteredTimelineData]
-  );
+  );*/
 
   return {
     timelineData: filteredTimelineData,
     filters,
-    jobs,
-    projects,
+    // jobs,
+    // projects,
     setFilters,
-    availableTags,
+    // availableTags,
   };
 };
 

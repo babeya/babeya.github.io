@@ -5,9 +5,6 @@ import { DateTime } from "luxon";
 import { useIntl } from "react-intl";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 
-import Button from "@mui/material/Button";
-import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-
 import PdfResume from "../../pdf";
 import { useLangContext } from "../../Translation";
 
@@ -30,11 +27,7 @@ const ResumeDownloadLink = ({ jobs, projects }: Props) => {
       }
       fileName={generateResumeName()}
     >
-      {({ blob, url, loading, error }) => (
-        <Button variant="contained" endIcon={<PictureAsPdfIcon />}>
-          Télécharger
-        </Button>
-      )}
+      {({ blob, url, loading, error }) => <div>Télécharger</div>}
     </PDFDownloadLink>
   );
 };

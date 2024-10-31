@@ -1,9 +1,5 @@
 import React, { useContext } from "react";
 
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-
 import { LangContext } from "../Translation";
 import LinkButtonWrapper from "../LinkButtonWrapper";
 
@@ -20,7 +16,7 @@ const LangSelector = () => {
 
   return (
     <>
-      <Button
+      <div
         color="inherit"
         aria-controls={open ? "fade-menu" : undefined}
         aria-haspopup="true"
@@ -28,8 +24,8 @@ const LangSelector = () => {
         onClick={handleClick}
       >
         {lang === "en" ? "🇬🇧" : "🇫🇷"}
-      </Button>
-      <Menu
+      </div>
+      {/*<div
         id="fade-menu"
         MenuListProps={{
           "aria-labelledby": "fade-button",
@@ -48,7 +44,7 @@ const LangSelector = () => {
         <MenuItem href="/en/" disabled={lang === "en"}>
           <LinkButtonWrapper href="/en/">English 🇬🇧</LinkButtonWrapper>
         </MenuItem>
-      </Menu>
+      </div>*/}
     </>
   );
 };

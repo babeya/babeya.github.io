@@ -1,0 +1,10 @@
+{
+  "school": "Epitech",
+  "link": "http://en.njtu.edu.cn",
+  "diploma": "Master informatique",
+  "from": "2014-09-01",
+  "to": "2015-06-01",
+  "validated": false,
+  "tags": ["C", "C++"],
+  "typename": "school"
+}

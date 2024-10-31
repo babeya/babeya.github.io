@@ -1,11 +1,7 @@
 import React from "react";
 
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/system/Stack";
-import Link from "@mui/material/Link";
-
 type Props = {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   text: React.ReactNode;
   href: string;
   target?: "_blank";
@@ -13,12 +9,12 @@ type Props = {
 
 const ProfileLink = ({ icon, text, href, target }: Props) => {
   return (
-    <Link href={href} target={target}>
-      <Stack direction="row">
+    <div>
+      <div>
         {icon}
-        <Typography marginLeft={1}>{text}</Typography>
-      </Stack>
-    </Link>
+        <div>{text}</div>
+      </div>
+    </div>
   );
 };
 
