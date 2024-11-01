@@ -108,3 +108,24 @@
   from { border-right-color: orange; }
   to { border-right-color: transparent; }
 }
+
+@keyframes pulse-border {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.timeline-border {
+  animation: pulse-border 4s ease-in-out infinite;
+}
+.timeline-line {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(34, 197, 94, 0.5) 10%,
+    rgba(34, 197, 94, 0.5) 90%,
+    transparent
+  );
+}
