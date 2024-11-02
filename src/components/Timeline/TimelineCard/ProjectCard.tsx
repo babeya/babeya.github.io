@@ -1,5 +1,7 @@
 import React from "react";
 
+import { CodeIcon } from "@radix-ui/react-icons";
+
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
 
 import BaseEventCard from "./BaseEventCard";
@@ -11,7 +13,7 @@ const ProjectCard = ({
   selectedTags,
 }: Props) => (
   <BaseEventCard
-    //icon={type === "website" ? <WebIcon /> : null}
+    icon={<CodeIcon className="h-6 w-6 text-green-400" />}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
     from={<TranslatedDate date={from} />}

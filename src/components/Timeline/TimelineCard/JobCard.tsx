@@ -1,6 +1,7 @@
 import React from "react";
 
 import { FormattedMessage } from "react-intl";
+import { BackpackIcon } from "@radix-ui/react-icons";
 
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
 import {
@@ -17,18 +18,16 @@ const JobCard = ({
   selectedTags,
 }: Props) => (
   <BaseEventCard
-    // icon={<WorkIcon sx={{ fill: (colors && colors[1]) || undefined }} />}
+    icon={<BackpackIcon className="h-6 w-6 text-green-400" />}
     colors={colors}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
     from={<TranslatedDate date={from} />}
     to={<TranslatedDate date={to} />}
-    title={company}
+    title={title && TRANSLATED_TITLE[title] ? TRANSLATED_TITLE[title] : title}
+    subtitle={company}
     link={link}
   >
-    <div>
-      {title && TRANSLATED_TITLE[title] ? TRANSLATED_TITLE[title] : title}
-    </div>
     <div>
       {type && TRANSLATED_JOB_TYPE[type] ? TRANSLATED_JOB_TYPE[type] : type}
     </div>

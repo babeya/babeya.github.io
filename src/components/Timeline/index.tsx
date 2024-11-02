@@ -1,14 +1,14 @@
 import React from "react";
 
-// import { TransitionGroup } from "react-transition-group";
+import { FormattedMessage } from "react-intl";
 
 import useTimelineData from "./useTimelineData";
-import { JobCard, ProjectCard } from "./EventCards";
-import { FormattedMessage } from "react-intl";
+import TimelineCard from "./TimelineCard";
 import TimelineHeader from "./Header";
 
 const Timeline = () => {
   const { timelineData, setFilters, filters } = useTimelineData(); // availableTags, jobs, projects } =
+  console.log(timelineData);
 
   return (
     <div className="bg-gray-900 min-h-screen text-green-400 font-mono p-8">
@@ -25,19 +25,7 @@ const Timeline = () => {
 
         <div className="py-3">
           {timelineData.map((node) => (
-            <div key={node.id}>
-              {node?.typename === "job" ? ( // TODO: auto generate __typename
-                <JobCard
-                  job={node as Queries.JobsJson}
-                  selectedTags={filters.tags}
-                />
-              ) : (
-                <ProjectCard
-                  project={node as Queries.ProjectsJson}
-                  selectedTags={filters.tags}
-                />
-              )}
-            </div>
+            <TimelineCard key={node.id} node={node} />
           ))}
         </div>
       </div>
