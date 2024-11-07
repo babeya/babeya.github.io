@@ -5,11 +5,16 @@ import { ReaderIcon } from "@radix-ui/react-icons";
 
 import BaseEventCard from "./BaseEventCard";
 
-type Props = { school: Queries.SchoolsJson; selectedTags: string[] };
+type Props = {
+  school: Queries.SchoolsJson;
+  selectedTags: string[];
+  onTagClick?: (tag: string) => void;
+};
 
 const SchoolCard = ({
   school: { school, diploma, tags, from, to, link },
   selectedTags,
+  onTagClick,
 }: Props) => (
   <BaseEventCard
     icon={<ReaderIcon className="h-6 w-6 text-green-400" />}
@@ -20,6 +25,7 @@ const SchoolCard = ({
     title={diploma}
     subtitle={school}
     link={link}
+    onTagClick={onTagClick}
   >
     <div />
   </BaseEventCard>

@@ -1,11 +1,85 @@
 import { useMemo, useState } from "react";
 
-import { useStaticQuery } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 
 import { TimelineFilters, TimelineNode, TimelineTag } from "../types";
 
-import { TIMELINE_QUERY } from "./query";
 import { mergeData, filterData, extractTags } from "./tools";
+
+const TIMELINE_QUERY = graphql`
+  query allJobs {
+    allProjectsJson {
+      nodes {
+        desc {
+          en {
+            id
+            childrenMarkdownRemark {
+              html
+              rawMarkdownBody
+            }
+          }
+          fr {
+            id
+            childMarkdownRemark {
+              html
+              rawMarkdownBody
+            }
+          }
+        }
+        name
+        id
+        from
+        tags
+        type
+        link
+        typename
+      }
+    }
+    allJobsJson {
+      nodes {
+        link
+        id
+        from
+        to
+        title
+        tags
+        type
+        typename
+        company
+        colors
+        desc {
+          en {
+            id
+            childMarkdownRemark {
+              html
+              rawMarkdownBody
+            }
+          }
+          fr {
+            id
+            childMarkdownRemark {
+              html
+              rawMarkdownBody
+            }
+          }
+        }
+      }
+    }
+    allSchoolsJson {
+      nodes {
+        diploma
+        from
+        id
+        link
+        school
+        tags
+        to
+        typename
+        validated
+      }
+    }
+  }
+`;
 
 type Result = {
   timelineData: TimelineNode[];
@@ -16,7 +90,10 @@ type Result = {
 
 const useTimelineData = (): Result => {
   const data = useStaticQuery(TIMELINE_QUERY);
-  const [filters, setFilters] = useState<TimelineFilters>({ tags: [] });
+  const [filters, setFilters] = useState<TimelineFilters>({
+    tags: [],
+    type: [],
+  });
 
   const jobs = data?.allJobsJson?.nodes || [];
   const projects = data?.allProjectsJson?.nodes || [];
@@ -32,16 +109,16 @@ const useTimelineData = (): Result => {
     [filters, timelineData]
   );
 
-  const tags = useMemo(() => extractTags(timelineData), [filteredTimelineData]);
+  const tags = useMemo(
+    () => extractTags(filteredTimelineData),
+    [filteredTimelineData]
+  );
 
   return {
     timelineData: filteredTimelineData,
     filters,
     tags,
-    // jobs,
-    // projects,
     setFilters,
-    // availableTags,
   };
 };
 

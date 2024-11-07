@@ -3,11 +3,7 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import {
-  //BriefcaseIcon,
-  CodeIcon,
-  // MortarboardIcon,
-} from "@radix-ui/react-icons";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 
 type Props = {
   children: React.ReactNode;
@@ -20,6 +16,7 @@ type Props = {
   link?: string | null;
   title?: React.ReactNode;
   subtitle?: React.ReactNode;
+  onTagClick?: (tag: string) => void;
 };
 
 const BaseEventCard = ({
@@ -33,9 +30,10 @@ const BaseEventCard = ({
   link,
   title,
   subtitle,
+  onTagClick,
 }: Props) => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
     <div className="relative mb-4 flex items-center">
@@ -49,14 +47,25 @@ const BaseEventCard = ({
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <Card className="w-full rounded-none bg-gray-900 border-green-400 hover:border-purple-400 transition-all duration-300 ease-in-out hover:scale-105 mb-6 ml-14 relative">
+        <Card className="rounded-none bg-gray-900 border-green-400 hover:border-purple-400 transition-all duration-300 ease-in-out hover:scale-105 mb-6 ml-14 relative">
           <CardHeader className="flex flex-row items-center gap-4 pb-2">
             <div>
-              <CardTitle className="text-green-400 font-mono text-lg">
+              <CardTitle className="text-green-400 font-mono text-lg mr-8">
                 {title}
               </CardTitle>
               {subtitle ? (
                 <p className="text-gray-400 font-mono text-sm">{subtitle}</p>
+              ) : null}
+              {link ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-4 right-4"
+                  // TODO :title={title || ""}
+                >
+                  <ExternalLinkIcon className="h-8 w-8 text-green-400 hover:text-purple-400" />
+                </a>
               ) : null}
             </div>
           </CardHeader>
@@ -72,7 +81,11 @@ const BaseEventCard = ({
               {tags?.map((tag, index) => (
                 <Badge
                   key={index}
-                  className="bg-purple-700 hover:bg-purple-600 text-white font-mono text-xs"
+                  aria-selected={selectedTags.includes(tag || "")}
+                  className="bg-purple-700 hover:bg-purple-600 text-white font-mono text-xs aria-selected:bg-green-400 aria-selected:hover:bg-green-600"
+                  onClick={() => {
+                    onTagClick && tag ? onTagClick(tag) : null;
+                  }}
                 >
                   {tag}
                 </Badge>

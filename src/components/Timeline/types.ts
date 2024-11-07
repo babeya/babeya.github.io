@@ -1,5 +1,5 @@
 export type TimelineFilters = {
-  type?: "jobs" | "projects";
+  type: string[];
   tags: string[];
 };
 

@@ -8,22 +8,45 @@ import JobCard from "./JobCard";
 
 type TimelineCardProps = {
   node: TimelineNode;
+  onTagClick?: (tag: string) => void;
+  selectedTags: string[];
 };
 
-const TimelineCard = ({ node }: TimelineCardProps) => {
+const TimelineCard = ({
+  node,
+  onTagClick,
+  selectedTags,
+}: TimelineCardProps) => {
   const { typename } = node;
-  console.log(typename);
 
   switch (typename) {
     case "job":
-      // @ts-ignore
-      return <JobCard job={node} />;
+      return (
+        <JobCard
+          // @ts-ignore
+          job={node}
+          onTagClick={onTagClick}
+          selectedTags={selectedTags}
+        />
+      );
     case "project":
-      // @ts-ignore
-      return <ProjectCard project={node} />;
+      return (
+        <ProjectCard
+          // @ts-ignore
+          project={node}
+          onTagClick={onTagClick}
+          selectedTags={selectedTags}
+        />
+      );
     case "school":
-      // @ts-ignore
-      return <SchoolCard school={node} />;
+      return (
+        <SchoolCard
+          // @ts-ignore
+          school={node}
+          onTagClick={onTagClick}
+          selectedTags={selectedTags}
+        />
+      );
     default:
       return null;
   }

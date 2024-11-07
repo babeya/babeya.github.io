@@ -1,1 +1,1 @@
-Site vitrine de l'entreprise JB Création Céramique. Nous utilisons [gatbsy](https://www.gatsbyjs.com) et githubpages pour faciliter la mise à jour du site et nullifier les couts d'hébergements.
+Site vitrine de l'entreprise JB Création Céramique.

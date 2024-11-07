@@ -1,10 +1,10 @@
 {
   "school": "Université de Rennes",
   "link": "https://formations.univ-rennes.fr/parcours/master-mention-informatique-parcours-ingenierie-logicielle-il",
-  "diploma": "Master mention informatique parcours ingénierie logicielle",
+  "diploma": "VAE Master mention informatique parcours ingénierie logicielle",
   "from": "2024-09-01",
   "to": "2025-07-01",
-  "tags": ["VAE"],
+  "tags": [],
   "validated": false,
   "typename": "school"
 }
