@@ -1,17 +1,76 @@
 import React from "react";
+
+import { FormattedMessage } from "react-intl";
+
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github } from "lucide-react";
+
+const TECHS = [
+  {
+    name: "React",
+    description: (
+      <FormattedMessage
+        id="about.react"
+        defaultMessage="pour une interface utilisateur dynamique."
+      />
+    ),
+    url: "https://react.dev",
+  },
+  {
+    name: "TypeScript",
+    description: (
+      <FormattedMessage
+        id="about.typescript"
+        defaultMessage="qui permet un code fiable avec le typage statique."
+      />
+    ),
+    url: "https://www.typescriptlang.org",
+  },
+  {
+    name: "Gatsby",
+    description: (
+      <FormattedMessage
+        id="about.gatsby"
+        defaultMessage="générateur de site statique rapide et performant."
+      />
+    ),
+    url: "https://www.gatsbyjs.com",
+  },
+  {
+    name: "Tailwind CSS",
+    description: (
+      <FormattedMessage
+        id="about.tailwind"
+        defaultMessage="pour un design moderne et adaptatif."
+      />
+    ),
+    url: "https://tailwindcss.com",
+  },
+  {
+    name: "ShadCN UI",
+    description: (
+      <FormattedMessage
+        id="about.shadcn"
+        defaultMessage="composants élégants pour une interface harmonieuse."
+      />
+    ),
+    url: "https://ui.shadcn.com",
+  },
+  {
+    name: "React-pdf",
+    description: (
+      <FormattedMessage
+        id="about.reactpdf"
+        defaultMessage="pour afficher et générer des documents PDF directement sur le site."
+      />
+    ),
+    url: "https://react-pdf.org",
+  },
+];
 
 export default function AboutSiteSection() {
-  const technologies = [
-    "React",
-    "TypeScript",
-    "Gatsby",
-    "Tailwind CSS",
-    "ShadCN UI",
-  ];
-
   return (
     <section className="w-full py-12 bg-gray-800">
       <div className="container mx-auto px-4">
@@ -21,48 +80,49 @@ export default function AboutSiteSection() {
               className="text-3xl font-bold text-green-400 mb-4 glitch"
               data-text="About This Site"
             >
-              About This Site
+              <FormattedMessage
+                id="aboutSite.title"
+                defaultMessage="À propos de ce site"
+              />
             </CardTitle>
           </CardHeader>
           <CardContent className="text-green-300 font-mono">
             <p className="mb-4">
-              This site was designed to showcase my background, skills, and
-              projects in a simple and effective way. It's built with modern
-              technologies that ensure performance and maintainability:
+              <FormattedMessage
+                id="aboutSite.description"
+                defaultMessage="Ce site a été conçu pour présenter mon parcours, mes compétences et mes projets de manière simple et efficace. Il est construit avec des technologies modernes qui garantissent performance et maintenabilité :"
+              />
             </p>
             <ul className="list-none space-y-2 mb-4">
-              {technologies.map((tech, index) => (
+              {TECHS.map(({ name, description, url }, index) => (
                 <li key={index} className="flex items-center">
-                  <Badge
-                    variant="outline"
-                    className="mr-2 bg-purple-700 text-purple-100"
-                  >
-                    {tech}
-                  </Badge>
-                  {tech === "React" && "for a dynamic user interface."}
-                  {tech === "TypeScript" &&
-                    "providing reliable, statically typed code."}
-                  {tech === "Gatsby" &&
-                    "a fast, efficient static site generator."}
-                  {tech === "Tailwind CSS" &&
-                    "for a modern and adaptive design."}
-                  {tech === "ShadCN UI" &&
-                    "elegant components for a cohesive interface."}
+                  <a href={url} target="_blank" rel="noopener noreferrer">
+                    <Badge className="bg-purple-700 hover:bg-purple-600 text-white font-mono mr-2">
+                      {name}
+                    </Badge>
+                  </a>
+                  {description}
                 </li>
               ))}
             </ul>
+
             <p className="mb-4">
-              The source code for this site is available on GitHub. Feel free to
-              take a look to explore its technical details.
+              <FormattedMessage
+                id="aboutSite.viewOnGithub"
+                defaultMessage="Le code source de ce site est disponible sur GitHub, n’hésitez pas à y jeter un coup d’œil pour découvrir les aspects techniques de sa réalisation."
+              />
             </p>
             <a
-              href="https://github.com/yourusername/your-repo"
+              href="https://github.com/babeya/babeya.github.io"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 bg-purple-600 text-purple-100 rounded hover:bg-purple-700 transition-colors duration-200"
             >
-              <Github className="mr-2 h-5 w-5" />
-              View on GitHub
+              <GitHubLogoIcon className="mr-2 h-5 w-5" />
+              <FormattedMessage
+                id="aboutSite.viewOnGithub"
+                defaultMessage="Voir sur GitHub"
+              />
             </a>
           </CardContent>
         </Card>

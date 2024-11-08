@@ -1,7 +1,6 @@
 import React from "react";
 
-import { FormattedMessage } from "react-intl";
-import { BackpackIcon } from "@radix-ui/react-icons";
+import { Briefcase } from "lucide-react";
 
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
 import {
@@ -23,7 +22,7 @@ const JobCard = ({
   onTagClick,
 }: Props) => (
   <BaseEventCard
-    icon={<BackpackIcon className="h-6 w-6 text-green-400" />}
+    icon={<Briefcase className="h-6 w-6 text-green-400" />}
     colors={colors}
     selectedTags={selectedTags}
     tags={tags || []} // TODO

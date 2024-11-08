@@ -15,10 +15,12 @@ export const mergeData = (data: {
 
 export const filterData = (
   timelineData: TimelineNode[],
-  { tags }: TimelineFilters
+  { tags, type }: TimelineFilters
 ) =>
   timelineData.filter(
-    (entry) => !tags?.length || tags.every((tag) => entry.tags?.includes(tag))
+    (entry) =>
+      (!tags?.length || tags.every((tag) => entry.tags?.includes(tag))) &&
+      (!type.length || (entry.typename && type.includes(entry.typename)))
   );
 
 const countTags = (timelineData: TimelineNode[]) =>

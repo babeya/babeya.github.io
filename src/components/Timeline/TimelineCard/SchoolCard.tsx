@@ -1,6 +1,8 @@
 import React from "react";
 
-import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
+import { GraduationCap } from "lucide-react";
+
+import { TranslatedDate } from "../../Translation";
 import { ReaderIcon } from "@radix-ui/react-icons";
 
 import BaseEventCard from "./BaseEventCard";
@@ -17,7 +19,7 @@ const SchoolCard = ({
   onTagClick,
 }: Props) => (
   <BaseEventCard
-    icon={<ReaderIcon className="h-6 w-6 text-green-400" />}
+    icon={<GraduationCap className="h-6 w-6 text-green-400" />}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
     from={<TranslatedDate date={from} />}

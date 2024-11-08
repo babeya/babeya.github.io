@@ -1,7 +1,14 @@
 import React from "react";
 
 import { IntlShape } from "react-intl";
-import { View, Document, Page, StyleSheet, Text } from "@react-pdf/renderer";
+import {
+  View,
+  Document,
+  Page,
+  StyleSheet,
+  Text,
+  Font,
+} from "@react-pdf/renderer";
 
 import JobSection from "./JobSection";
 import InfoSection from "./InfoSection";
@@ -14,8 +21,22 @@ type Props = {
   lang: "fr" | "en";
 };
 
+Font.register({
+  family: "Lato",
+  fonts: [
+    {
+      src: "https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf",
+      fontWeight: 400,
+    },
+    {
+      src: "https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf",
+      fontWeight: 700,
+    },
+  ],
+});
+
 const styles = StyleSheet.create({
-  page: { fontSize: 9, marginVertical: 10 },
+  page: { fontSize: 9 },
   layout: { display: "flex", flexDirection: "row", height: "100%" },
   content: { flex: 1, paddingHorizontal: 10 },
   contentTitle: {

@@ -17,7 +17,7 @@ exports.onPostBuild = ({ reporter }: any) => {
 };
 // Create blog pages dynamically
 exports.createPages = async ({ graphql, actions }: any) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   const indexTemplate = path.resolve(`src/pages/index.tsx`);
 
@@ -33,6 +33,14 @@ exports.createPages = async ({ graphql, actions }: any) => {
     component: indexTemplate,
     context: {
       lang: "en",
+    },
+  });
+
+  createRedirect({
+    fromPath: `/`,
+    toPath: `/en`,
+    conditions: {
+      language: [`en`],
     },
   });
 };

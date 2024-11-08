@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CodeIcon } from "@radix-ui/react-icons";
+import { Code } from "lucide-react";
 
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
 
@@ -18,7 +18,7 @@ const ProjectCard = ({
   onTagClick,
 }: Props) => (
   <BaseEventCard
-    icon={<CodeIcon className="h-6 w-6 text-green-400" />}
+    icon={<Code className="h-6 w-6 text-green-400" />}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
     from={<TranslatedDate date={from} />}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
@@ -11,6 +11,7 @@ import {
   EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
 
+import { LangContext } from "../Translation";
 import ProfileLink from "./ProfileLink";
 import LanguageSelect from "./LanguageSelect";
 
@@ -34,7 +35,7 @@ const MESSAGES = defineMessage({
 export default function HeroSection() {
   const [glitchText, setGlitchText] = useState(NAME);
   // TODO: language switch
-  const [language, setLanguage] = useState("en");
+  const { lang } = useContext(LangContext);
   const intl = useIntl();
 
   useEffect(() => {
@@ -60,8 +61,12 @@ export default function HeroSection() {
 
       <div className="absolute top-4 right-4 z-20">
         <LanguageSelect
-          onChange={(value) => setLanguage(value)}
-          value={language}
+          onChange={(value) => {
+            value === "en"
+              ? window.location.replace("https://www.ababey.com/en")
+              : window.location.replace("https://www.ababey.com");
+          }}
+          value={lang}
         />
       </div>
 

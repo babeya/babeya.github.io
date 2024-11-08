@@ -18,6 +18,7 @@ const Timeline = () => {
       <div className="relative max-w-4xl mx-auto">
         <TimelineHeader
           tags={tags}
+          timelineData={timelineData}
           filters={filters}
           onFilterChange={setFilters}
         />
