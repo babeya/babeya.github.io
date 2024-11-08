@@ -1,8 +1,8 @@
 {
-  "name": "Tout Bonnement",
+  "name": "toutbonnement.com",
   "link": "https://www.toutbonnement.com",
-  "tags": ["React", "Typescript", "Gatsby"],
-  "release": "2022-09-01",
+  "tags": ["React", "Typescript", "NextJs", "Nodejs", "PostgreSQL", "Docker"],
+  "from": "2024-08-01",
   "type": "website",
   "desc": {
     "fr": "./toutbonnement.fr.md",

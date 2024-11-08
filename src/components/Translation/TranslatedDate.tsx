@@ -8,9 +8,10 @@ import LangContext from "./LangContext";
 type Props = {
   date?: string | null;
   format?: string;
+  local?: "en" | "fr";
 };
 
-const TranslatedDate = ({ date, format = "MMM yy" }: Props) => {
+const TranslatedDate = ({ date, format = "MMM yy", local }: Props) => {
   const { lang } = useContext(LangContext);
 
   if (!date) {
@@ -19,7 +20,9 @@ const TranslatedDate = ({ date, format = "MMM yy" }: Props) => {
 
   return (
     <Fragment>
-      {DateTime.fromISO(date).setLocale(lang).toFormat(format)}
+      {DateTime.fromISO(date)
+        .setLocale(local || lang)
+        .toFormat(format)}
     </Fragment>
   );
 };

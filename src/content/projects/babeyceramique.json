@@ -2,7 +2,7 @@
   "name": "babeyceramique.com",
   "link": "https://www.babeyceramique.com",
   "tags": ["React", "Typescript", "Gatsby"],
-  "release": "2021-09-01",
+  "from": "2021-09-01",
   "type": "website",
   "desc": {
     "fr": "./babeyceramique.fr.md",

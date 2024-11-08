@@ -1,0 +1,10 @@
+{
+  "school": "Epitech",
+  "link": "https://www.epitech.eu",
+  "diploma": "Bachelor",
+  "from": "2011-09-01",
+  "to": "2014-09-01",
+  "validated": true,
+  "tags": ["C", "C++"],
+  "typename": "school"
+}

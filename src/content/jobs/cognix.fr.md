@@ -1,3 +1,1 @@
-Intégration de sites internet (conversion de maquettes PSD en code HTML et CSS). J’ai réalisé une centaine de sites, chaque intégration prenant entre une et deux journées, en fonction de la complexité de la maquette et du nombre de pages à intégrer.
-
-J’ai également participé au développement des templates d’un nouveau module de boutique en ligne (panier, tunnel de paiement...) du CMS vendu par l’entreprise
+Intégration de maquettes PSD en HTML/CSS pour une centaine de sites (une à deux journées par site). Participation au développement des templates e-commerce (panier, tunnel de paiement) du CMS de l’entreprise.

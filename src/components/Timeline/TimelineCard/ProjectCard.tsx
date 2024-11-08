@@ -1,30 +1,35 @@
 import React from "react";
 
-import Typography from "@mui/material/Typography";
-import WebIcon from "@mui/icons-material/Web";
+import { Code } from "lucide-react";
 
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
 
 import BaseEventCard from "./BaseEventCard";
 
-type Props = { project: Queries.ProjectsJson; selectedTags: string[] };
+type Props = {
+  project: Queries.ProjectsJson;
+  selectedTags: string[];
+  onTagClick?: (tag: string) => void;
+};
 
 const ProjectCard = ({
-  project: { name, desc, type, tags, release, link },
+  project: { name, desc, type, tags, from, link },
   selectedTags,
+  onTagClick,
 }: Props) => (
   <BaseEventCard
-    icon={type === "website" ? <WebIcon /> : null}
+    icon={<Code className="h-6 w-6 text-green-400" />}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
-    from={<TranslatedDate date={release} />}
+    from={<TranslatedDate date={from} />}
     title={name}
     link={link}
+    onTagClick={onTagClick}
   >
-    <Typography component="div">
+    <div>
       {/* @ts-ignore */}
       <TranslatedMarkdown content={desc} />
-    </Typography>
+    </div>
   </BaseEventCard>
 );
 

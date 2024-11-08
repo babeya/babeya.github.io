@@ -24,16 +24,21 @@ in reprehenderit in voluptate velit esse cillum dolore eu fugiat
 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 
+export const getTranslatedMarkdownRemark = (
+  grphMdw: TranslatedGraphqlMarkdown,
+  lang: "fr" | "en"
+) =>
+  grphMdw[lang] &&
+  (grphMdw[lang].childMarkdownRemark ||
+    (grphMdw[lang].childrenMarkdownRemark &&
+      // @ts-ignore
+      grphMdw[lang].childrenMarkdownRemark[0]));
+
 const TranslatedMarkdown = ({ content }: Props) => {
   const { lang } = useContext(LangContext);
 
   const translatedHtml =
-    content &&
-    content[lang] &&
-    (content[lang].childMarkdownRemark?.html ||
-      (content[lang].childrenMarkdownRemark &&
-        // @ts-ignore
-        content[lang].childrenMarkdownRemark[0]?.html));
+    (content && getTranslatedMarkdownRemark(content, lang)?.html) || null;
 
   return translatedHtml ? (
     <div dangerouslySetInnerHTML={{ __html: translatedHtml }} />
