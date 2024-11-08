@@ -27,7 +27,7 @@ import {
 
 import { TimelineFilters, TimelineNode, TimelineTag } from "../types";
 
-import ResumeDownloadLink from "./ResumeDownloadLink";
+// import ResumeDownloadLink from "./ResumeDownloadLink";
 
 type Props = {
   tags: TimelineTag[];
@@ -71,7 +71,9 @@ export default function TimelineHeader({
             )}
           </Button>
         </CollapsibleTrigger>
-        <ResumeDownloadLink timelineData={timelineData} />
+        {/*typeof window !== undefined ? (
+          <ResumeDownloadLink timelineData={timelineData} />
+        ) : null*/}
       </div>
       <CollapsibleContent className="space-y-4 pt-4 border-t border-gray-700">
         <motion.div
