@@ -21,6 +21,14 @@ exports.createPages = async ({ graphql, actions }: any) => {
 
   const indexTemplate = path.resolve(`src/pages/index.tsx`);
 
+  createRedirect({
+    fromPath: `/`,
+    toPath: `/en`,
+    conditions: {
+      language: [`en`],
+    },
+  });
+
   createPage({
     path: `/`,
     component: indexTemplate,
@@ -33,14 +41,6 @@ exports.createPages = async ({ graphql, actions }: any) => {
     component: indexTemplate,
     context: {
       lang: "en",
-    },
-  });
-
-  createRedirect({
-    fromPath: `/`,
-    toPath: `/en`,
-    conditions: {
-      language: [`en`],
     },
   });
 };

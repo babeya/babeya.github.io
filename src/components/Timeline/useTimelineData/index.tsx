@@ -104,8 +104,6 @@ const useTimelineData = (): Result => {
     [jobs, projects, schools]
   );
 
-  console.log(filters);
-
   const filteredTimelineData = useMemo(
     () => filterData(timelineData, filters),
     [filters, timelineData]

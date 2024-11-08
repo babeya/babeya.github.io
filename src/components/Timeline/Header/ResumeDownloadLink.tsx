@@ -4,15 +4,14 @@ import { DateTime } from "luxon";
 
 import { useIntl, FormattedMessage } from "react-intl";
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import { Button } from "@/components/ui/button";
 
 import { Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 import PdfResume from "../../pdf";
 import { useLangContext } from "../../Translation";
 
 import { TimelineNode } from "../types";
-import { time } from "console";
 
 const generateResumeName = () =>
   `a_babey_resume_${DateTime.now().toLocaleString(DateTime.DATE_SHORT)}.pdf`;
