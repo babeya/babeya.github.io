@@ -11,12 +11,12 @@ import {
 } from "@react-pdf/renderer";
 
 import JobSection from "./JobSection";
+import ProjectSection from "./ProjectSection";
 import InfoSection from "./InfoSection";
-import { GENERAL_MESSAGES } from "../CommonFormattedMessage";
 
 type Props = {
-  jobs: Queries.JobsJsonEdge[];
-  projects: Queries.ProjectsJsonEdge[];
+  jobs: Queries.JobsJson[];
+  projects: Queries.ProjectsJson[];
   intl: IntlShape;
   lang: "fr" | "en";
 };
@@ -36,39 +36,17 @@ Font.register({
 });
 
 const styles = StyleSheet.create({
-  page: { fontSize: 9 },
-  layout: { display: "flex", flexDirection: "row", height: "100%" },
-  content: { flex: 1, paddingHorizontal: 10 },
-  contentTitle: {
-    borderTop: "1px solid #ddd",
-    borderBottom: "1px solid #ddd",
-    paddingVertical: 3,
-    marginVertical: 4,
-    fontSize: 13,
-    fontWeight: "bold",
-  },
+  page: { fontSize: 9, fontFamily: "Lato" },
 });
 
-const Resume = ({ jobs, intl, lang }: Props) => (
+const Resume = ({ jobs, projects, intl, lang }: Props) => (
   <Document>
-    <Page style={styles.page} wrap>
+    <Page style={styles.page} wrap size="A4">
       <InfoSection intl={intl} lang={lang} />
-      <View style={styles.content}>
-        <Text style={styles.contentTitle}>
-          {intl.formatMessage(GENERAL_MESSAGES.professionalExperiences)}
-        </Text>
-        {jobs.map((job) => (
-          <JobSection job={job} intl={intl} lang={lang} />
-        ))}
-        <Text style={styles.contentTitle}>
-          {intl.formatMessage(GENERAL_MESSAGES.personalProjects)}
-        </Text>
-        {/* {projects.map((project) => (
-          <ProjectSection project={project} intl={intl} lang={lang} />
-        ))} */}
-        <Text style={styles.contentTitle}>
-          {intl.formatMessage(GENERAL_MESSAGES.education)}
-        </Text>
+      <View>
+        <JobSection jobs={jobs} intl={intl} lang={lang} />
+        {/* <EducationSection education={education} intl={intl} lang={lang} /> */}
+        <ProjectSection projects={projects} intl={intl} lang={lang} />
       </View>
     </Page>
   </Document>

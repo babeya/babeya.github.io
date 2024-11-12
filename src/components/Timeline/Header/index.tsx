@@ -7,7 +7,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Checkbox } from "@/components/ui/checkbox";
@@ -26,8 +26,11 @@ import {
 } from "@/components/ui/select";
 
 import { TimelineFilters, TimelineNode, TimelineTag } from "../types";
-
-// import ResumeDownloadLink from "./ResumeDownloadLink";
+import ResumeDownloadLink from "./ResumeDownloadLink";
+import { PDFViewer } from "@react-pdf/renderer";
+import PdfResume from "../../pdf";
+import { usePdfResume } from "./usePdfResume";
+import FunkyCVTemplate from "@/components/pdf/tmp";
 
 type Props = {
   tags: TimelineTag[];
@@ -43,9 +46,18 @@ export default function TimelineHeader({
   onFilterChange,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
+  const { jobs, projects, intl, lang } = usePdfResume(timelineData);
 
   return (
     <Collapsible>
+      <div className="w-full max-h-full">
+        <PDFViewer className="w-full min-h-screen">
+          <PdfResume jobs={jobs} projects={projects} intl={intl} lang={lang} />
+        </PDFViewer>
+        <PDFViewer className="w-full min-h-screen">
+          <FunkyCVTemplate />
+        </PDFViewer>
+      </div>
       <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-2 mb-4">
         <CollapsibleTrigger asChild>
           <Button
@@ -71,9 +83,9 @@ export default function TimelineHeader({
             )}
           </Button>
         </CollapsibleTrigger>
-        {/*typeof window !== undefined ? (
+        {typeof window !== undefined ? (
           <ResumeDownloadLink timelineData={timelineData} />
-        ) : null*/}
+        ) : null}
       </div>
       <CollapsibleContent className="space-y-4 pt-4 border-t border-gray-700">
         <motion.div

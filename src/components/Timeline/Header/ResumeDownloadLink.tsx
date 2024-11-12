@@ -4,10 +4,9 @@ import { DateTime } from "luxon";
 
 import { useIntl, FormattedMessage } from "react-intl";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { Button } from "@/components/ui/button";
-
 import { Download } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import PdfResume from "../../pdf";
 import { useLangContext } from "../../Translation";
 
@@ -18,6 +17,32 @@ const generateResumeName = () =>
 
 type Props = {
   timelineData: TimelineNode[];
+};
+
+const usePdfResume = (timelineData: TimelineNode[]) => {
+  const intl = useIntl();
+  const { lang } = useLangContext();
+
+  const projects = useMemo(
+    () => [...timelineData].filter((node) => node.typename === "project"),
+    [timelineData]
+  );
+  const school = useMemo(
+    () => [...timelineData].filter((node) => node.typename === "shcool"),
+    [timelineData]
+  );
+  const jobs = useMemo(
+    () => [...timelineData].filter((node) => node.typename === "job"),
+    [timelineData]
+  );
+
+  return {
+    projects,
+    school,
+    jobs,
+    intl,
+    lang,
+  };
 };
 
 const ResumeDownloadLink = ({ timelineData }: Props) => {

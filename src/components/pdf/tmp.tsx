@@ -95,9 +95,7 @@ export default function FunkyCVTemplate() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
-            <FontAwesomeIcon style={styles.icon} icon="user" /> About Me
-          </Text>
+          <Text style={styles.sectionTitle}>About Me</Text>
           <Text style={styles.entryDetail}>
             A passionate software engineer with expertise in web development and
             a knack for creating elegant solutions to complex problems.
@@ -105,10 +103,7 @@ export default function FunkyCVTemplate() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
-            <FontAwesomeIcon style={styles.icon} icon="briefcase" /> Work
-            Experience
-          </Text>
+          <Text style={styles.sectionTitle}>Experience</Text>
           <View style={styles.entry}>
             <Text style={styles.entryTitle}>
               Senior Developer, Tech Innovators Inc.
@@ -136,10 +131,7 @@ export default function FunkyCVTemplate() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
-            <FontAwesomeIcon style={styles.icon} icon="graduation-cap" />{" "}
-            Education
-          </Text>
+          <Text style={styles.sectionTitle}>Education</Text>
           <View style={styles.entry}>
             <Text style={styles.entryTitle}>BSc in Computer Science</Text>
             <Text style={styles.entryDetail}>
@@ -149,9 +141,7 @@ export default function FunkyCVTemplate() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
-            <FontAwesomeIcon style={styles.icon} icon="cogs" /> Skills
-          </Text>
+          <Text style={styles.sectionTitle}>Skills</Text>
           <Text style={styles.entryDetail}>
             JavaScript, React, Node.js, Python, SQL, Git, Agile Methodologies
           </Text>

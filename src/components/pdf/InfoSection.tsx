@@ -18,6 +18,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#3498db",
     padding: 20,
     color: "white",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   name: { fontSize: 28, fontWeight: 700 },
   title: { fontSize: 14, marginTop: 5 },
@@ -34,15 +38,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   infoType: {
-    fontWeight: "bold",
+    //fontWeight: "bold",
   },
   infoValue: { color: "white" },
 });
 
 const InfoSection = ({ intl: { formatMessage } }: Props) => (
   <View style={styles.header}>
-    <Text style={styles.name}>A. BABEY</Text>
-    <Text style={styles.title}>{formatMessage(GENERAL_MESSAGES.title)}</Text>
+    <View>
+      <Text style={styles.name}>A. BABEY</Text>
+      <Text style={styles.title}>{formatMessage(GENERAL_MESSAGES.title)}</Text>
+    </View>
     <View>
       <View style={styles.infoBloc}>
         <Text style={styles.infoType}>E-mail :</Text>
