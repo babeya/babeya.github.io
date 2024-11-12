@@ -5,6 +5,7 @@ import { IntlShape } from "react-intl";
 import { View, Text, StyleSheet, Link } from "@react-pdf/renderer";
 
 import { GENERAL_MESSAGES } from "../CommonFormattedMessage";
+import { GithubPdfIcon, LinkedinPdfIcon, MailPdfIcon } from "./Icons";
 
 type Props = {
   intl: IntlShape;
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
   infoType: {
     //fontWeight: "bold",
   },
-  infoValue: { color: "white" },
+  infoValue: { color: "white", marginLeft: 5 },
 });
 
 const InfoSection = ({ intl: { formatMessage } }: Props) => (
@@ -51,20 +52,20 @@ const InfoSection = ({ intl: { formatMessage } }: Props) => (
     </View>
     <View>
       <View style={styles.infoBloc}>
-        <Text style={styles.infoType}>E-mail :</Text>
+        <MailPdfIcon />
         <Link src="mailto:contact@ababey.com">
           <Text style={styles.infoValue}>contact@ababey.com</Text>
         </Link>
       </View>
       <View style={styles.infoBloc}>
-        <Text style={styles.infoType}>Github :</Text>
+        <GithubPdfIcon />
         <Link src="https://github.com/babeya">
           <Text style={styles.infoValue}>github.com/babeya</Text>
         </Link>
       </View>
       <View style={styles.infoBloc}>
-        <Text style={styles.infoType}>LinkedIn :</Text>
-        <Link src="https://www.linkedin.com/in/a-babey/">
+        <LinkedinPdfIcon />
+        <Link src="https://www.linkedin.com/in/a-babey">
           <Text style={styles.infoValue}>linkedin.com/in/a-babey</Text>
         </Link>
       </View>

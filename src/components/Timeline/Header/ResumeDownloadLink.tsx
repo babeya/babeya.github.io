@@ -1,16 +1,18 @@
-import React, { useMemo } from "react";
+import React from "react";
 
 import { DateTime } from "luxon";
 
-import { useIntl, FormattedMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+
 import PdfResume from "../../pdf";
-import { useLangContext } from "../../Translation";
 
 import { TimelineNode } from "../types";
+
+import { usePdfResume } from "./usePdfResume";
 
 const generateResumeName = () =>
   `a_babey_resume_${DateTime.now().toLocaleString(DateTime.DATE_SHORT)}.pdf`;
@@ -19,52 +21,20 @@ type Props = {
   timelineData: TimelineNode[];
 };
 
-const usePdfResume = (timelineData: TimelineNode[]) => {
-  const intl = useIntl();
-  const { lang } = useLangContext();
-
-  const projects = useMemo(
-    () => [...timelineData].filter((node) => node.typename === "project"),
-    [timelineData]
-  );
-  const school = useMemo(
-    () => [...timelineData].filter((node) => node.typename === "shcool"),
-    [timelineData]
-  );
-  const jobs = useMemo(
-    () => [...timelineData].filter((node) => node.typename === "job"),
-    [timelineData]
-  );
-
-  return {
-    projects,
-    school,
-    jobs,
-    intl,
-    lang,
-  };
-};
-
 const ResumeDownloadLink = ({ timelineData }: Props) => {
-  const intl = useIntl();
-  const { lang } = useLangContext();
-
-  const projects = useMemo(
-    () => [...timelineData].filter((node) => node.typename === "project"),
-    [timelineData]
-  );
-  const school = useMemo(
-    () => [...timelineData].filter((node) => node.typename === "shcool"),
-    [timelineData]
-  );
-  const jobs = useMemo(
-    () => [...timelineData].filter((node) => node.typename === "job"),
-    [timelineData]
-  );
+  const { jobs, projects, schools, intl, lang } = usePdfResume(timelineData);
 
   return (
     <PDFDownloadLink
-      document={<PdfResume jobs={[]} projects={[]} intl={intl} lang={lang} />}
+      document={
+        <PdfResume
+          jobs={jobs}
+          projects={projects}
+          schools={schools}
+          intl={intl}
+          lang={lang}
+        />
+      }
       fileName={generateResumeName()}
     >
       {

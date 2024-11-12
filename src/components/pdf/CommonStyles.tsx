@@ -1,11 +1,21 @@
-import { StyleSheet } from "@react-pdf/renderer";
+import { StyleSheet, Font } from "@react-pdf/renderer";
+
+Font.register({
+  family: "Lato",
+  fonts: [
+    {
+      src: "https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf",
+      fontWeight: 400,
+    },
+    {
+      src: "https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf",
+      fontWeight: 700,
+    },
+  ],
+});
 
 export const COMMON_STYLES = StyleSheet.create({
-  block: {
-    display: "flex",
-    flexDirection: "row",
-    marginVertical: 4,
-  },
+  page: { fontSize: 9, fontFamily: "Lato" },
   section: {
     margin: 10,
     padding: 15,
@@ -29,27 +39,5 @@ export const COMMON_STYLES = StyleSheet.create({
   entryDetail: {
     fontSize: 12,
     color: "#34495e",
-  },
-
-  dateColumn: {
-    width: 50,
-  },
-  detailsColumn: {
-    flex: 1,
-  },
-  title1: {
-    fontSize: 12,
-    marginBottom: 3,
-    //fontWeight: "bold",
-  },
-  title2: {
-    fontSize: 10,
-    marginBottom: 3,
-    // fontStyle: "italic",
-  },
-  title3: {
-    fontSize: 10,
-    marginBottom: 3,
-    // fontStyle: "italic",
   },
 });

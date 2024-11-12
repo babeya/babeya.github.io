@@ -13,7 +13,7 @@ type Props = {
   lang: "fr" | "en";
 };
 
-const ProjectEntry = ({
+const SchoolEntry = ({
   school: { tags, from, link, school, diploma },
   intl: { formatMessage },
   lang,
@@ -24,11 +24,9 @@ const ProjectEntry = ({
     </Text>
     <Text style={COMMON_STYLES.entryDetail}>
       {from && <TranslatedDate date={from} local={lang} />}
-      {/** @ts-ignore */}
-      {/*type && `, ${formatMessage(JOB_TYPE_MESSAGES[type])}`*/}
     </Text>
     <Text style={COMMON_STYLES.entryDetail}>{tags?.join(", ")}</Text>
   </View>
 );
 
-export default ProjectEntry;
+export default SchoolEntry;

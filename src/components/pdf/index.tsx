@@ -1,52 +1,39 @@
 import React from "react";
 
 import { IntlShape } from "react-intl";
-import {
-  View,
-  Document,
-  Page,
-  StyleSheet,
-  Text,
-  Font,
-} from "@react-pdf/renderer";
+import { View, Document, Page } from "@react-pdf/renderer";
 
+import { COMMON_STYLES } from "./CommonStyles";
 import JobSection from "./JobSection";
 import ProjectSection from "./ProjectSection";
+import SchoolSection from "./SchoolSection";
 import InfoSection from "./InfoSection";
 
 type Props = {
   jobs: Queries.JobsJson[];
   projects: Queries.ProjectsJson[];
+  schools: Queries.SchoolsJson[];
   intl: IntlShape;
   lang: "fr" | "en";
 };
 
-Font.register({
-  family: "Lato",
-  fonts: [
-    {
-      src: "https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf",
-      fontWeight: 400,
-    },
-    {
-      src: "https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf",
-      fontWeight: 700,
-    },
-  ],
-});
-
-const styles = StyleSheet.create({
-  page: { fontSize: 9, fontFamily: "Lato" },
-});
-
-const Resume = ({ jobs, projects, intl, lang }: Props) => (
+const Resume = ({ jobs, projects, intl, lang, schools }: Props) => (
   <Document>
-    <Page style={styles.page} wrap size="A4">
+    <Page style={COMMON_STYLES.page} wrap size="A4">
       <InfoSection intl={intl} lang={lang} />
       <View>
-        <JobSection jobs={jobs} intl={intl} lang={lang} />
-        {/* <EducationSection education={education} intl={intl} lang={lang} /> */}
-        <ProjectSection projects={projects} intl={intl} lang={lang} />
+        {(jobs.length > 0 && (
+          <JobSection jobs={jobs} intl={intl} lang={lang} />
+        )) ||
+          null}
+        {(schools.length > 0 && (
+          <SchoolSection schools={schools} intl={intl} lang={lang} />
+        )) ||
+          null}
+        {(projects.length > 0 && (
+          <ProjectSection projects={projects} intl={intl} lang={lang} />
+        )) ||
+          null}
       </View>
     </Page>
   </Document>

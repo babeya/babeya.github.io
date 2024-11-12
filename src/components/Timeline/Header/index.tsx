@@ -46,13 +46,19 @@ export default function TimelineHeader({
   onFilterChange,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-  const { jobs, projects, intl, lang } = usePdfResume(timelineData);
+  const { jobs, projects, schools, intl, lang } = usePdfResume(timelineData);
 
   return (
     <Collapsible>
       <div className="w-full max-h-full">
         <PDFViewer className="w-full min-h-screen">
-          <PdfResume jobs={jobs} projects={projects} intl={intl} lang={lang} />
+          <PdfResume
+            jobs={jobs}
+            schools={schools}
+            projects={projects}
+            intl={intl}
+            lang={lang}
+          />
         </PDFViewer>
         <PDFViewer className="w-full min-h-screen">
           <FunkyCVTemplate />
