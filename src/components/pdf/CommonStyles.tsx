@@ -36,8 +36,15 @@ export const COMMON_STYLES = StyleSheet.create({
     fontSize: 14,
     fontWeight: 700,
   },
+  entryLink: {
+    color: "black",
+  },
   entryDetail: {
     fontSize: 12,
     color: "#34495e",
+  },
+  entryTags: {
+    fontSize: 10,
+    color: "#34495e7a",
   },
 });

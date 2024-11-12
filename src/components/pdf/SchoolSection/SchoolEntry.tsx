@@ -14,7 +14,7 @@ type Props = {
 };
 
 const SchoolEntry = ({
-  school: { tags, from, to, link, school, diploma },
+  school: { tags, from, to, link, school, diploma, desc },
   intl: { formatMessage },
   lang,
 }: Props) => (
@@ -24,9 +24,10 @@ const SchoolEntry = ({
     </Text>
     <Text style={COMMON_STYLES.entryDetail}>
       {from && <TranslatedDate date={from} local={lang} />} -{" "}
-      {(to && <TranslatedDate date={to} local={lang} />) || "TODAY"}{" "}
+      {(to && <TranslatedDate date={to} local={lang} />) || ""}{" "}
     </Text>
-    <Text style={COMMON_STYLES.entryDetail}>{tags?.join(", ")}</Text>
+    <Text style={COMMON_STYLES.entryDetail}>{desc && desc[lang]}</Text>
+    <Text style={COMMON_STYLES.entryTags}>{tags?.join(", ")}</Text>
   </View>
 );
 

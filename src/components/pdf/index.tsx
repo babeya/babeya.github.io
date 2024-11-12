@@ -1,13 +1,16 @@
 import React from "react";
 
 import { IntlShape } from "react-intl";
-import { View, Document, Page, Text } from "@react-pdf/renderer";
+import { View, Document, Page, Text, Link } from "@react-pdf/renderer";
 
 import { COMMON_STYLES } from "./CommonStyles";
+import { GENERAL_MESSAGES } from "../CommonFormattedMessage";
+
 import JobSection from "./JobSection";
 import ProjectSection from "./ProjectSection";
 import SchoolSection from "./SchoolSection";
 import InfoSection from "./InfoSection";
+import AboutSection from "./AboutSection";
 
 type Props = {
   jobs: Queries.JobsJson[];
@@ -22,6 +25,7 @@ const Resume = ({ jobs, projects, intl, lang, schools }: Props) => (
     <Page style={COMMON_STYLES.page} size="A4">
       <InfoSection intl={intl} lang={lang} />
       <View>
+        <AboutSection intl={intl} lang={lang} />s
         {(jobs.length > 0 && (
           <JobSection jobs={jobs} intl={intl} lang={lang} />
         )) ||
@@ -45,7 +49,8 @@ const Resume = ({ jobs, projects, intl, lang, schools }: Props) => (
         }}
       >
         <Text style={{ textAlign: "center" }}>
-          CV generated on www.ababey.com
+          {intl.formatMessage(GENERAL_MESSAGES.generatedOn)}{" "}
+          <Link href="https://www.ababey.com">www.ababey.com</Link>
         </Text>
       </View>
     </Page>

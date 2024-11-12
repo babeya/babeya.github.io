@@ -2,6 +2,13 @@ const messages = {
   "language.en": "English",
   "language.fr": "Français",
   "profile.title": "Full Stack Developer",
+  "profile.professionalExperiences": "Professional Experiences",
+  "profile.personalProjects": "Personal Projects",
+  "profile.education": "Education",
+  "profile.about": "About",
+  "profile.aboutContent":
+    "Front-end developer with over 10 years of experience in web and mobile application development, as well as solid back-end skills. I have worked with technologies such as React, TypeScript, GraphQL, Node.js, and PHP to create user-friendly and efficient experiences, while also developing and integrating APIs and backends.",
+  "profile.generatedOn": "Generated on",
   "timeline.title": "Resume",
   "timeline.export": "Export Resume",
   "timeline.showFilters": "Show Filters",

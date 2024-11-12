@@ -21,7 +21,7 @@ export type ProjectSectionProps = {
 const SchoolSection = ({ schools, intl, lang }: ProjectSectionProps) => (
   <View style={COMMON_STYLES.section} wrap={false}>
     <Text style={COMMON_STYLES.sectionTitle}>
-      {intl.formatMessage(GENERAL_MESSAGES.personalProjects)}
+      {intl.formatMessage(GENERAL_MESSAGES.education)}
     </Text>
     {schools.map((school, idx) => (
       <SchoolEntry key={idx} school={school} intl={intl} lang={lang} />

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
-import { FormattedMessage, useIntl, defineMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import {
   LinkedInLogoIcon,
@@ -11,30 +11,18 @@ import {
   EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
 
+import {
+  TRANSLATED_GENERAL_MESSAGES,
+  GENERAL_MESSAGES,
+} from "../CommonFormattedMessage";
+
+import { EMAIL, EMAIL_LINK, GITHUB, LINKEDIN, NAME } from "../../config";
 import { LangContext } from "../Translation";
 import ProfileLink from "./ProfileLink";
 import LanguageSelect from "./LanguageSelect";
 
-const NAME = "A. Babey";
-
-const MESSAGES = defineMessage({
-  title: {
-    id: "profile.title",
-    defaultMessage: "Développeur Full Stack",
-  },
-  description: {
-    id: "profile.description",
-    defaultMessage: "TODO",
-  },
-  contact: {
-    id: "profile.contact",
-    defaultMessage: "Contact",
-  },
-});
-
 export default function HeroSection() {
   const [glitchText, setGlitchText] = useState(NAME);
-  // TODO: language switch
   const { lang } = useContext(LangContext);
   const intl = useIntl();
 
@@ -81,7 +69,10 @@ export default function HeroSection() {
         </motion.h1>
         <div className="text-2xl md:text-3xl text-purple-400 font-mono">
           <TypeAnimation
-            sequence={[`<${intl.formatMessage(MESSAGES.title)} />`, 2000]}
+            sequence={[
+              `<${intl.formatMessage(GENERAL_MESSAGES.title)} />`,
+              2000,
+            ]}
             wrapper="span"
             cursor={true}
             repeat={Infinity}
@@ -93,10 +84,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <FormattedMessage id="profile.description" defaultMessage="TODO" />{" "}
-          <br />
-          <br />
-          <FormattedMessage id="profile.rate" defaultMessage="TJM: 600€" />
+          {TRANSLATED_GENERAL_MESSAGES.aboutContent}
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4"
@@ -106,17 +94,17 @@ export default function HeroSection() {
         >
           <ProfileLink
             icon={<EnvelopeClosedIcon />}
-            href="mailto:contact@ababey.com"
-            text="contact@ababey.com"
+            href={EMAIL_LINK}
+            text={EMAIL}
           />
           <ProfileLink
-            href="https://github.com/babeya"
+            href={GITHUB}
             target="_blank"
             icon={<GitHubLogoIcon />}
             text="babeya"
           />
           <ProfileLink
-            href="https://github.com/babeya"
+            href={LINKEDIN}
             target="_blank"
             icon={<LinkedInLogoIcon />}
             text="a-babey"

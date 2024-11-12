@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, Text } from "@react-pdf/renderer";
+import { View, Text, Link } from "@react-pdf/renderer";
 import { IntlShape } from "react-intl";
 
 import { TranslatedDate } from "../../Translation";
@@ -18,14 +18,21 @@ type Props = {
 };
 
 const JobEntry = ({
-  job: { company, title, from, to, type, desc, tags },
+  job: { company, title, from, to, type, desc, tags, shortDesc, link },
   intl: { formatMessage },
   lang,
 }: Props) => (
   <View style={COMMON_STYLES.entry} wrap>
     <Text style={COMMON_STYLES.entryTitle}>
       {/** @ts-ignore */}
-      {title && formatMessage(TITLE_MESSAGES[title])}, {company}
+      {title && formatMessage(TITLE_MESSAGES[title])},{" "}
+      {link ? (
+        <Link href={link} style={COMMON_STYLES.entryLink}>
+          {company}
+        </Link>
+      ) : (
+        company
+      )}
     </Text>
     <Text style={COMMON_STYLES.entryDetail}>
       {from && <TranslatedDate date={from} local={lang} />} -{" "}
@@ -33,7 +40,15 @@ const JobEntry = ({
       {/** @ts-ignore */}
       {type && `, ${formatMessage(JOB_TYPE_MESSAGES[type])}`}
     </Text>
-    <Text style={COMMON_STYLES.entryDetail}>{tags?.join(", ")}</Text>
+    {shortDesc && shortDesc[lang]
+      ? shortDesc[lang].map((desc) => (
+          <Text style={COMMON_STYLES.entryDetail}>
+            {"• "}
+            {desc}
+          </Text>
+        ))
+      : null}
+    <Text style={COMMON_STYLES.entryTags}>{tags?.join(", ")}</Text>
   </View>
 );
 

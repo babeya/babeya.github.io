@@ -1,5 +1,3 @@
-import { profile } from "console";
-import { title } from "process";
 import React from "react";
 
 import { FormattedMessage, defineMessages } from "react-intl";
@@ -7,7 +5,7 @@ import { FormattedMessage, defineMessages } from "react-intl";
 const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   title: {
     id: "profile.title",
-    defaultMessage: "Développeur Javascript / Typescript",
+    defaultMessage: "Développeur Full Stack",
   },
   professionalExperiences: {
     id: "profile.professionalExperiences",
@@ -20,6 +18,23 @@ const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   education: {
     id: "profile.education",
     defaultMessage: "Formation",
+  },
+  about: {
+    id: "profile.about",
+    defaultMessage: "À propos",
+  },
+  aboutContent: {
+    id: "profile.aboutContent",
+    defaultMessage:
+      "Développeur front-end avec plus de 10 ans d’expérience dans le développement d’applications web et mobiles, ainsi qu’une maîtrise des technologies back-end. J’ai travaillé avec des technologies comme React, TypeScript, GraphQL, Node.js et PHP pour créer des expériences utilisateur performantes et intuitives, tout en développant et intégrant des API et backends.",
+  },
+  generatedOn: {
+    id: "profile.generatedOn",
+    defaultMessage: "Généré sur",
+  },
+  contact: {
+    id: "profile.contact",
+    defaultMessage: "Contact",
   },
 };
 
@@ -44,6 +59,10 @@ export const TRANSLATED_GENERAL_MESSAGES: { [key: string]: React.ReactNode } = {
   education: (
     <FormattedMessage {...TRANSLATED_GENERAL_MESSAGES_CONFIG.education} />
   ),
+  aboutContent: (
+    <FormattedMessage {...TRANSLATED_GENERAL_MESSAGES_CONFIG.aboutContent} />
+  ),
+  contact: <FormattedMessage {...TRANSLATED_GENERAL_MESSAGES_CONFIG.contact} />,
 };
 
 // JOB TITLE
@@ -79,8 +98,6 @@ export const TRANSLATED_TITLE: { [key: string]: React.ReactNode } = {
   tv: <FormattedMessage {...TRANSLATED_TITLE_CONFIG.tv} />,
   integrator: <FormattedMessage {...TRANSLATED_TITLE_CONFIG.integrator} />,
 };
-
-// JOB_TYPE
 
 const TRANSLATED_JOB_TYPE_CONFIG = {
   mission: { id: "job-type.mission", defaultMessage: "Mission" },

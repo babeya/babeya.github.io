@@ -11,5 +11,9 @@
   "desc": {
     "fr": "./nestor.fr.md",
     "en": "./nestor.en.md"
+  },
+  "shortDesc": {
+    "fr": ["Gestion de la plateforme informatique (site web, backoffice, API)"],
+    "en": ["Management of the IT platform (website, backoffice, API)"]
   }
 }

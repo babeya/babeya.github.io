@@ -4,7 +4,10 @@ import { IntlShape } from "react-intl";
 
 import { View, Text, StyleSheet, Link } from "@react-pdf/renderer";
 
+import { EMAIL, EMAIL_LINK, GITHUB, LINKEDIN, NAME } from "../../config";
+
 import { GENERAL_MESSAGES } from "../CommonFormattedMessage";
+
 import { GithubPdfIcon, LinkedinPdfIcon, MailPdfIcon } from "./Icons";
 
 type Props = {
@@ -47,25 +50,25 @@ const styles = StyleSheet.create({
 const InfoSection = ({ intl: { formatMessage } }: Props) => (
   <View style={styles.header}>
     <View>
-      <Text style={styles.name}>A. BABEY</Text>
+      <Text style={styles.name}>{NAME}</Text>
       <Text style={styles.title}>{formatMessage(GENERAL_MESSAGES.title)}</Text>
     </View>
     <View>
       <View style={styles.infoBloc}>
         <MailPdfIcon />
-        <Link src="mailto:contact@ababey.com">
-          <Text style={styles.infoValue}>contact@ababey.com</Text>
+        <Link src={EMAIL_LINK}>
+          <Text style={styles.infoValue}>{EMAIL}</Text>
         </Link>
       </View>
       <View style={styles.infoBloc}>
         <GithubPdfIcon />
-        <Link src="https://github.com/babeya">
+        <Link src={GITHUB}>
           <Text style={styles.infoValue}>github.com/babeya</Text>
         </Link>
       </View>
       <View style={styles.infoBloc}>
         <LinkedinPdfIcon />
-        <Link src="https://www.linkedin.com/in/a-babey">
+        <Link href={LINKEDIN}>
           <Text style={styles.infoValue}>linkedin.com/in/a-babey</Text>
         </Link>
       </View>

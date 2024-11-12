@@ -6,5 +6,9 @@
   "from": "2014-09-01",
   "validated": false,
   "tags": ["C", "C++"],
-  "typename": "school"
+  "typename": "school",
+  "desc": {
+    "fr": "Non validé",
+    "en": "Unvalidated training"
+  }
 }
