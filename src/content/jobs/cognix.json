@@ -10,5 +10,9 @@
   "desc": {
     "fr": "./cognix.fr.md",
     "en": "./cognix.en.md"
+  },
+  "shortDesc": {
+    "fr": ["Intégration de sites web"],
+    "en": ["Website integration"]
   }
 }

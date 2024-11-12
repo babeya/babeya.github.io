@@ -4,7 +4,11 @@ import { IntlShape } from "react-intl";
 
 import { View, Text, StyleSheet, Link } from "@react-pdf/renderer";
 
+import { EMAIL, EMAIL_LINK, GITHUB, LINKEDIN, NAME } from "../../config";
+
 import { GENERAL_MESSAGES } from "../CommonFormattedMessage";
+
+import { GithubPdfIcon, LinkedinPdfIcon, MailPdfIcon } from "./Icons";
 
 type Props = {
   intl: IntlShape;
@@ -18,6 +22,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#3498db",
     padding: 20,
     color: "white",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   name: { fontSize: 28, fontWeight: 700 },
   title: { fontSize: 14, marginTop: 5 },
@@ -34,31 +42,33 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   infoType: {
-    fontWeight: "bold",
+    //fontWeight: "bold",
   },
-  infoValue: { color: "white" },
+  infoValue: { color: "white", marginLeft: 5 },
 });
 
 const InfoSection = ({ intl: { formatMessage } }: Props) => (
   <View style={styles.header}>
-    <Text style={styles.name}>A. BABEY</Text>
-    <Text style={styles.title}>{formatMessage(GENERAL_MESSAGES.title)}</Text>
+    <View>
+      <Text style={styles.name}>{NAME}</Text>
+      <Text style={styles.title}>{formatMessage(GENERAL_MESSAGES.title)}</Text>
+    </View>
     <View>
       <View style={styles.infoBloc}>
-        <Text style={styles.infoType}>E-mail :</Text>
-        <Link src="mailto:contact@ababey.com">
-          <Text style={styles.infoValue}>contact@ababey.com</Text>
+        <MailPdfIcon />
+        <Link src={EMAIL_LINK}>
+          <Text style={styles.infoValue}>{EMAIL}</Text>
         </Link>
       </View>
       <View style={styles.infoBloc}>
-        <Text style={styles.infoType}>Github :</Text>
-        <Link src="https://github.com/babeya">
+        <GithubPdfIcon />
+        <Link src={GITHUB}>
           <Text style={styles.infoValue}>github.com/babeya</Text>
         </Link>
       </View>
       <View style={styles.infoBloc}>
-        <Text style={styles.infoType}>LinkedIn :</Text>
-        <Link src="https://www.linkedin.com/in/a-babey/">
+        <LinkedinPdfIcon />
+        <Link href={LINKEDIN}>
           <Text style={styles.infoValue}>linkedin.com/in/a-babey</Text>
         </Link>
       </View>

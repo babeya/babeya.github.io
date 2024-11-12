@@ -11,5 +11,9 @@
   "desc": {
     "fr": "./molotov.fr.md",
     "en": "./molotov.en.md"
+  },
+  "shortDesc": {
+    "fr": ["Développement d'applications TV (appleTv, webOS) et console (PS4)"],
+    "en": ["Development of TV applications (appleTv, webOS) and console (PS4)"]
   }
 }

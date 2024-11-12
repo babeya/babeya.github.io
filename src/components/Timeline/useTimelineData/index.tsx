@@ -47,6 +47,10 @@ const TIMELINE_QUERY = graphql`
         typename
         company
         colors
+        shortDesc {
+          en
+          fr
+        }
         desc {
           en {
             id
@@ -76,6 +80,10 @@ const TIMELINE_QUERY = graphql`
         to
         typename
         validated
+        desc {
+          fr
+          en
+        }
       }
     }
   }

@@ -11,5 +11,9 @@
   "desc": {
     "fr": "./laposte.fr.md",
     "en": "./laposte.en.md"
+  },
+  "shortDesc": {
+    "fr": ["Développement d'applications web et mobiles"],
+    "en": ["Development of web and mobile applications"]
   }
 }

@@ -12,5 +12,13 @@
   "desc": {
     "fr": "./pagesJaunes.fr.md",
     "en": "./pagesJaunes.en.md"
+  },
+  "shortDesc": {
+    "fr": [
+      "Développement d'une application web d'exploration de données dans un cluster elasticsearch"
+    ],
+    "en": [
+      "Development of a web application for data exploration in an Elasticsearch cluster"
+    ]
   }
 }

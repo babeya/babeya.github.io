@@ -11,5 +11,15 @@
   "desc": {
     "fr": "./pierreEtVacances.fr.md",
     "en": "./pierreEtVacances.en.md"
+  },
+  "shortDesc": {
+    "fr": [
+      "Développement d'applications mobiles",
+      "Développement d'une applcation pour bornes interactives"
+    ],
+    "en": [
+      "Development of mobile applications",
+      "Development of an application for interactive terminals"
+    ]
   }
 }

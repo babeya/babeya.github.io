@@ -11,5 +11,15 @@
   "desc": {
     "fr": "./greenflex.fr.md",
     "en": "./greenflex.en.md"
+  },
+  "shortDesc": {
+    "fr": [
+      "Développement et maintenance d'applications web",
+      "Développement d'outils de visualisation de données"
+    ],
+    "en": [
+      "Development and maintenance of web applications",
+      "Development of data visualization tools"
+    ]
   }
 }

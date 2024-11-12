@@ -6,5 +6,9 @@
   "to": "2025-07-01",
   "tags": [],
   "validated": false,
-  "typename": "school"
+  "typename": "school",
+  "desc": {
+    "fr": "En cours",
+    "en": "In progress"
+  }
 }
