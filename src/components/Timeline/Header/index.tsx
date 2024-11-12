@@ -47,6 +47,7 @@ export default function TimelineHeader({
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const { jobs, projects, schools, intl, lang } = usePdfResume(timelineData);
+  console.log(schools);
 
   return (
     <Collapsible>
@@ -59,9 +60,6 @@ export default function TimelineHeader({
             intl={intl}
             lang={lang}
           />
-        </PDFViewer>
-        <PDFViewer className="w-full min-h-screen">
-          <FunkyCVTemplate />
         </PDFViewer>
       </div>
       <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-2 mb-4">

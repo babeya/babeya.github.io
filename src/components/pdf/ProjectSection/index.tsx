@@ -19,7 +19,7 @@ export type ProjectSectionProps = {
  * Render the project section of the pdf resume
  */
 const ProjectSection = ({ projects, intl, lang }: ProjectSectionProps) => (
-  <View style={COMMON_STYLES.section}>
+  <View style={COMMON_STYLES.section} wrap={false}>
     <Text style={COMMON_STYLES.sectionTitle}>
       {intl.formatMessage(GENERAL_MESSAGES.personalProjects)}
     </Text>

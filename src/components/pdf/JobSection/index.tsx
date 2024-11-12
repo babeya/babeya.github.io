@@ -19,7 +19,7 @@ type Props = {
  * Render the job section of the pdf resume
  */
 const JobSection = ({ jobs, intl, lang }: Props) => (
-  <View style={COMMON_STYLES.section}>
+  <View style={COMMON_STYLES.section} wrap={false}>
     <Text style={COMMON_STYLES.sectionTitle}>
       {intl.formatMessage(GENERAL_MESSAGES.professionalExperiences)}
     </Text>

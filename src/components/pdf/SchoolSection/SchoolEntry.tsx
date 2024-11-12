@@ -14,16 +14,17 @@ type Props = {
 };
 
 const SchoolEntry = ({
-  school: { tags, from, link, school, diploma },
+  school: { tags, from, to, link, school, diploma },
   intl: { formatMessage },
   lang,
 }: Props) => (
-  <View style={COMMON_STYLES.entry} wrap>
+  <View style={COMMON_STYLES.entry}>
     <Text style={COMMON_STYLES.entryTitle}>
       {diploma}, {school}
     </Text>
     <Text style={COMMON_STYLES.entryDetail}>
-      {from && <TranslatedDate date={from} local={lang} />}
+      {from && <TranslatedDate date={from} local={lang} />} -{" "}
+      {(to && <TranslatedDate date={to} local={lang} />) || "TODAY"}{" "}
     </Text>
     <Text style={COMMON_STYLES.entryDetail}>{tags?.join(", ")}</Text>
   </View>

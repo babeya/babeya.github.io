@@ -23,7 +23,7 @@ export const usePdfResume = (timelineData: TimelineNode[]) => {
 
   // @ts-ignore
   const schools: Queries.SchoolsJson[] = useMemo(
-    () => [...timelineData].filter((node) => node.typename === "shcool"),
+    () => [...timelineData].filter((node) => node.typename === "school"),
     [timelineData]
   );
 

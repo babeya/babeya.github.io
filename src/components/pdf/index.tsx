@@ -1,7 +1,7 @@
 import React from "react";
 
 import { IntlShape } from "react-intl";
-import { View, Document, Page } from "@react-pdf/renderer";
+import { View, Document, Page, Text } from "@react-pdf/renderer";
 
 import { COMMON_STYLES } from "./CommonStyles";
 import JobSection from "./JobSection";
@@ -19,7 +19,7 @@ type Props = {
 
 const Resume = ({ jobs, projects, intl, lang, schools }: Props) => (
   <Document>
-    <Page style={COMMON_STYLES.page} wrap size="A4">
+    <Page style={COMMON_STYLES.page} size="A4">
       <InfoSection intl={intl} lang={lang} />
       <View>
         {(jobs.length > 0 && (
@@ -34,6 +34,19 @@ const Resume = ({ jobs, projects, intl, lang, schools }: Props) => (
           <ProjectSection projects={projects} intl={intl} lang={lang} />
         )) ||
           null}
+      </View>
+      <View
+        fixed
+        style={{
+          position: "absolute",
+          bottom: 2,
+          color: "black",
+          width: "100%",
+        }}
+      >
+        <Text style={{ textAlign: "center" }}>
+          CV generated on www.ababey.com
+        </Text>
       </View>
     </Page>
   </Document>
