@@ -7,7 +7,7 @@
   "to": "2024-02-08",
   "typename": "job",
   "colors": ["#00A880", "#03485E"],
-  "tags": ["React", "Typescript", "GraphQL"],
+  "tags": ["React", "Typescript", "GraphQL", "Node.js", "PostgreSQL", "Docker", "PHP"],
   "desc": {
     "fr": "./greenflex.fr.md",
     "en": "./greenflex.en.md"
