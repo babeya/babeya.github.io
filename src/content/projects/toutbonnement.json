@@ -1,7 +1,7 @@
 {
   "name": "toutbonnement.com",
   "link": "https://www.toutbonnement.com",
-  "tags": ["React", "Typescript", "NextJs", "Nodejs", "PostgreSQL", "Docker"],
+  "tags": ["React", "Typescript", "NextJs", "Node.js", "PostgreSQL", "Docker"],
   "from": "2024-08-01",
   "type": "website",
   "desc": {
