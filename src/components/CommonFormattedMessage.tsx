@@ -5,7 +5,7 @@ import { FormattedMessage, defineMessages } from "react-intl";
 const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   title: {
     id: "profile.title",
-    defaultMessage: "Développeur JavaScript / TypeScript",
+    defaultMessage: "Développeur Front-end (React / TypeScript)",
   },
   professionalExperiences: {
     id: "profile.professionalExperiences",
@@ -26,7 +26,7 @@ const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   aboutContent: {
     id: "profile.aboutContent",
     defaultMessage:
-      "Développeur front-end avec plus de 10 ans d’expérience dans le développement d’applications web et mobiles, ainsi qu’une maîtrise des technologies back-end. J’ai travaillé avec des technologies comme React, TypeScript, GraphQL, Node.js et PHP pour créer des expériences utilisateur performantes et intuitives, tout en développant et intégrant des API et backends.",
+      "Front-end Developer with over 10 years of experience in web and mobile application development. Specialized in React, Next.js, and TypeScript, I have designed high-performance, optimized interfaces. Experienced in API integration (GraphQL, REST) and best practices in testing and CI/CD.",
   },
   generatedOn: {
     id: "profile.generatedOn",
@@ -127,7 +127,7 @@ export const TRANSLATED_SKILLS_CONFIG = {
   },
   tests: {
     id: "skills.tests",
-    defaultMessage: "Tests",
+    defaultMessage: "Qualité & Tests",
   },
   performance: {
     id: "skills.performance",
@@ -135,7 +135,7 @@ export const TRANSLATED_SKILLS_CONFIG = {
   },
   apiAndData: {
     id: "skills.apiAndData",
-    defaultMessage: "API & Données",
+    defaultMessage: "APIs & Gestion des données",
   },
   tools: {
     id: "skills.tools",

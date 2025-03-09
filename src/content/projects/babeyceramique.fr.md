@@ -1,1 +1,0 @@
-Site vitrine de l'entreprise JB Création Céramique.

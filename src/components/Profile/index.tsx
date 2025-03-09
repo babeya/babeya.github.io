@@ -27,7 +27,9 @@ export default function HeroSection() {
   const intl = useIntl();
 
   useEffect(() => {
+    let count = 0;
     const glitchInterval = setInterval(() => {
+      count++;
       const glitched = NAME.split("")
         .map((char) =>
           Math.random() > 0.7
@@ -38,7 +40,11 @@ export default function HeroSection() {
         )
         .join("");
       setGlitchText(glitched);
-    }, 500);
+      if (count > 10) {
+        setGlitchText(NAME);
+        clearInterval(glitchInterval);
+      }
+    }, 200);
 
     return () => clearInterval(glitchInterval);
   }, []);

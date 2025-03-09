@@ -8,7 +8,7 @@
   "validated": true,
   "typename": "school",
   "desc": {
-    "fr": "Cours suivis, diplôme non délivré.",
-    "en": "Coursework completed, degree not awarded."
+    "fr": "Formation suivie, sans validation finale.",
+    "en": "Training completed, without final certification."
   }
 }

@@ -29,13 +29,19 @@ const JobCard = ({
     from={<TranslatedDate date={from} />}
     to={<TranslatedDate date={to} />}
     title={title && TRANSLATED_TITLE[title] ? TRANSLATED_TITLE[title] : title}
-    subtitle={company}
+    subtitle={
+      <span>
+        {company}
+        {type && TRANSLATED_JOB_TYPE[type] ? (
+          <> ({TRANSLATED_JOB_TYPE[type]})</>
+        ) : (
+          type
+        )}
+      </span>
+    }
     link={link}
     onTagClick={onTagClick}
   >
-    <div>
-      {type && TRANSLATED_JOB_TYPE[type] ? TRANSLATED_JOB_TYPE[type] : type}
-    </div>
     <div>
       {/* @ts-ignore */}
       <TranslatedMarkdown content={desc} />
