@@ -56,6 +56,14 @@ export default function HeroSection() {
       <div className="absolute top-4 right-4 z-20">
         <LanguageSelect
           onChange={(value) => {
+            try {
+              // @ts-ignore
+              window.umami.track("Language Change", {
+                lang: value,
+              });
+            } catch (err) {
+              console.error(err);
+            }
             value === "en"
               ? window.location.replace("https://www.ababey.com/en")
               : window.location.replace("https://www.ababey.com");

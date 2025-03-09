@@ -40,7 +40,10 @@ const ResumeDownloadLink = ({ timelineData }: Props) => {
       {
         // @ts-ignore
         ({ blob, url, loading, error }) => (
-          <Button className="w-full sm:w-auto bg-purple-700 hover:bg-purple-600 text-white">
+          <Button
+            data-umami-event="Download Resume"
+            className="w-full sm:w-auto bg-purple-700 hover:bg-purple-600 text-white"
+          >
             <Download className="mr-2 h-4 w-4" />
             <FormattedMessage
               id="timeline.export"
