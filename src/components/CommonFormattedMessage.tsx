@@ -26,7 +26,7 @@ const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   aboutContent: {
     id: "profile.aboutContent",
     defaultMessage:
-      "Front-end Developer with over 10 years of experience in web and mobile application development. Specialized in React, Next.js, and TypeScript, I have designed high-performance, optimized interfaces. Experienced in API integration (GraphQL, REST) and best practices in testing and CI/CD.",
+      "Développeur front-end avec plus de 10 ans d’expérience dans le développement d’applications web et mobiles. Spécialisé en React, Next.js et TypeScript, j’ai conçu des interfaces performantes et optimisées. Expérimenté en intégration d’APIs (GraphQL, REST) et bonnes pratiques de testing et CI/CD.",
   },
   generatedOn: {
     id: "profile.generatedOn",
