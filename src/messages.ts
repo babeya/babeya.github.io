@@ -1,13 +1,13 @@
 const messages = {
   "language.en": "English",
   "language.fr": "Français",
-  "profile.title": "Full Stack Developer",
+  "profile.title": "Front-end Developer (React / TypeScript)",
   "profile.professionalExperiences": "Professional Experiences",
   "profile.personalProjects": "Personal Projects",
   "profile.education": "Education",
   "profile.about": "About",
   "profile.aboutContent":
-    "Front-end developer with over 10 years of experience in web and mobile application development, as well as solid back-end skills. I have worked with technologies such as React, TypeScript, GraphQL, Node.js, and PHP to create user-friendly and efficient experiences, while also developing and integrating APIs and backends.",
+    "Front-end Developer with over 10 years of experience in web and mobile application development. Specialized in React, Next.js, and TypeScript, I have designed high-performance, optimized interfaces. Experienced in API integration (GraphQL, REST) and best practices in testing and CI/CD.",
   "profile.generatedOn": "Generated on",
   "timeline.title": "Resume",
   "timeline.export": "Export Resume",
@@ -40,6 +40,12 @@ const messages = {
   "about.sourceCode":
     "The source code for this site is available on GitHub. Feel free to take a look to explore its technical details.",
   "about.viewOnGithub": "View on GitHub",
+  "skills.title": "Skills & Technologies",
+  "skills.frontEnd": "Front-end",
+  "skills.tests": "Quality & Testing",
+  "skills.performance": "Performance & Optimization",
+  "skills.apiAndData": "APIs and Data",
+  "skills.tools": "Tools & DevOps",
 };
 
 export default messages;

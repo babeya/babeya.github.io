@@ -5,7 +5,7 @@ import { FormattedMessage, defineMessages } from "react-intl";
 const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   title: {
     id: "profile.title",
-    defaultMessage: "Développeur Full Stack",
+    defaultMessage: "Développeur Front-end (React / TypeScript)",
   },
   professionalExperiences: {
     id: "profile.professionalExperiences",
@@ -26,7 +26,7 @@ const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   aboutContent: {
     id: "profile.aboutContent",
     defaultMessage:
-      "Développeur front-end avec plus de 10 ans d’expérience dans le développement d’applications web et mobiles, ainsi qu’une maîtrise des technologies back-end. J’ai travaillé avec des technologies comme React, TypeScript, GraphQL, Node.js et PHP pour créer des expériences utilisateur performantes et intuitives, tout en développant et intégrant des API et backends.",
+      "Front-end Developer with over 10 years of experience in web and mobile application development. Specialized in React, Next.js, and TypeScript, I have designed high-performance, optimized interfaces. Experienced in API integration (GraphQL, REST) and best practices in testing and CI/CD.",
   },
   generatedOn: {
     id: "profile.generatedOn",
@@ -114,4 +114,42 @@ export const TRANSLATED_JOB_TYPE: { [key: string]: React.ReactNode } = {
   mission: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.mission} />,
   internship: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.internship} />,
   openEnded: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.openEnded} />,
+};
+
+export const TRANSLATED_SKILLS_CONFIG = {
+  title: {
+    id: "skills.title",
+    defaultMessage: "Compétences & Technologies",
+  },
+  frontEnd: {
+    id: "skills.frontEnd",
+    defaultMessage: "Front-end",
+  },
+  tests: {
+    id: "skills.tests",
+    defaultMessage: "Qualité & Tests",
+  },
+  performance: {
+    id: "skills.performance",
+    defaultMessage: "Performance & Optimisation",
+  },
+  apiAndData: {
+    id: "skills.apiAndData",
+    defaultMessage: "APIs & Gestion des données",
+  },
+  tools: {
+    id: "skills.tools",
+    defaultMessage: "Outils & DevOps",
+  },
+};
+
+export const SKILLS_MESSAGES = defineMessages(TRANSLATED_SKILLS_CONFIG);
+
+export const TRANSLATED_SKILLS: { [key: string]: React.ReactNode } = {
+  title: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.title} />,
+  frontEnd: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.frontEnd} />,
+  tests: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.tests} />,
+  performance: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.performance} />,
+  apiAndData: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.apiAndData} />,
+  tools: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.tools} />,
 };

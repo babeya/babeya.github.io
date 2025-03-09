@@ -63,13 +63,13 @@ const InfoSection = ({ intl: { formatMessage } }: Props) => (
       <View style={styles.infoBloc}>
         <GithubPdfIcon />
         <Link src={GITHUB}>
-          <Text style={styles.infoValue}>github.com/babeya</Text>
+          <Text style={styles.infoValue}>babeya</Text>
         </Link>
       </View>
       <View style={styles.infoBloc}>
         <LinkedinPdfIcon />
         <Link href={LINKEDIN}>
-          <Text style={styles.infoValue}>linkedin.com/in/a-babey</Text>
+          <Text style={styles.infoValue}>a-babey</Text>
         </Link>
       </View>
     </View>

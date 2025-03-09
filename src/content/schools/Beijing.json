@@ -8,7 +8,7 @@
   "tags": ["C", "C++"],
   "typename": "school",
   "desc": {
-    "fr": "Non validé",
-    "en": "Unvalidated training"
+    "fr": "Formation suivie mais non diplômante",
+    "en": "Completed coursework, non-degree program"
   }
 }

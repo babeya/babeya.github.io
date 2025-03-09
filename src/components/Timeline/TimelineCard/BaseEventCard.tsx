@@ -69,7 +69,7 @@ const BaseEventCard = ({
               ) : null}
             </div>
           </CardHeader>
-          <CardContent className="pt-2">
+          <CardContent>
             <p className="text-gray-500 font-mono text-xs mb-2">
               {from}
               {to ? <> - {to}</> : null}

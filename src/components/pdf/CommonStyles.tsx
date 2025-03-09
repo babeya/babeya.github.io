@@ -17,34 +17,34 @@ Font.register({
 export const COMMON_STYLES = StyleSheet.create({
   page: { fontSize: 9, fontFamily: "Lato" },
   section: {
-    margin: 10,
-    padding: 15,
-    flexGrow: 1,
+    marginHorizontal: 10,
+    marginVertical: 7,
+    padding: 7,
+    //flexGrow: 1,
     borderLeft: "3pt solid #3498db",
     backgroundColor: "#f8f9fa",
   },
   sectionTitle: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 700,
-    marginBottom: 10,
     color: "#2c3e50",
   },
   entry: {
-    marginBottom: 10,
+    marginTop: 10,
   },
   entryTitle: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: 700,
   },
   entryLink: {
     color: "black",
   },
   entryDetail: {
-    fontSize: 12,
+    fontSize: 10,
     color: "#34495e",
   },
   entryTags: {
-    fontSize: 10,
+    fontSize: 8,
     color: "#34495e7a",
   },
 });

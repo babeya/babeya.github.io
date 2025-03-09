@@ -1,1 +1,0 @@
-Showcase site for JB Création Céramique.
