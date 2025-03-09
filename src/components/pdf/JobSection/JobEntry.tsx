@@ -22,7 +22,7 @@ const JobEntry = ({
   intl: { formatMessage },
   lang,
 }: Props) => (
-  <View style={COMMON_STYLES.entry} wrap>
+  <View style={COMMON_STYLES.entry} wrap={false}>
     <Text style={COMMON_STYLES.entryTitle}>
       {/** @ts-ignore */}
       {title && formatMessage(TITLE_MESSAGES[title])},{" "}

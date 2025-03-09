@@ -1,7 +1,7 @@
 const messages = {
   "language.en": "English",
   "language.fr": "Français",
-  "profile.title": "Full Stack Developer",
+  "profile.title": "Javascript / Typescript Developer",
   "profile.professionalExperiences": "Professional Experiences",
   "profile.personalProjects": "Personal Projects",
   "profile.education": "Education",

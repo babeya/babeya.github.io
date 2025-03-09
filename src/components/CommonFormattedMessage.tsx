@@ -5,7 +5,7 @@ import { FormattedMessage, defineMessages } from "react-intl";
 const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   title: {
     id: "profile.title",
-    defaultMessage: "Développeur Full Stack",
+    defaultMessage: "Développeur JavaScript / TypeScript",
   },
   professionalExperiences: {
     id: "profile.professionalExperiences",
@@ -114,4 +114,42 @@ export const TRANSLATED_JOB_TYPE: { [key: string]: React.ReactNode } = {
   mission: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.mission} />,
   internship: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.internship} />,
   openEnded: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.openEnded} />,
+};
+
+export const TRANSLATED_SKILLS_CONFIG = {
+  title: {
+    id: "skills.title",
+    defaultMessage: "Compétences & Technologies",
+  },
+  frontEnd: {
+    id: "skills.frontEnd",
+    defaultMessage: "Front-end",
+  },
+  tests: {
+    id: "skills.tests",
+    defaultMessage: "Tests",
+  },
+  performance: {
+    id: "skills.performance",
+    defaultMessage: "Performance & Optimisation",
+  },
+  apiAndData: {
+    id: "skills.apiAndData",
+    defaultMessage: "API & Données",
+  },
+  tools: {
+    id: "skills.tools",
+    defaultMessage: "Outils & DevOps",
+  },
+};
+
+export const SKILLS_MESSAGES = defineMessages(TRANSLATED_SKILLS_CONFIG);
+
+export const TRANSLATED_SKILLS: { [key: string]: React.ReactNode } = {
+  title: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.title} />,
+  frontEnd: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.frontEnd} />,
+  tests: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.tests} />,
+  performance: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.performance} />,
+  apiAndData: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.apiAndData} />,
+  tools: <FormattedMessage {...TRANSLATED_SKILLS_CONFIG.tools} />,
 };
