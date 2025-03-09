@@ -23,6 +23,11 @@ const Page = ({ children, lang }: Props) => {
       <Helmet>
         <html lang={lang} />
         <title>ababey.com</title>
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="29cd043b-a4ce-4f53-85b2-e34984d2392d"
+        ></script>
       </Helmet>
       <LangContext.Provider value={{ lang }}>
         <IntlProvider

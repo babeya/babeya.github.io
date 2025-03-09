@@ -27,19 +27,19 @@ const messages = {
   "job-type.mission": "Mission",
   "job-type.internship": "Internship",
   "job-type.openEnded": "Open-ended Contract",
-  "about.title": "About This Site",
-  "about.description":
+  "aboutSite.title": "About This Site",
+  "aboutSite.description":
     "This site was designed to showcase my background, skills, and projects in a simple and effective way. It's built with modern technologies that ensure performance and maintainability:",
-  "about.react": "for a dynamic user interface.",
-  "about.typescript": "providing reliable, statically typed code.",
-  "about.gatsby": "a fast, efficient static site generator.",
-  "about.tailwind": "for a modern and adaptive design.",
-  "about.shadcn": "elegant components for a cohesive interface.",
-  "about.reactpdf":
+  "aboutSite.react": "for a dynamic user interface.",
+  "aboutSite.typescript": "providing reliable, statically typed code.",
+  "aboutSite.gatsby": "a fast, efficient static site generator.",
+  "aboutSite.tailwind": "for a modern and adaptive design.",
+  "aboutSite.shadcn": "elegant components for a cohesive interface.",
+  "aboutSite.reactpdf":
     "for displaying and generating PDF documents directly on the site.",
-  "about.sourceCode":
+  "aboutSite.sourceCode":
     "The source code for this site is available on GitHub. Feel free to take a look to explore its technical details.",
-  "about.viewOnGithub": "View on GitHub",
+  "aboutSite.viewOnGithub": "View on GitHub",
   "skills.title": "Skills & Technologies",
   "skills.frontEnd": "Front-end",
   "skills.tests": "Quality & Testing",

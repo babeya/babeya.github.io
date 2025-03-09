@@ -12,7 +12,7 @@ const TECHS = [
     name: "React",
     description: (
       <FormattedMessage
-        id="about.react"
+        id="aboutSite.react"
         defaultMessage="pour une interface utilisateur dynamique."
       />
     ),
@@ -22,7 +22,7 @@ const TECHS = [
     name: "TypeScript",
     description: (
       <FormattedMessage
-        id="about.typescript"
+        id="aboutSite.typescript"
         defaultMessage="qui permet un code fiable avec le typage statique."
       />
     ),
@@ -32,7 +32,7 @@ const TECHS = [
     name: "Gatsby",
     description: (
       <FormattedMessage
-        id="about.gatsby"
+        id="aboutSite.gatsby"
         defaultMessage="générateur de site statique rapide et performant."
       />
     ),
@@ -42,7 +42,7 @@ const TECHS = [
     name: "Tailwind CSS",
     description: (
       <FormattedMessage
-        id="about.tailwind"
+        id="aboutSite.tailwind"
         defaultMessage="pour un design moderne et adaptatif."
       />
     ),
@@ -52,7 +52,7 @@ const TECHS = [
     name: "ShadCN UI",
     description: (
       <FormattedMessage
-        id="about.shadcn"
+        id="aboutSite.shadcn"
         defaultMessage="composants élégants pour une interface harmonieuse."
       />
     ),
@@ -62,7 +62,7 @@ const TECHS = [
     name: "React-pdf",
     description: (
       <FormattedMessage
-        id="about.reactpdf"
+        id="aboutSite.reactpdf"
         defaultMessage="pour afficher et générer des documents PDF directement sur le site."
       />
     ),
@@ -108,7 +108,7 @@ export default function AboutSiteSection() {
 
             <p className="mb-4">
               <FormattedMessage
-                id="aboutSite.viewOnGithub"
+                id="aboutSite.sourceCode"
                 defaultMessage="Le code source de ce site est disponible sur GitHub, n’hésitez pas à y jeter un coup d’œil pour découvrir les aspects techniques de sa réalisation."
               />
             </p>
