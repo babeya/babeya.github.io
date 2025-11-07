@@ -47,7 +47,7 @@ const BaseEventCard = ({
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <Card className="rounded-none bg-slate-900 border-slate-700 hover:border-blue-500 transition-all duration-300 ease-in-out hover:scale-[1.02] mb-6 ml-14 relative">
+        <Card className="bg-slate-800/50 border-slate-700 hover:border-blue-500 transition-all duration-300 ease-in-out hover:scale-[1.02] mb-6 ml-14 relative">
           <CardHeader className="flex flex-row items-center gap-4 pb-2">
             <div>
               <CardTitle className="text-slate-100 font-mono text-lg mr-8">

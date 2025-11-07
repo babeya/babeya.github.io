@@ -60,4 +60,18 @@
 .markdown ul {
   list-style-type: disc;
   margin-left: 2em;
+  margin-bottom: 1em;
+}
+
+.markdown p {
+  margin-bottom: 1em;
+}
+
+.markdown li {
+  margin-bottom: 0.5em;
+}
+
+.markdown a {
+  color: #3b82f6;
+  text-decoration: underline;
 }

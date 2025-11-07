@@ -1,5 +1,5 @@
-* Participation au développement d’une application pour borne interactive (type borne McDonald’s) pour la réservation d’activités sur site. L’application fonctionnait avec des web components et un framework maison s’occupant de l’authentification, de la navigation et du paiement via les API propres à la borne.
-* Développement d’un "driver" pour l’impression des tickets de la borne interactive (une réservation entraînait l’impression d’un ticket avec QR code et toutes les informations de la réservation).
-* Développement de la nouvelle application mobile Pierre et Vacances en React Native, en particulier les systèmes de planning, réservation d’activités, réservation de séjours, et fiches sites.
+* Participation au développement d'une application pour borne interactive (type borne McDonald's) pour la réservation d'activités sur site. L'application fonctionnait avec des web components et un framework maison s'occupant de l'authentification, de la navigation et du paiement via les API propres à la borne.
+* Développement d'un "driver" pour l'impression des tickets de la borne interactive (une réservation entraînait l'impression d'un ticket avec QR code et toutes les informations de la réservation).
+* Développement de la nouvelle application mobile Pierre et Vacances en React Native, en particulier les systèmes de planning, réservation d'activités, réservation de séjours, et fiches sites.
 * Aide à la maintenance des applications existantes (MyPVCP, Center Parcs).
-* POC sur l’intégration de ChatBot via des API de NLP (Natural Language Processing) disponibles en ligne.
+* POC sur l'intégration de ChatBot via des API de NLP (Natural Language Processing) disponibles en ligne.

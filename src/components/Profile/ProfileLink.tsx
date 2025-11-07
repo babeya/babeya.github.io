@@ -9,7 +9,7 @@ type Props = {
 
 const ProfileLink = ({ icon, text, href, target }: Props) => (
   <a
-    className="bg-slate-800 p-3 rounded-lg flex items-center space-x-2 transition-all duration-300 ease-in-out hover:bg-slate-700 group relative overflow-hidden"
+    className="bg-slate-800 p-3 rounded-2xl flex items-center space-x-2 transition-all duration-300 ease-in-out hover:bg-slate-700 group relative overflow-hidden"
     href={href}
     rel="noopener noreferrer"
     target={target}

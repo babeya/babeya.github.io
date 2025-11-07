@@ -1,3 +1,3 @@
-* Développement et maintenance d’applications TV pour Samsung (Tizen), LG (WebOS), AppleTV (tvOS), et PlayStation 4. 
-* Création d’une bibliothèque asynchrone en surcouche de l’API PlayStation, optimisations de navigation pour les TV et PlayStation, et implémentation de pages personnalisées sur AppleTV.
-* Collaboration avec les services de développement de Samsung et Sony à l’international, et démonstration des applications TV à des partenaires externes (Disney, OCS).
+* Développement et maintenance d'applications TV pour Samsung (Tizen), LG (WebOS), AppleTV (tvOS), et PlayStation 4. 
+* Création d'une bibliothèque asynchrone en surcouche de l'API PlayStation, optimisations de navigation pour les TV et PlayStation, et implémentation de pages personnalisées sur AppleTV.
+* Collaboration avec les services de développement de Samsung et Sony à l'international, et démonstration des applications TV à des partenaires externes (Disney, OCS).

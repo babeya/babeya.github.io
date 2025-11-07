@@ -1,18 +1,19 @@
+**DataJot** is an iOS, iPadOS, and macOS app built to explore **SwiftData**, **SwiftUI**, and **App Intents**.  
+The goal is to provide a lightweight, fully customizable alternative to Apple’s Health app.
 
-DataJot is an iOS/iPadOS/macOS app I’m developing to experiment with SwiftData, SwiftUI, and App Intents.
-The goal: to create a lightweight, fully customizable equivalent of Apple’s Health app.
+**Key features:**  
 
-Main features :
+- Create custom numeric data series  
+- Local storage with SwiftData, App Group, and iCloud sync  
+- Widgets to quickly view and add values  
+- Integration with the Shortcuts app via App Intents for automated input and retrieval  
+- Privacy-focused: no account, no data collection  
 
-* Create custom numeric series
-* Local storage with SwiftData, App Group, and iCloud sync
-* Widgets to quickly view and add values
-* Integration with the Shortcuts app via App Intents for automated input and retrieval
-* Privacy-focused: no account, no tracking
+**This project demonstrates:**  
 
-This project allows me to explore in depth:
+- Data modeling and persistence with SwiftData  
+- Seamless integration of widgets and App Intents  
+- Multi-device synchronization through iCloud  
+- Best practices for multi-platform Apple development  
 
-* Data modeling and persistence with SwiftData
-* Integrating widgets and App Intents into a unified flow
-* Seamless synchronization through iCloud
-* Best practices for multi-platform Apple development
+[Available on the App Store](https://apps.apple.com/fr/app/datajot/id6748443459)
