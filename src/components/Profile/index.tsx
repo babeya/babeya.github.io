@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
-import { FormattedMessage, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 
 import {
   LinkedInLogoIcon,
@@ -50,7 +50,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-900 to-blue-900 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMjEyMTIxIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiMzMTMxMzEiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')] opacity-10"></div>
 
       <div className="absolute top-4 right-4 z-20">
@@ -74,14 +74,14 @@ export default function HeroSection() {
 
       <div className="z-10 text-center space-y-8 px-4">
         <motion.h1
-          className="text-6xl md:text-8xl font-bold text-neon-green font-mono"
+          className="text-6xl md:text-8xl font-bold text-slate-100 font-mono"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           {glitchText}
         </motion.h1>
-        <div className="text-2xl md:text-3xl text-purple-400 font-mono">
+        <div className="text-2xl md:text-3xl text-blue-400 font-mono">
           <TypeAnimation
             sequence={[
               `<${intl.formatMessage(GENERAL_MESSAGES.title)} />`,
@@ -93,7 +93,7 @@ export default function HeroSection() {
           />
         </div>
         <motion.p
-          className="text-neon-green text-lg md:text-xl max-w-2xl mx-auto"
+          className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}

@@ -22,7 +22,7 @@ const JobCard = ({
   onTagClick,
 }: Props) => (
   <BaseEventCard
-    icon={<Briefcase className="h-6 w-6 text-green-400" />}
+    icon={<Briefcase className="h-6 w-6 text-blue-500" />}
     colors={colors}
     selectedTags={selectedTags}
     tags={tags || []} // TODO

@@ -1,1 +1,2 @@
-Integration of PSD mockups into HTML/CSS for about a hundred websites, with development time ranging from one to two days per site. Also contributed to e-commerce template development (cart, payment flow) for the company’s CMS.
+* Integration of PSD mockups into HTML/CSS for about a hundred websites, with development time ranging from one to two days per site. 
+* Also contributed to e-commerce template development (cart, payment flow) for the company’s CMS.

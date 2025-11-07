@@ -35,7 +35,7 @@ const Page = ({ children, lang }: Props) => {
           defaultLocale="fr"
           messages={lang === "fr" ? undefined : messages}
         >
-          <div className="min-h-screen bg-gray-900 text-green-400 font-mono">
+          <div className="min-h-screen bg-slate-900 text-slate-100 font-mono">
             {children}
           </div>
         </IntlProvider>

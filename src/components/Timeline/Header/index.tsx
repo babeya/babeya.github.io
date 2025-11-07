@@ -50,7 +50,7 @@ export default function TimelineHeader({
           <Button
             onClick={() => setIsOpen((prev) => !prev)}
             variant="outline"
-            className="w-full sm:w-auto bg-purple-700 hover:bg-purple-600 text-white border-purple-500"
+            className="w-full sm:w-auto bg-slate-700 hover:bg-slate-600 text-slate-100 border-slate-600"
           >
             {isOpen ? (
               <ChevronUp className="mr-2 h-4 w-4" />
@@ -74,15 +74,15 @@ export default function TimelineHeader({
           <ResumeDownloadLink timelineData={timelineData} />
         ) : null}
       </div>
-      <CollapsibleContent className="space-y-4 pt-4 border-t border-gray-700">
+      <CollapsibleContent className="space-y-4 pt-4 border-t border-slate-700">
         <motion.div
           layout
-          className="mb-8 p-6 bg-gray-900 rounded-lg border border-purple-500 shadow-lg animate-glow"
+          className="mb-8 p-6 bg-slate-900 rounded-lg border border-slate-700 shadow-lg"
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <div className="flex flex-col gap-6">
             <div>
-              <h3 className="text-neon-green text-lg font-mono mb-3">
+              <h3 className="text-slate-100 text-lg font-mono mb-3">
                 <FormattedMessage
                   id="timeline.filterByTags"
                   defaultMessage="Filtrer par Tags"
@@ -115,11 +115,11 @@ export default function TimelineHeader({
                             });
                           }
                         }}
-                        className="border-purple-500 text-purple-500 focus:ring-purple-500"
+                        className="border-blue-500 text-blue-500 focus:ring-blue-500"
                       />
                       <label
                         htmlFor={name}
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-neon-green cursor-pointer"
+                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-slate-300 cursor-pointer"
                       >
                         {name}({count})
                       </label>
@@ -129,7 +129,7 @@ export default function TimelineHeader({
               </div>
             </div>
             <div>
-              <h3 className="text-neon-green text-lg font-mono mb-3">
+              <h3 className="text-slate-100 text-lg font-mono mb-3">
                 <FormattedMessage
                   id="timeline.filterByType"
                   defaultMessage="Filtrer par Type"
@@ -144,13 +144,13 @@ export default function TimelineHeader({
                 }}
                 defaultValue={typeFilter.length === 1 ? typeFilter[0] : "all"}
               >
-                <SelectTrigger className="w-full  bg-gray-800 text-neon-green border-purple-500 focus:border-purple-600 focus:ring focus:ring-purple-300 focus:ring-opacity-50 rounded-md transition-all duration-300 font-mono">
+                <SelectTrigger className="w-full bg-slate-800 text-slate-100 border-slate-700 focus:border-blue-600 focus:ring focus:ring-blue-300 focus:ring-opacity-50 rounded-md transition-all duration-300 font-mono">
                   <SelectValue placeholder="Select type" />
                 </SelectTrigger>
-                <SelectContent className="bg-gray-800 border border-purple-500">
+                <SelectContent className="bg-slate-800 border border-slate-700">
                   <SelectItem
                     value="all"
-                    className="text-neon-green hover:bg-purple-700 transition-colors duration-200"
+                    className="text-slate-100 hover:bg-slate-700 transition-colors duration-200"
                   >
                     <span className="flex items-center">
                       <span className="mr-2">
@@ -163,7 +163,7 @@ export default function TimelineHeader({
                   </SelectItem>
                   <SelectItem
                     value="job"
-                    className="text-neon-green hover:bg-purple-700 transition-colors duration-200"
+                    className="text-slate-100 hover:bg-slate-700 transition-colors duration-200"
                   >
                     <span className="flex items-center">
                       <Briefcase className="mr-2" size={16} />
@@ -175,7 +175,7 @@ export default function TimelineHeader({
                   </SelectItem>
                   <SelectItem
                     value="project"
-                    className="text-neon-green hover:bg-purple-700 transition-colors duration-200"
+                    className="text-slate-100 hover:bg-slate-700 transition-colors duration-200"
                   >
                     <span className="flex items-center">
                       <Code className="mr-2" size={16} />
@@ -187,7 +187,7 @@ export default function TimelineHeader({
                   </SelectItem>
                   <SelectItem
                     value="education"
-                    className="text-neon-green hover:bg-purple-700 transition-colors duration-200"
+                    className="text-slate-100 hover:bg-slate-700 transition-colors duration-200"
                   >
                     <span className="flex items-center">
                       <GraduationCap className="mr-2" size={16} />

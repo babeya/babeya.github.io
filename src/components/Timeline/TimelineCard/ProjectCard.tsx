@@ -18,7 +18,7 @@ const ProjectCard = ({
   onTagClick,
 }: Props) => (
   <BaseEventCard
-    icon={<Code className="h-6 w-6 text-green-400" />}
+    icon={<Code className="h-6 w-6 text-blue-500" />}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
     from={<TranslatedDate date={from} />}
