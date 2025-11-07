@@ -51,7 +51,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[hsl(var(--page-bg))] via-[hsl(140,30%,95%)] to-[hsl(var(--page-bg))] dark:bg-gradient-to-br dark:from-background dark:via-muted dark:to-background relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center pb-12 md:pb-0 bg-gradient-to-br from-[hsl(var(--page-bg))] via-[hsl(140,30%,95%)] to-[hsl(var(--page-bg))] dark:bg-gradient-to-br dark:from-background dark:via-muted dark:to-background relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMjEyMTIxIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiMzMTMxMzEiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')] opacity-5 dark:opacity-10"></div>
 
       <div className="absolute inset-0 opacity-20 dark:opacity-30">
@@ -79,7 +79,7 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="z-10 text-center space-y-8 px-4">
+      <div className="z-10 text-center space-y-8 px-4 mt-20 sm:mt-0">
         <motion.h1
           className="text-6xl md:text-8xl font-bold text-foreground font-mono"
           initial={{ opacity: 0, y: -50 }}

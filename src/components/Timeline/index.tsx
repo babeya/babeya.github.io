@@ -24,8 +24,8 @@ const Timeline = () => {
         />
       </div>
       <div className="relative max-w-4xl mx-auto">
-        {/* Glowing timeline line with smooth edges */}
-        <div className="absolute left-5 top-0 bottom-0 w-0.5">
+        {/* Glowing timeline line with smooth edges - hidden on mobile */}
+        <div className="hidden md:block absolute left-5 top-0 bottom-0 w-0.5">
           <div className="absolute inset-0 timeline-line"></div>
         </div>
 

@@ -24,6 +24,8 @@ const Page = ({ children, lang }: Props) => {
       <Helmet>
         <html lang={lang} />
         <title>ababey.com</title>
+        <meta name="theme-color" content="hsl(140, 20%, 97%)" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="hsl(222.2, 47.4%, 11.2%)" media="(prefers-color-scheme: dark)" />
         <script
           defer
           src="https://cloud.umami.is/script.js"

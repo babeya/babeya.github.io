@@ -23,8 +23,8 @@ const JobSection = ({ jobs, intl, lang }: Props) => (
     <Text style={COMMON_STYLES.sectionTitle}>
       {intl.formatMessage(GENERAL_MESSAGES.professionalExperiences)}
     </Text>
-    {jobs.map((job) => (
-      <JobEntry job={job} intl={intl} lang={lang} />
+    {jobs.map((job, idx) => (
+      <JobEntry job={job} intl={intl} lang={lang} key={idx} />
     ))}
   </View>
 );
