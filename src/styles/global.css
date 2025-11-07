@@ -2,6 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 76% 36%;
+    --radius: 0.5rem;
+    
+    /* Custom theme colors - Light mode with green tint */
+    --page-bg: 140 20% 97%;
+    --card-bg: 0 0% 100%;
+    --card-hover: 140 15% 95%;
+    --text-primary: 222.2 47.4% 11.2%;
+    --text-secondary: 215.4 16.3% 46.9%;
+    --text-muted: 215.4 16.3% 56.9%;
+    --icon-color: 142 76% 36%;
+    --timeline-line: 142 76% 36%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 76% 36%;
+    
+    /* Custom theme colors */
+    --page-bg: 222.2 47.4% 11.2%;
+    --card-bg: 217.2 32.6% 17.5%;
+    --card-hover: 217.2 32.6% 20%;
+    --text-primary: 210 40% 98%;
+    --text-secondary: 215 20.2% 65.1%;
+    --text-muted: 217.9 10.6% 64.9%;
+    --icon-color: 142 76% 36%;
+    --timeline-line: 142 76% 36%;
+  }
+}
+
 @keyframes glitch {
   0% { text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff, 0.025em 0.05em 0 #fffc00; }
   14% { text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff, 0.025em 0.05em 0 #fffc00; }
@@ -72,6 +139,28 @@
 }
 
 .markdown a {
-  color: #3b82f6;
+  color: hsl(var(--primary));
   text-decoration: underline;
+}
+
+@layer utilities {
+  .bg-page {
+    background-color: hsl(var(--page-bg));
+  }
+  
+  .bg-card-custom {
+    background-color: hsl(var(--card-bg));
+  }
+  
+  .text-primary-custom {
+    color: hsl(var(--text-primary));
+  }
+  
+  .text-secondary-custom {
+    color: hsl(var(--text-secondary));
+  }
+  
+  .text-muted-custom {
+    color: hsl(var(--text-muted));
+  }
 }

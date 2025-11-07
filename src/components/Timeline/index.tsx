@@ -11,7 +11,7 @@ const Timeline = () => {
   const { timelineData, setFilters, filters, tags } = useTimelineData(); // availableTags, jobs, projects } =
 
   return (
-    <div className="bg-slate-900 min-h-screen text-slate-100 font-mono p-8">
+    <div className="bg-background min-h-screen text-foreground font-mono p-8">
       <h2 className="text-3xl font-bold mb-8 text-center">
         <FormattedMessage id="timeline.title" defaultMessage="Curriculum" />
       </h2>

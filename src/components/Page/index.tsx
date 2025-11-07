@@ -7,6 +7,7 @@ import { Settings } from "luxon";
 import messages from "../../messages";
 
 import { LangContext } from "../Translation";
+import { ThemeProvider } from "../Theme";
 
 type Props = {
   children: React.ReactNode;
@@ -29,17 +30,19 @@ const Page = ({ children, lang }: Props) => {
           data-website-id="29cd043b-a4ce-4f53-85b2-e34984d2392d"
         ></script>
       </Helmet>
-      <LangContext.Provider value={{ lang }}>
-        <IntlProvider
-          locale={lang}
-          defaultLocale="fr"
-          messages={lang === "fr" ? undefined : messages}
-        >
-          <div className="min-h-screen bg-slate-900 text-slate-100 font-mono">
-            {children}
-          </div>
-        </IntlProvider>
-      </LangContext.Provider>
+      <ThemeProvider>
+        <LangContext.Provider value={{ lang }}>
+          <IntlProvider
+            locale={lang}
+            defaultLocale="fr"
+            messages={lang === "fr" ? undefined : messages}
+          >
+            <div className="min-h-screen bg-background text-foreground font-mono">
+              {children}
+            </div>
+          </IntlProvider>
+        </LangContext.Provider>
+      </ThemeProvider>
     </>
   );
 };

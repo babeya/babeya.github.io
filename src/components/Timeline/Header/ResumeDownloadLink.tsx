@@ -42,7 +42,7 @@ const ResumeDownloadLink = ({ timelineData }: Props) => {
         ({ blob, url, loading, error }) => (
           <Button
             data-umami-event="Download Resume"
-            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white"
+            className="w-full sm:w-auto"
           >
             <Download className="mr-2 h-4 w-4" />
             <FormattedMessage

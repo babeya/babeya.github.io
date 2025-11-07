@@ -19,7 +19,7 @@ const SchoolCard = ({
   onTagClick,
 }: Props) => (
   <BaseEventCard
-    icon={<GraduationCap className="h-6 w-6 text-blue-500" />}
+    icon={<GraduationCap className="h-6 w-6 text-primary" />}
     selectedTags={selectedTags}
     tags={tags || []} // TODO
     from={<TranslatedDate date={from} />}

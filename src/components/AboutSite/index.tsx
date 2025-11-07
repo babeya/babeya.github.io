@@ -72,12 +72,12 @@ const TECHS = [
 
 export default function AboutSiteSection() {
   return (
-    <section className="w-full py-12 bg-slate-800">
+    <section className="w-full py-12 bg-muted">
       <div className="container mx-auto px-4">
-        <Card className="bg-slate-900 border-slate-700 border-2 shadow-lg">
+        <Card className="border-2 shadow-lg">
           <CardHeader>
             <CardTitle
-              className="text-3xl font-bold text-slate-100 mb-4"
+              className="text-3xl font-bold mb-4"
               data-text="About This Site"
             >
               <FormattedMessage
@@ -86,7 +86,7 @@ export default function AboutSiteSection() {
               />
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-slate-300 font-mono">
+          <CardContent className="text-muted-foreground font-mono">
             <p className="mb-4">
               <FormattedMessage
                 id="aboutSite.description"
@@ -97,7 +97,7 @@ export default function AboutSiteSection() {
               {TECHS.map(({ name, description, url }, index) => (
                 <li key={index} className="flex items-center">
                   <a href={url} target="_blank" rel="noopener noreferrer">
-                    <Badge className="bg-blue-600 hover:bg-blue-500 text-white font-mono mr-2">
+                    <Badge className="font-mono mr-2">
                       {name}
                     </Badge>
                   </a>
@@ -116,7 +116,7 @@ export default function AboutSiteSection() {
               href="https://github.com/babeya/babeya.github.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition-colors duration-200"
+              className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors duration-200"
             >
               <GitHubLogoIcon className="mr-2 h-5 w-5" />
               <FormattedMessage
