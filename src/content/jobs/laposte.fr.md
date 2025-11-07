@@ -1,1 +1,1 @@
-Contribution au développement de l’application mobile Monimalz, au site e-commerce monimalz.com, et à un jeu de calcul pour la tirelire connectée Monimalz.
+Contribution au développement de l'application mobile Monimalz, au site e-commerce monimalz.com, et à un jeu de calcul pour la tirelire connectée Monimalz.

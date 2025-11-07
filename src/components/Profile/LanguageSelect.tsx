@@ -17,10 +17,10 @@ type LanguageSelectProps = {
 
 const LanguageSelect = ({ onChange, value }: LanguageSelectProps) => (
   <Select onValueChange={onChange} defaultValue={value}>
-    <SelectTrigger className="w-[110px] bg-gray-800 text-neon-green">
+    <SelectTrigger className="w-[110px] bg-slate-800 text-slate-100 border-slate-700">
       <SelectValue placeholder="Language" />
     </SelectTrigger>
-    <SelectContent className="w-[110px] bg-gray-800 text-neon-green">
+    <SelectContent className="w-[110px] bg-slate-800 text-slate-100 border-slate-700">
       <SelectItem value="en">
         <FormattedMessage id="language.en" defaultMessage="English" />
       </SelectItem>

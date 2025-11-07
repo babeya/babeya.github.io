@@ -1,0 +1,12 @@
+{
+  "name": "DataJot",
+  "link": "https://www.datajot.app",
+  "tags": ["NextJs", "Swift", "SwiftUi", "SwiftChart"],
+  "from": "2025-09-01",
+  "type": "website",
+  "desc": {
+    "fr": "./datajot.fr.md",
+    "en": "./datajot.en.md"
+  },
+  "typename": "project"
+}

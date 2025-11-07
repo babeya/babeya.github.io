@@ -41,7 +41,10 @@ const TranslatedMarkdown = ({ content }: Props) => {
     (content && getTranslatedMarkdownRemark(content, lang)?.html) || null;
 
   return translatedHtml ? (
-    <div dangerouslySetInnerHTML={{ __html: translatedHtml }} />
+    <div
+      dangerouslySetInnerHTML={{ __html: translatedHtml }}
+      className="text-justify markdown"
+    />
   ) : (
     <div>{LOREM}</div>
   );

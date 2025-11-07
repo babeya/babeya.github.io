@@ -37,7 +37,7 @@ const BaseEventCard = ({
 
   return (
     <div className="relative mb-4 flex items-center">
-      <div className="absolute left-5 transform -translate-x-1/2 w-10 h-10 bg-gray-800 rounded-full border-4 border-green-500 flex items-center justify-center z-10">
+      <div className="absolute left-5 transform -translate-x-1/2 w-10 h-10 bg-card rounded-full border-4 border-primary flex items-center justify-center z-10">
         {icon}
       </div>
       <motion.div
@@ -47,14 +47,14 @@ const BaseEventCard = ({
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <Card className="rounded-none bg-gray-900 border-green-400 hover:border-purple-400 transition-all duration-300 ease-in-out hover:scale-105 mb-6 ml-14 relative">
+        <Card className="bg-card/50 border-border hover:border-primary transition-all duration-300 ease-in-out hover:scale-[1.02] mb-6 ml-14 relative">
           <CardHeader className="flex flex-row items-center gap-4 pb-2">
             <div>
-              <CardTitle className="text-green-400 font-mono text-lg mr-8">
+              <CardTitle className="text-foreground font-mono text-lg mr-8">
                 {title}
               </CardTitle>
               {subtitle ? (
-                <p className="text-gray-400 font-mono text-sm">{subtitle}</p>
+                <p className="text-muted-foreground font-mono text-sm">{subtitle}</p>
               ) : null}
               {link ? (
                 <a
@@ -64,17 +64,17 @@ const BaseEventCard = ({
                   className="absolute top-4 right-4"
                   // TODO :title={title || ""}
                 >
-                  <ExternalLinkIcon className="h-8 w-8 text-green-400 hover:text-purple-400" />
+                  <ExternalLinkIcon className="h-8 w-8 text-primary hover:text-primary/80" />
                 </a>
               ) : null}
             </div>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-500 font-mono text-xs mb-2">
+            <p className="text-muted-foreground font-mono text-xs mb-2">
               {from}
               {to ? <> - {to}</> : null}
             </p>
-            <div className="text-green-300 font-mono text-sm mb-4">
+            <div className="text-foreground font-mono text-sm mb-4">
               {children}
             </div>
             <div className="flex flex-wrap gap-2">
@@ -82,7 +82,7 @@ const BaseEventCard = ({
                 <Badge
                   key={index}
                   aria-selected={selectedTags.includes(tag || "")}
-                  className="bg-purple-700 hover:bg-purple-600 text-white font-mono text-xs aria-selected:bg-green-400 aria-selected:hover:bg-green-600"
+                  className="bg-secondary hover:bg-secondary/80 text-secondary-foreground font-mono text-xs aria-selected:bg-primary aria-selected:hover:bg-primary/80 aria-selected:text-primary-foreground"
                   onClick={() => {
                     onTagClick && tag ? onTagClick(tag) : null;
                   }}
