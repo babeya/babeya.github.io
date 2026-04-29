@@ -1,1 +1,2 @@
-Développement et maintenance de composants React et de modules variés (gestion de parc, équipements IoT, comptes utilisateurs, visualisation de données, GTB), avec création d'outils d'import/export de données, ainsi que documentation et tests des composants.
+Développement de modules front-end en React / TypeScript pour des fonctionnalités métier : gestion de parc, équipements IoT, comptes utilisateurs, visualisation de données et GTB.
+Responsabilité technique sur plusieurs modules : conception des fonctionnalités, mise en place des tests, maintenance et évolution de l’application.

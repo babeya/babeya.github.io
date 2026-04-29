@@ -1,2 +1,2 @@
-* Intégration de maquettes PSD en HTML/CSS pour une centaine de sites (une à deux journées par site). 
-* Participation au développement des templates e-commerce (panier, tunnel de paiement) du CMS de l'entreprise.
+Intégration de maquettes PSD en HTML/CSS pour une centaine de sites, avec un rythme de production de 1 à 2 jours par site.
+Participation au développement des templates e-commerce du CMS interne, notamment le panier et le tunnel de paiement.

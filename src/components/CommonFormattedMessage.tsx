@@ -5,7 +5,8 @@ import { FormattedMessage, defineMessages } from "react-intl";
 const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   title: {
     id: "profile.title",
-    defaultMessage: "Développeur Front-end (React / TypeScript)",
+    defaultMessage:
+      "Développeur Front-end Senior | React, TypeScript, React Native",
   },
   professionalExperiences: {
     id: "profile.professionalExperiences",
@@ -26,7 +27,7 @@ const TRANSLATED_GENERAL_MESSAGES_CONFIG = {
   aboutContent: {
     id: "profile.aboutContent",
     defaultMessage:
-      "Développeur front-end avec plus de 10 ans d’expérience dans le développement d’applications web et mobiles. Spécialisé en React, Next.js et TypeScript, j’ai conçu des interfaces performantes et optimisées. Expérimenté en intégration d’APIs (GraphQL, REST) et bonnes pratiques de testing et CI/CD.",
+      "Développeur Front-end Senior avec plus de 10 ans d’expérience dans la création d’applications web, mobiles, TV et orientées données. Expertise forte en React, TypeScript, Next.js, React Native, APIs GraphQL/REST, optimisation des performances, tests et CI/CD. Habitué à transformer des besoins métier complexes en interfaces fiables, maintenables et performantes, en contexte produit comme en mission.",
   },
   generatedOn: {
     id: "profile.generatedOn",

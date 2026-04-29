@@ -12,7 +12,13 @@
     "en": "./cognix.en.md"
   },
   "shortDesc": {
-    "fr": ["Intégration de sites web"],
-    "en": ["Website integration"]
+    "fr": [
+      "Intégration HTML/CSS de maquettes PSD pour une centaine de sites, avec cycles de livraison courts.",
+      "Participation au développement de templates e-commerce pour panier et tunnel de paiement dans le CMS interne."
+    ],
+    "en": [
+      "Converted PSD mockups into HTML/CSS for about a hundred websites with short delivery cycles.",
+      "Contributed to e-commerce templates for cart and checkout flows in the internal CMS."
+    ]
   }
 }

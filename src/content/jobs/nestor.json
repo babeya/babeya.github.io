@@ -13,7 +13,15 @@
     "en": "./nestor.en.md"
   },
   "shortDesc": {
-    "fr": ["Gestion de la plateforme informatique (site web, backoffice, API)"],
-    "en": ["Management of the IT platform (website, backoffice, API)"]
+    "fr": [
+      "Pilotage technique de la plateforme web, back-office et API : Prestashop, Laravel, React, Node.js et AWS.",
+      "Migration d'une architecture vieillissante vers une API et un front-end plus maintenables, avec amélioration des enjeux de sécurité et de performance.",
+      "Mise en place de CI/CD, tracking analytics, services d'extraction de données, notifications clients et coordination avec prestataires externes."
+    ],
+    "en": [
+      "Led the technical delivery of the website, back office, and API stack: Prestashop, Laravel, React, Node.js, and AWS.",
+      "Migrated an aging architecture toward a more maintainable API and front-end, improving security and performance concerns.",
+      "Implemented CI/CD, analytics tracking, data extraction services, customer notifications, and coordination with external providers."
+    ]
   }
 }

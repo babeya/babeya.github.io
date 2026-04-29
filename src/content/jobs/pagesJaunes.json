@@ -15,10 +15,12 @@
   },
   "shortDesc": {
     "fr": [
-      "Développement d'une application web d'exploration de données dans un cluster elasticsearch"
+      "Développement d'une application open source d'exploration et de visualisation de données dans un cluster Elasticsearch.",
+      "Refonte d'un POC jQuery vers AngularJS avec recherche avancée, facettes, templating de résultats et dashboards auto-rafraîchis."
     ],
     "en": [
-      "Development of a web application for data exploration in an Elasticsearch cluster"
+      "Developed an open-source data exploration and visualization application for an Elasticsearch cluster.",
+      "Rebuilt a jQuery POC with AngularJS, adding advanced search, facets, result templating, and auto-refreshed dashboards."
     ]
   }
 }

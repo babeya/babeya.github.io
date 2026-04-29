@@ -14,12 +14,14 @@
   },
   "shortDesc": {
     "fr": [
-      "Développement et maintenance d'applications web",
-      "Développement d'outils de visualisation de données"
+      "Conception, développement et maintenance de modules React/TypeScript pour des applications métier : gestion de parc, IoT, comptes utilisateurs, GTB et visualisation de données.",
+      "Intégration d'APIs GraphQL et REST, création d'outils d'import/export et amélioration de la fiabilité via documentation, tests et composants réutilisables.",
+      "Contribution à la performance, à la maintenabilité et à l'expérience utilisateur sur des interfaces riches en données."
     ],
     "en": [
-      "Development and maintenance of web applications",
-      "Development of data visualization tools"
+      "Designed, developed, and maintained React/TypeScript modules for business applications: fleet management, IoT equipment, user accounts, BMS, and data visualization.",
+      "Integrated GraphQL and REST APIs, built import/export tooling, and improved reliability through documentation, testing, and reusable components.",
+      "Contributed to performance, maintainability, and user experience across data-heavy interfaces."
     ]
   }
 }

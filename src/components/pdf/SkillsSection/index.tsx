@@ -15,6 +15,18 @@ type Props = {
 const STYLES = StyleSheet.create({
   skillLabel: {
     fontWeight: 700,
+    color: "#172033",
+  },
+  skillsGrid: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginTop: 2,
+  },
+  skillLine: {
+    width: "50%",
+    paddingRight: 8,
+    marginTop: 3,
   },
 });
 
@@ -23,43 +35,40 @@ const SkillsSection = ({ intl: { formatMessage } }: Props) => (
     <Text style={COMMON_STYLES.sectionTitle}>
       {formatMessage(SKILLS_MESSAGES.title)}
     </Text>
-    <Text style={COMMON_STYLES.entryDetail}>
-      {"• "}
-      <Text style={STYLES.skillLabel}>
-        {formatMessage(SKILLS_MESSAGES.frontEnd)}
+    <View style={STYLES.skillsGrid}>
+      <Text style={[COMMON_STYLES.entryDetail, STYLES.skillLine]}>
+        <Text style={STYLES.skillLabel}>
+          {formatMessage(SKILLS_MESSAGES.frontEnd)}
+        </Text>
+        <Text>
+          : React, Next.js, TypeScript, JavaScript, React Native, TailwindCSS
+        </Text>
       </Text>
-      <Text>
-        : React, Next.js, TypeScript, JavaScript, React Native, TailwindCSS
+      <Text style={[COMMON_STYLES.entryDetail, STYLES.skillLine]}>
+        <Text style={STYLES.skillLabel}>
+          {formatMessage(SKILLS_MESSAGES.tests)}
+        </Text>
+        <Text>: Jest, Cypress, React Testing Library</Text>
       </Text>
-    </Text>
-    <Text style={COMMON_STYLES.entryDetail}>
-      {"• "}
-      <Text style={STYLES.skillLabel}>
-        {formatMessage(SKILLS_MESSAGES.tests)}
+      <Text style={[COMMON_STYLES.entryDetail, STYLES.skillLine]}>
+        <Text style={STYLES.skillLabel}>
+          {formatMessage(SKILLS_MESSAGES.performance)}
+        </Text>
+        <Text>: Code-splitting, Lazy loading, Webpack, Lighthouse</Text>
       </Text>
-      <Text>: Jest, Cypress, React Testing Library</Text>
-    </Text>
-    <Text style={COMMON_STYLES.entryDetail}>
-      {"• "}
-      <Text style={STYLES.skillLabel}>
-        {formatMessage(SKILLS_MESSAGES.performance)}
+      <Text style={[COMMON_STYLES.entryDetail, STYLES.skillLine]}>
+        <Text style={STYLES.skillLabel}>
+          {formatMessage(SKILLS_MESSAGES.apiAndData)}
+        </Text>
+        <Text>: GraphQL, REST, Apollo Client, data visualization</Text>
       </Text>
-      <Text>: Code-splitting, Lazy loading, Webpack, Lighthouse</Text>
-    </Text>
-    <Text style={COMMON_STYLES.entryDetail}>
-      {"• "}
-      <Text style={STYLES.skillLabel}>
-        {formatMessage(SKILLS_MESSAGES.apiAndData)}
+      <Text style={[COMMON_STYLES.entryDetail, STYLES.skillLine]}>
+        <Text style={STYLES.skillLabel}>
+          {formatMessage(SKILLS_MESSAGES.tools)}
+        </Text>
+        <Text>: Git, AWS, Docker, Firebase, CI/CD</Text>
       </Text>
-      <Text>: GraphQL, REST, Apollo Client</Text>
-    </Text>
-    <Text style={COMMON_STYLES.entryDetail}>
-      {"• "}
-      <Text style={STYLES.skillLabel}>
-        {formatMessage(SKILLS_MESSAGES.tools)}
-      </Text>
-      <Text>: Git, AWS, Docker, Firebase</Text>
-    </Text>
+    </View>
   </View>
 );
 

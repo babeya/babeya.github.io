@@ -13,7 +13,13 @@
     "en": "./laposte.en.md"
   },
   "shortDesc": {
-    "fr": ["Développement d'applications web et mobiles"],
-    "en": ["Development of web and mobile applications"]
+    "fr": [
+      "Développement d'applications web et mobiles en React, React Native et Node.js pour l'écosystème Monimalz.",
+      "Contribution au site e-commerce, à l'application mobile et à un jeu connecté, avec attention portée à l'ergonomie et à la qualité d'intégration."
+    ],
+    "en": [
+      "Developed web and mobile applications with React, React Native, and Node.js for the Monimalz ecosystem.",
+      "Contributed to the e-commerce website, mobile app, and connected game, with focus on usability and integration quality."
+    ]
   }
 }

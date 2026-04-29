@@ -1,1 +1,2 @@
-Development and maintenance of React components and various modules (fleet management, IoT equipment, user accounts, data visualization, BMS), including the creation of data import/export tools, along with documentation and testing of components.
+Development of front-end modules in React / TypeScript for business features: asset management, IoT devices, user accounts, data visualization, and building management systems.
+Technical ownership of several modules: feature design, test implementation, maintenance, and application evolution.

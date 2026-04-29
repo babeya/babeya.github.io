@@ -15,36 +15,46 @@ Font.register({
 });
 
 export const COMMON_STYLES = StyleSheet.create({
-  page: { fontSize: 9, fontFamily: "Lato" },
+  page: {
+    fontSize: 9,
+    fontFamily: "Lato",
+    color: "#172033",
+    backgroundColor: "#ffffff",
+    paddingBottom: 10,
+  },
   section: {
-    marginHorizontal: 10,
-    marginVertical: 7,
-    padding: 7,
-    //flexGrow: 1,
-    borderLeft: "3pt solid #3498db",
-    backgroundColor: "#f8f9fa",
+    marginHorizontal: 18,
+    marginTop: 10,
+    paddingTop: 7,
+    borderTop: "1.2pt solid #d7dee8",
   },
   sectionTitle: {
-    fontSize: 16,
+    fontSize: 11,
     fontWeight: 700,
-    color: "#2c3e50",
+    color: "#1455a0",
+    textTransform: "uppercase",
+    letterSpacing: 0.8,
+    marginBottom: 2,
   },
   entry: {
-    marginTop: 10,
+    marginTop: 8,
   },
   entryTitle: {
-    fontSize: 12,
+    fontSize: 10.5,
     fontWeight: 700,
+    color: "#172033",
   },
   entryLink: {
-    color: "black",
+    color: "#172033",
   },
   entryDetail: {
-    fontSize: 10,
-    color: "#34495e",
+    fontSize: 9,
+    color: "#29384d",
+    lineHeight: 1.35,
   },
   entryTags: {
-    fontSize: 8,
-    color: "#34495e7a",
+    fontSize: 7.5,
+    color: "#596b83",
+    marginTop: 2,
   },
 });

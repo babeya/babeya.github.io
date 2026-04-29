@@ -13,7 +13,15 @@
     "en": "./molotov.en.md"
   },
   "shortDesc": {
-    "fr": ["Développement d'applications TV (appleTv, webOS) et console (PS4)"],
-    "en": ["Development of TV applications (appleTv, webOS) and console (PS4)"]
+    "fr": [
+      "Développement et maintenance d'applications TV et console en JavaScript pour Samsung Tizen, LG webOS, Apple TV/tvOS et PlayStation 4.",
+      "Création d'une bibliothèque asynchrone sur l'API PlayStation et optimisation de la navigation pour des environnements contraints.",
+      "Collaboration avec les équipes internationales Samsung/Sony et démonstrations produit auprès de partenaires externes."
+    ],
+    "en": [
+      "Developed and maintained JavaScript TV and console applications for Samsung Tizen, LG webOS, Apple TV/tvOS, and PlayStation 4.",
+      "Created an asynchronous library over the PlayStation API and optimized navigation for constrained devices.",
+      "Collaborated with Samsung/Sony international teams and demonstrated product features to external partners."
+    ]
   }
 }

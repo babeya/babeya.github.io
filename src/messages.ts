@@ -1,13 +1,13 @@
 const messages = {
   "language.en": "English",
   "language.fr": "Français",
-  "profile.title": "Front-end Developer (React / TypeScript)",
+  "profile.title": "Senior Front-end Developer | React, TypeScript, React Native",
   "profile.professionalExperiences": "Professional Experiences",
   "profile.personalProjects": "Personal Projects",
   "profile.education": "Education",
   "profile.about": "About",
   "profile.aboutContent":
-    "Front-end Developer with over 10 years of experience in web and mobile application development. Specialized in React, Next.js, and TypeScript, I have designed high-performance, optimized interfaces. Experienced in API integration (GraphQL, REST) and best practices in testing and CI/CD.",
+    "Senior Front-end Developer with 10+ years of experience building web, mobile, TV, and data-heavy applications. Strong expertise in React, TypeScript, Next.js, React Native, GraphQL/REST APIs, performance optimization, testing, and CI/CD. Comfortable turning complex business needs into reliable, maintainable interfaces in product and consulting environments.",
   "profile.generatedOn": "Generated on",
   "timeline.title": "Resume",
   "timeline.export": "Export Resume",

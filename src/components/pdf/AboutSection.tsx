@@ -17,7 +17,7 @@ const AboutSection = ({ intl: { formatMessage } }: Props) => (
     <Text style={COMMON_STYLES.sectionTitle}>
       {formatMessage(GENERAL_MESSAGES.about)}
     </Text>
-    <Text style={COMMON_STYLES.entryDetail}>
+    <Text style={[COMMON_STYLES.entryDetail, { marginTop: 2 }]}>
       {formatMessage(GENERAL_MESSAGES.aboutContent)}
     </Text>
   </View>

@@ -19,16 +19,18 @@ const LEFT_ALIGN_PADDING = 10;
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: "#3498db",
-    padding: 20,
-    color: "white",
+    backgroundColor: "#f5f8fc",
+    borderBottom: "3pt solid #1455a0",
+    paddingHorizontal: 18,
+    paddingVertical: 16,
+    color: "#172033",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
-  name: { fontSize: 28, fontWeight: 700 },
-  title: { fontSize: 14, marginTop: 5 },
+  name: { fontSize: 25, fontWeight: 700, color: "#0f2747" },
+  title: { fontSize: 11, marginTop: 5, color: "#1455a0" },
   blocTitle: {
     fontWeight: "bold",
     fontSize: 12,
@@ -44,7 +46,7 @@ const styles = StyleSheet.create({
   infoType: {
     //fontWeight: "bold",
   },
-  infoValue: { color: "white", marginLeft: 5 },
+  infoValue: { color: "#172033", marginLeft: 5, fontSize: 8.5 },
 });
 
 const InfoSection = ({ intl: { formatMessage } }: Props) => (

@@ -14,12 +14,14 @@
   },
   "shortDesc": {
     "fr": [
-      "Développement d'applications mobiles",
-      "Développement d'une applcation pour bornes interactives"
+      "Développement de la nouvelle application mobile Pierre et Vacances en React Native : planning, réservations d'activités, réservations de séjours et fiches sites.",
+      "Conception d'une application pour bornes interactives avec authentification, paiement, navigation et impression de tickets QR code.",
+      "Maintenance d'applications existantes et POC d'intégration de chatbot via APIs NLP."
     ],
     "en": [
-      "Development of mobile applications",
-      "Development of an application for interactive terminals"
+      "Developed the new Pierre et Vacances mobile application in React Native: scheduling, activity booking, stay booking, and site pages.",
+      "Built an interactive kiosk application with authentication, payment, navigation, and QR-code ticket printing.",
+      "Maintained existing applications and prototyped chatbot integration through NLP APIs."
     ]
   }
 }
