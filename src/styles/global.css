@@ -158,6 +158,19 @@
   text-decoration: underline;
 }
 
+.timeline-card-copy .markdown {
+  text-align: left;
+}
+
+.timeline-card-copy .markdown p,
+.timeline-card-copy .markdown ul {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-card-copy .markdown li {
+  margin-bottom: 0.25rem;
+}
+
 @layer utilities {
   .bg-page {
     background-color: hsl(var(--page-bg));

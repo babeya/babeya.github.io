@@ -4,7 +4,7 @@ import { IntlShape } from "react-intl";
 
 import { View, Text, StyleSheet } from "@react-pdf/renderer";
 
-import { COMMON_STYLES } from "./../CommonStyles";
+import { COMMON_STYLES, PDF_COLORS } from "./../CommonStyles";
 import { SKILLS_MESSAGES } from "../../CommonFormattedMessage";
 
 type Props = {
@@ -15,7 +15,7 @@ type Props = {
 const STYLES = StyleSheet.create({
   skillLabel: {
     fontWeight: 700,
-    color: "#172033",
+    color: PDF_COLORS.text,
   },
   skillsGrid: {
     display: "flex",

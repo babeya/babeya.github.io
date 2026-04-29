@@ -106,23 +106,6 @@ export default function HeroSection() {
             />
           </motion.div>
         </div>
-        <motion.div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-10 right-8 hidden w-72 border border-border bg-card/70 p-5 text-left shadow-sm backdrop-blur lg:block"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-        >
-          <div className="mb-4 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-            stack
-          </div>
-          <div className="grid grid-cols-2 gap-2 text-sm text-foreground">
-            <span>React</span>
-            <span>TypeScript</span>
-            <span>Next.js</span>
-            <span>React Native</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

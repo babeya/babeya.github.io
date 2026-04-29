@@ -9,7 +9,7 @@ import {
   TITLE_MESSAGES,
 } from "../../CommonFormattedMessage";
 
-import { COMMON_STYLES } from "../CommonStyles";
+import { COMMON_STYLES, PDF_COLORS } from "../CommonStyles";
 import { StyleSheet } from "@react-pdf/renderer";
 
 type Props = {
@@ -20,7 +20,7 @@ type Props = {
 
 const STYLES = StyleSheet.create({
   meta: {
-    color: "#596b83",
+    color: PDF_COLORS.muted,
     marginTop: 1,
     marginBottom: 2,
   },

@@ -1,8 +1,9 @@
 import React from "react";
 
 import { Svg, Path } from "@react-pdf/renderer";
+import { PDF_COLORS } from "./CommonStyles";
 
-const HEADER_ICON_COLOR = "#1455a0";
+const HEADER_ICON_COLOR = PDF_COLORS.primaryDark;
 
 export const GithubPdfIcon = () => (
   <Svg width="15" height="15" viewBox="0 0 15 15" fill="none">

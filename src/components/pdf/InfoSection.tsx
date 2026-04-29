@@ -9,6 +9,7 @@ import { EMAIL, EMAIL_LINK, GITHUB, LINKEDIN, NAME } from "../../config";
 import { GENERAL_MESSAGES } from "../CommonFormattedMessage";
 
 import { GithubPdfIcon, LinkedinPdfIcon, MailPdfIcon } from "./Icons";
+import { PDF_COLORS } from "./CommonStyles";
 
 type Props = {
   intl: IntlShape;
@@ -19,18 +20,18 @@ const LEFT_ALIGN_PADDING = 10;
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: "#f5f8fc",
-    borderBottom: "3pt solid #1455a0",
+    backgroundColor: PDF_COLORS.headerBg,
+    borderBottom: `3pt solid ${PDF_COLORS.primary}`,
     paddingHorizontal: 18,
     paddingVertical: 16,
-    color: "#172033",
+    color: PDF_COLORS.text,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
-  name: { fontSize: 25, fontWeight: 700, color: "#0f2747" },
-  title: { fontSize: 11, marginTop: 5, color: "#1455a0" },
+  name: { fontSize: 25, fontWeight: 700, color: PDF_COLORS.text },
+  title: { fontSize: 11, marginTop: 5, color: PDF_COLORS.primaryDark },
   blocTitle: {
     fontWeight: "bold",
     fontSize: 12,
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   infoType: {
     //fontWeight: "bold",
   },
-  infoValue: { color: "#172033", marginLeft: 5, fontSize: 8.5 },
+  infoValue: { color: PDF_COLORS.text, marginLeft: 5, fontSize: 8.5 },
 });
 
 const InfoSection = ({ intl: { formatMessage } }: Props) => (

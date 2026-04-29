@@ -36,62 +36,61 @@ const BaseEventCard = ({
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <div className="relative mb-4 flex items-center">
-      {/* Icon circle - hidden on mobile, shown on desktop */}
-      <div className="absolute left-5 z-10 hidden h-10 w-10 -translate-x-1/2 items-center justify-center border border-primary/30 bg-card text-primary shadow-sm md:flex">
-        {icon}
-      </div>
+    <div className="relative border-b border-border last:border-b-0">
       <motion.div
         className="w-full"
         ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        initial={{ opacity: 0, y: 16 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
       >
-        <Card className="relative mb-6 ml-0 border-border bg-card/80 shadow-sm transition-colors duration-200 hover:border-primary/35 md:ml-14">
-          <CardHeader className="flex flex-row items-center gap-4 pb-3">
-            <div className="flex items-center gap-3 w-full">
-              {/* Icon shown inline on mobile */}
-              <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-primary/30 bg-primary/10 text-primary md:hidden">
-                {icon}
+        <Card className="relative border-0 bg-transparent shadow-none transition-colors duration-200 hover:bg-muted/35">
+          <CardHeader className="p-4 pb-2">
+            <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+              <div className="flex min-w-0 items-center gap-3">
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-primary/25 bg-primary/10 text-primary [&_svg]:h-4 [&_svg]:w-4">
+                  {icon}
+                </div>
+                <div className="min-w-0">
+                  <CardTitle className="text-base font-semibold leading-6 tracking-normal text-foreground">
+                    {title}
+                  </CardTitle>
+                  {subtitle ? (
+                    <p className="mt-0.5 text-sm leading-5 text-muted-foreground">
+                      {subtitle}
+                    </p>
+                  ) : null}
+                </div>
               </div>
-              <div className="flex-1">
-                <CardTitle className="mr-8 text-lg font-semibold tracking-normal text-foreground">
-                  {title}
-                </CardTitle>
-                {subtitle ? (
-                  <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                    {subtitle}
-                  </p>
+              <div className="flex flex-shrink-0 items-center gap-3">
+                <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                  {from}
+                  {to ? <> - {to}</> : null}
+                </p>
+                {link ? (
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary transition-colors hover:text-primary/80"
+                    // TODO :title={title || ""}
+                  >
+                    <ExternalLinkIcon className="h-4 w-4" />
+                  </a>
                 ) : null}
               </div>
-              {link ? (
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0"
-                  // TODO :title={title || ""}
-                >
-                  <ExternalLinkIcon className="h-5 w-5 text-primary transition-colors hover:text-primary/80" />
-                </a>
-              ) : null}
             </div>
           </CardHeader>
-          <CardContent>
-            <p className="mb-3 text-xs uppercase tracking-[0.14em] text-muted-foreground">
-              {from}
-              {to ? <> - {to}</> : null}
-            </p>
-            <div className="mb-4 text-sm leading-7 text-foreground">
+          <CardContent className="px-4 pb-4">
+            <div className="timeline-card-copy mb-3 text-sm leading-6 text-foreground">
               {children}
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {tags?.map((tag, index) => (
                 <Badge
                   key={index}
                   aria-selected={selectedTags.includes(tag || "")}
-                  className="border border-border bg-secondary/70 text-xs font-medium text-secondary-foreground hover:bg-secondary aria-selected:border-primary aria-selected:bg-primary aria-selected:text-primary-foreground aria-selected:hover:bg-primary/85"
+                  className="border border-border bg-secondary/70 px-2 py-0 text-[11px] font-medium text-secondary-foreground shadow-none hover:bg-secondary aria-selected:border-primary aria-selected:bg-primary aria-selected:text-primary-foreground aria-selected:hover:bg-primary/85"
                   onClick={() => {
                     onTagClick && tag ? onTagClick(tag) : null;
                   }}

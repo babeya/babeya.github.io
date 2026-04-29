@@ -14,24 +14,35 @@ Font.register({
   ],
 });
 
+export const PDF_COLORS = {
+  page: "#ffffff",
+  headerBg: "#f6f9f7",
+  text: "#0f172a",
+  textSoft: "#334155",
+  muted: "#64748b",
+  border: "#dce7df",
+  primary: "#16a34a",
+  primaryDark: "#15803d",
+};
+
 export const COMMON_STYLES = StyleSheet.create({
   page: {
     fontSize: 9,
     fontFamily: "Lato",
-    color: "#172033",
-    backgroundColor: "#ffffff",
+    color: PDF_COLORS.text,
+    backgroundColor: PDF_COLORS.page,
     paddingBottom: 10,
   },
   section: {
     marginHorizontal: 18,
     marginTop: 10,
     paddingTop: 7,
-    borderTop: "1.2pt solid #d7dee8",
+    borderTop: `1.2pt solid ${PDF_COLORS.border}`,
   },
   sectionTitle: {
     fontSize: 11,
     fontWeight: 700,
-    color: "#1455a0",
+    color: PDF_COLORS.primaryDark,
     textTransform: "uppercase",
     letterSpacing: 0.8,
     marginBottom: 2,
@@ -42,19 +53,19 @@ export const COMMON_STYLES = StyleSheet.create({
   entryTitle: {
     fontSize: 10.5,
     fontWeight: 700,
-    color: "#172033",
+    color: PDF_COLORS.text,
   },
   entryLink: {
-    color: "#172033",
+    color: PDF_COLORS.text,
   },
   entryDetail: {
     fontSize: 9,
-    color: "#29384d",
+    color: PDF_COLORS.textSoft,
     lineHeight: 1.35,
   },
   entryTags: {
     fontSize: 7.5,
-    color: "#596b83",
+    color: PDF_COLORS.muted,
     marginTop: 2,
   },
 });
