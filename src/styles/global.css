@@ -67,6 +67,21 @@
     --icon-color: 142 76% 36%;
     --timeline-line: 142 76% 36%;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.18);
+  }
 }
 
 @keyframes glitch {

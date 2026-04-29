@@ -77,12 +77,12 @@ export default function TimelineHeader({
       <CollapsibleContent className="space-y-4 pt-4 border-t border-border">
         <motion.div
           layout
-          className="mb-8 p-6 bg-card rounded-2xl border border-border shadow-lg"
+          className="mb-8 border border-border bg-card/80 p-5 shadow-sm sm:p-6"
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <div className="flex flex-col gap-6">
             <div>
-              <h3 className="text-foreground text-lg font-mono mb-3">
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                 <FormattedMessage
                   id="timeline.filterByTags"
                   defaultMessage="Filtrer par Tags"
@@ -119,7 +119,7 @@ export default function TimelineHeader({
                       />
                       <label
                         htmlFor={name}
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground cursor-pointer"
+                        className="cursor-pointer text-sm leading-none text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       >
                         {name}({count})
                       </label>
@@ -129,7 +129,7 @@ export default function TimelineHeader({
               </div>
             </div>
             <div>
-              <h3 className="text-foreground text-lg font-mono mb-3">
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                 <FormattedMessage
                   id="timeline.filterByType"
                   defaultMessage="Filtrer par Type"

@@ -72,12 +72,12 @@ const TECHS = [
 
 export default function AboutSiteSection() {
   return (
-    <section className="w-full py-12 bg-muted">
-      <div className="container mx-auto px-4">
-        <Card className="border-2 shadow-lg">
+    <section className="w-full border-t border-border bg-muted/45 py-16">
+      <div className="container mx-auto px-5 sm:px-8">
+        <Card className="border-border bg-card/80 shadow-sm">
           <CardHeader>
             <CardTitle
-              className="text-3xl font-bold mb-4"
+              className="mb-2 text-2xl font-semibold tracking-normal"
               data-text="About This Site"
             >
               <FormattedMessage
@@ -86,27 +86,25 @@ export default function AboutSiteSection() {
               />
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-muted-foreground font-mono">
-            <p className="mb-4">
+          <CardContent className="text-muted-foreground">
+            <p className="mb-5 max-w-4xl leading-7">
               <FormattedMessage
                 id="aboutSite.description"
                 defaultMessage="Ce site a été conçu pour présenter mon parcours, mes compétences et mes projets de manière simple et efficace. Il est construit avec des technologies modernes qui garantissent performance et maintenabilité :"
               />
             </p>
-            <ul className="list-none space-y-2 mb-4">
+            <ul className="mb-5 grid list-none gap-3 sm:grid-cols-2">
               {TECHS.map(({ name, description, url }, index) => (
-                <li key={index} className="flex items-center">
+                <li key={index} className="flex items-start gap-2 leading-7">
                   <a href={url} target="_blank" rel="noopener noreferrer">
-                    <Badge className="font-mono mr-2">
-                      {name}
-                    </Badge>
+                    <Badge className="font-medium">{name}</Badge>
                   </a>
                   {description}
                 </li>
               ))}
             </ul>
 
-            <p className="mb-4">
+            <p className="mb-5 max-w-4xl leading-7">
               <FormattedMessage
                 id="aboutSite.sourceCode"
                 defaultMessage="Le code source de ce site est disponible sur GitHub, n’hésitez pas à y jeter un coup d’œil pour découvrir les aspects techniques de sa réalisation."
@@ -116,7 +114,7 @@ export default function AboutSiteSection() {
               href="https://github.com/babeya/babeya.github.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors duration-200"
+              className="inline-flex items-center bg-primary px-4 py-2 text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
             >
               <GitHubLogoIcon className="mr-2 h-5 w-5" />
               <FormattedMessage

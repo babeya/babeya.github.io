@@ -9,15 +9,15 @@ type Props = {
 
 const ProfileLink = ({ icon, text, href, target }: Props) => (
   <a
-    className="bg-card p-4 rounded-2xl flex items-center space-x-3 transition-all duration-300 ease-in-out hover:bg-primary/10 group relative overflow-hidden border-2 border-primary/20 hover:border-primary shadow-lg hover:shadow-xl hover:scale-105"
+    className="group relative flex items-center gap-3 border border-border bg-card/80 px-4 py-3 text-sm shadow-sm transition-colors duration-200 hover:border-primary/40 hover:bg-primary/10 sm:text-base"
     href={href}
     rel="noopener noreferrer"
     target={target}
   >
-    <span className="relative z-10 text-primary transition-all duration-300 group-hover:scale-125">
+    <span className="text-primary transition-colors duration-200 group-hover:text-primary/80">
       {icon}
     </span>
-    <span className="relative z-10 text-foreground font-mono font-semibold transition-all duration-300 group-hover:text-primary">
+    <span className="text-foreground transition-colors duration-200 group-hover:text-primary">
       {text}
     </span>
   </a>

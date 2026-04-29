@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
 
 import { useIntl } from "react-intl";
 
@@ -23,43 +22,15 @@ import ProfileLink from "./ProfileLink";
 import LanguageSelect from "./LanguageSelect";
 
 export default function HeroSection() {
-  const [glitchText, setGlitchText] = useState(NAME);
   const { lang } = useContext(LangContext);
   const intl = useIntl();
-
-  useEffect(() => {
-    let count = 0;
-    const glitchInterval = setInterval(() => {
-      count++;
-      const glitched = NAME.split("")
-        .map((char) =>
-          Math.random() > 0.7
-            ? String.fromCharCode(
-                char.charCodeAt(0) + Math.floor(Math.random() * 10) - 5
-              )
-            : char
-        )
-        .join("");
-      setGlitchText(glitched);
-      if (count > 10) {
-        setGlitchText(NAME);
-        clearInterval(glitchInterval);
-      }
-    }, 200);
-
-    return () => clearInterval(glitchInterval);
-  }, []);
+  const title = intl.formatMessage(GENERAL_MESSAGES.title);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center pb-12 md:pb-0 bg-gradient-to-br from-[hsl(var(--page-bg))] via-[hsl(140,30%,95%)] to-[hsl(var(--page-bg))] dark:bg-gradient-to-br dark:from-background dark:via-muted dark:to-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMjEyMTIxIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiMzMTMxMzEiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')] opacity-5 dark:opacity-10"></div>
+    <section className="relative min-h-[92svh] overflow-hidden border-b border-border bg-[radial-gradient(circle_at_top_left,hsl(var(--primary)/0.10),transparent_34%),linear-gradient(180deg,hsl(var(--page-bg)),hsl(var(--background)))] dark:bg-[radial-gradient(circle_at_top_left,hsl(var(--primary)/0.16),transparent_32%),linear-gradient(180deg,hsl(var(--background)),hsl(var(--muted)/0.35))]">
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(hsl(var(--foreground)/0.035)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--foreground)/0.035)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:linear-gradient(to_bottom,black,transparent_82%)]" />
 
-      <div className="absolute inset-0 opacity-20 dark:opacity-30">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+      <div className="absolute right-4 top-4 z-20 flex items-center gap-2 sm:right-6 sm:top-6">
         <ThemeToggle />
         <LanguageSelect
           onChange={(value) => {
@@ -79,57 +50,78 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="z-10 text-center space-y-8 px-4 mt-20 sm:mt-0">
-        <motion.h1
-          className="text-6xl md:text-8xl font-bold text-foreground font-mono"
+      <div className="relative z-10 mx-auto flex min-h-[92svh] w-full max-w-6xl items-center px-5 py-28 sm:px-8 lg:px-12">
+        <div className="max-w-3xl space-y-8">
+          <motion.p
+            className="inline-flex items-center border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-primary"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+          >
+            Portfolio / resume
+          </motion.p>
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.05 }}
+          >
+            <h1 className="text-5xl font-semibold leading-none tracking-normal text-foreground sm:text-6xl md:text-7xl">
+              {NAME}
+            </h1>
+            <p className="max-w-2xl text-balance text-xl leading-8 text-primary md:text-2xl">
+              &lt;{title} /&gt;
+            </p>
+          </motion.div>
+          <motion.p
+            className="max-w-2xl text-pretty text-base leading-8 text-muted-foreground md:text-lg"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.14 }}
+          >
+            {TRANSLATED_GENERAL_MESSAGES.aboutContent}
+          </motion.p>
+          <motion.div
+            className="flex flex-col items-stretch gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.22 }}
+          >
+            <ProfileLink
+              icon={<EnvelopeClosedIcon className="h-5 w-5" />}
+              href={EMAIL_LINK}
+              text={EMAIL}
+            />
+            <ProfileLink
+              href={GITHUB}
+              target="_blank"
+              icon={<GitHubLogoIcon className="h-5 w-5" />}
+              text="babeya"
+            />
+            <ProfileLink
+              href={LINKEDIN}
+              target="_blank"
+              icon={<LinkedInLogoIcon className="h-5 w-5" />}
+              text="a-babey"
+            />
+          </motion.div>
+        </div>
+        <motion.div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-10 right-8 hidden w-72 border border-border bg-card/70 p-5 text-left shadow-sm backdrop-blur lg:block"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
         >
-          {glitchText}
-        </motion.h1>
-        <div className="text-2xl md:text-3xl text-primary font-mono">
-          <TypeAnimation
-            sequence={[
-              `<${intl.formatMessage(GENERAL_MESSAGES.title)} />`,
-              2000,
-            ]}
-            wrapper="span"
-            cursor={true}
-            repeat={Infinity}
-          />
-        </div>
-        <motion.p
-          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {TRANSLATED_GENERAL_MESSAGES.aboutContent}
-        </motion.p>
-        <motion.div
-          className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <ProfileLink
-            icon={<EnvelopeClosedIcon className="w-5 h-5" />}
-            href={EMAIL_LINK}
-            text={EMAIL}
-          />
-          <ProfileLink
-            href={GITHUB}
-            target="_blank"
-            icon={<GitHubLogoIcon className="w-5 h-5" />}
-            text="babeya"
-          />
-          <ProfileLink
-            href={LINKEDIN}
-            target="_blank"
-            icon={<LinkedInLogoIcon className="w-5 h-5" />}
-            text="a-babey"
-          />
+          <div className="mb-4 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+            stack
+          </div>
+          <div className="grid grid-cols-2 gap-2 text-sm text-foreground">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Next.js</span>
+            <span>React Native</span>
+          </div>
         </motion.div>
       </div>
     </section>
