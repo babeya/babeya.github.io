@@ -1,0 +1,35 @@
+{
+  "company": "Badsim",
+  "title": "independent",
+  "type": "freelance",
+  "from": "2024-08-01",
+  "typename": "job",
+  "colors": ["#1455A0", "#0F2747"],
+  "tags": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Swift",
+    "SwiftUI",
+    "iOS",
+    "Node.js",
+    "TailwindCSS",
+    "SEO"
+  ],
+  "desc": {
+    "fr": "./badsim.fr.md",
+    "en": "./badsim.en.md"
+  },
+  "shortDesc": {
+    "fr": [
+      "Création de sites vitrines, applications web et applications mobiles pour des clients indépendants et petites structures.",
+      "Développement d'interfaces modernes avec Next.js, React, TypeScript et TailwindCSS, avec attention portée à la performance, au SEO et à la maintenabilité.",
+      "Conception d'applications iOS en Swift/SwiftUI et accompagnement technique de bout en bout : cadrage, architecture, développement, livraison et évolution."
+    ],
+    "en": [
+      "Build showcase websites, web applications, and mobile applications for independent clients and small businesses.",
+      "Develop modern interfaces with Next.js, React, TypeScript, and TailwindCSS, with focus on performance, SEO, and maintainability.",
+      "Design iOS applications with Swift/SwiftUI and provide end-to-end technical support: scoping, architecture, development, delivery, and iteration."
+    ]
+  }
+}

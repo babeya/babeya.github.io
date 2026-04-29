@@ -1,5 +1,6 @@
 import React from "react";
 
+import { FormattedMessage } from "react-intl";
 import { Briefcase } from "lucide-react";
 
 import { TranslatedDate, TranslatedMarkdown } from "../../Translation";
@@ -27,7 +28,13 @@ const JobCard = ({
     selectedTags={selectedTags}
     tags={tags || []} // TODO
     from={<TranslatedDate date={from} />}
-    to={<TranslatedDate date={to} />}
+    to={
+      to ? (
+        <TranslatedDate date={to} />
+      ) : (
+        <FormattedMessage id="profile.present" defaultMessage="Aujourd'hui" />
+      )
+    }
     title={title && TRANSLATED_TITLE[title] ? TRANSLATED_TITLE[title] : title}
     subtitle={
       <span>

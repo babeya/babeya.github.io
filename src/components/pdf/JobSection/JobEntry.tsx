@@ -51,7 +51,8 @@ const JobEntry = ({
       </Text>
       <Text style={[COMMON_STYLES.entryDetail, STYLES.meta]}>
         {from && <TranslatedDate date={from} local={lang} />} -{" "}
-        {(to && <TranslatedDate date={to} local={lang} />) || "TODAY"}{" "}
+      {(to && <TranslatedDate date={to} local={lang} />) ||
+        (lang === "fr" ? "Aujourd'hui" : "Present")}{" "}
         {/** @ts-ignore */}
         {type && `, ${formatMessage(JOB_TYPE_MESSAGES[type])}`}
       </Text>

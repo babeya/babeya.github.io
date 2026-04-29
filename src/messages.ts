@@ -9,6 +9,7 @@ const messages = {
   "profile.aboutContent":
     "Senior Front-end Developer with 10+ years of experience building web, mobile, TV, and data-heavy applications. Strong expertise in React, TypeScript, Next.js, React Native, GraphQL/REST APIs, performance optimization, testing, and CI/CD. Comfortable turning complex business needs into reliable, maintainable interfaces in product and consulting environments.",
   "profile.generatedOn": "Generated on",
+  "profile.present": "Present",
   "timeline.title": "Resume",
   "timeline.export": "Export Resume",
   "timeline.showFilters": "Show Filters",
@@ -24,9 +25,11 @@ const messages = {
   "job-title.fullStack": "Full-Stack Developer",
   "job-title.tv": "TV / Console Developer",
   "job-title.integrator": "Front-end Integrator",
+  "job-title.independent": "Freelance Developer",
   "job-type.mission": "Mission",
   "job-type.internship": "Internship",
   "job-type.openEnded": "Open-ended Contract",
+  "job-type.freelance": "Freelance",
   "aboutSite.title": "About This Site",
   "aboutSite.description":
     "This site was designed to showcase my background, skills, and projects in a simple and effective way. It's built with modern technologies that ensure performance and maintainability:",

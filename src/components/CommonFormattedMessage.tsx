@@ -88,6 +88,10 @@ const TRANSLATED_TITLE_CONFIG = {
     id: "job-title.integrator",
     defaultMessage: "Intégrateur Front-end",
   },
+  independent: {
+    id: "job-title.independent",
+    defaultMessage: "Développeur indépendant",
+  },
 };
 
 export const TITLE_MESSAGES = defineMessages(TRANSLATED_TITLE_CONFIG);
@@ -98,6 +102,7 @@ export const TRANSLATED_TITLE: { [key: string]: React.ReactNode } = {
   fullStack: <FormattedMessage {...TRANSLATED_TITLE_CONFIG.fullStack} />,
   tv: <FormattedMessage {...TRANSLATED_TITLE_CONFIG.tv} />,
   integrator: <FormattedMessage {...TRANSLATED_TITLE_CONFIG.integrator} />,
+  independent: <FormattedMessage {...TRANSLATED_TITLE_CONFIG.independent} />,
 };
 
 const TRANSLATED_JOB_TYPE_CONFIG = {
@@ -107,6 +112,7 @@ const TRANSLATED_JOB_TYPE_CONFIG = {
     defaultMessage: "Stage",
   },
   openEnded: { id: "job-type.openEnded", defaultMessage: "CDI" },
+  freelance: { id: "job-type.freelance", defaultMessage: "Freelance" },
 };
 
 export const JOB_TYPE_MESSAGES = defineMessages(TRANSLATED_JOB_TYPE_CONFIG);
@@ -115,6 +121,7 @@ export const TRANSLATED_JOB_TYPE: { [key: string]: React.ReactNode } = {
   mission: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.mission} />,
   internship: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.internship} />,
   openEnded: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.openEnded} />,
+  freelance: <FormattedMessage {...TRANSLATED_JOB_TYPE_CONFIG.freelance} />,
 };
 
 export const TRANSLATED_SKILLS_CONFIG = {
