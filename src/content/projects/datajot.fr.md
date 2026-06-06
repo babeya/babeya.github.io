@@ -16,4 +16,4 @@ L’objectif est de proposer une alternative légère et entièrement personnali
 - La synchronisation multi-appareils via iCloud  
 - Les bonnes pratiques du développement multiplateforme dans l’écosystème Apple  
 
-[Disponible sur l’App Store](https://apps.apple.com/fr/app/datajot/id6748443459)
+Découvrez DataJot sur le [site officiel](https://www.datajot.app/fr) ou téléchargez l’application sur l’[App Store](https://apps.apple.com/fr/app/datajot/id6748443459).
