@@ -15,7 +15,7 @@ import { TimelineNode } from "../types";
 import { usePdfResume } from "./usePdfResume";
 
 const generateResumeName = () =>
-  `a_babey_resume_${DateTime.now().toLocaleString(DateTime.DATE_SHORT)}.pdf`;
+  `arthur_babey_resume_${DateTime.now().toFormat("yyyy-LL-dd")}.pdf`;
 
 type Props = {
   timelineData: TimelineNode[];

@@ -23,8 +23,9 @@ const SchoolEntry = ({
       {diploma}, {school}
     </Text>
     <Text style={COMMON_STYLES.entryDetail}>
-      {from && <TranslatedDate date={from} local={lang} />} -{" "}
-      {(to && <TranslatedDate date={to} local={lang} />) || ""}{" "}
+      {from && <TranslatedDate date={from} format="MMM yyyy" local={lang} />} -{" "}
+      {(to && <TranslatedDate date={to} format="MMM yyyy" local={lang} />) ||
+        ""}{" "}
     </Text>
     <Text style={COMMON_STYLES.entryDetail}>{desc && desc[lang]}</Text>
     <Text style={COMMON_STYLES.entryTags}>{tags?.join(", ")}</Text>

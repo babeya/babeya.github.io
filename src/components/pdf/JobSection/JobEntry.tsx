@@ -42,7 +42,7 @@ const JobEntry = ({
         {/** @ts-ignore */}
         {title && formatMessage(TITLE_MESSAGES[title])},{" "}
         {link ? (
-          <Link href={link} style={COMMON_STYLES.entryLink}>
+          <Link src={link} style={COMMON_STYLES.entryLink}>
             {company}
           </Link>
         ) : (
@@ -50,9 +50,14 @@ const JobEntry = ({
         )}
       </Text>
       <Text style={[COMMON_STYLES.entryDetail, STYLES.meta]}>
-        {from && <TranslatedDate date={from} local={lang} />} -{" "}
-      {(to && <TranslatedDate date={to} local={lang} />) ||
-        (lang === "fr" ? "Aujourd'hui" : "Present")}{" "}
+        {from && (
+          <TranslatedDate date={from} format="MMM yyyy" local={lang} />
+        )}{" "}
+        -{" "}
+        {(to && (
+          <TranslatedDate date={to} format="MMM yyyy" local={lang} />
+        )) ||
+          (lang === "fr" ? "Aujourd'hui" : "Present")}{" "}
         {/** @ts-ignore */}
         {type && `, ${formatMessage(JOB_TYPE_MESSAGES[type])}`}
       </Text>
